@@ -1,0 +1,138 @@
+$pagination: 'cp-ui-pagination';
+@import '../../style/index.scss';
+
+.#{$pagination} {
+  &-small {
+    .#{$pagination}-item {
+      min-width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      line-height: 22px;
+
+      .cp-ui-icon {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &-large {
+    .#{$pagination}-item {
+      min-width: 40px;
+      height: 40px;
+      margin-right: 8px;
+      line-height: 38px;
+
+      .cp-ui-icon {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-wrap {
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  &-item {
+    display: inline-block;
+    min-width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    font-family: Arial;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    background-color: #fff;
+    outline: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    a {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &-noEllipsis {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+
+    &.#{$pagination}-item-active {
+      font-weight: 500;
+      border-color: $color-brand-normal;
+      color: #fff;
+      background: $color-brand-normal;
+    }
+
+    &:hover {
+      border-color: $color-brand-normal;
+      color: #fff;
+      background: $color-brand-normal;
+    }
+  }
+
+  &-pre,
+  &-next {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+
+    &:hover {
+      border-color: $color-brand-normal;
+      color: #fff;
+      background: $color-brand-normal;
+    }
+
+    &-disabled {
+      color: rgba(0, 0, 0, 0.25);
+      border-color: #d9d9d9;
+      cursor: not-allowed;
+      background: #fff;
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.25);
+        border-color: #d9d9d9;
+        cursor: not-allowed;
+        background: #fff;
+      }
+    }
+  }
+
+  &-next {
+    margin-right: 0;
+  }
+
+  &-leftEllipsis,
+  &-rightEllipsis {
+    letter-spacing: 2px;
+    border-radius: 4px;
+  }
+
+  .cp-ui-icon {
+    font-size: 16px;
+  }
+
+  &-option {
+    display: inline-block;
+    margin-left: 16px;
+    vertical-align: middle;
+  }
+
+  &-quick-jump {
+    .cp-ui-input {
+      margin: 0 8px;
+      width: 50px;
+    }
+  }
+}

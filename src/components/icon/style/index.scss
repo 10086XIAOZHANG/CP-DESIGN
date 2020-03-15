@@ -1,0 +1,338 @@
+@import '../../style/index.scss';
+
+$icon: 'cp-ui-icon';
+
+@font-face {
+  font-family: 'uniIconFont';
+  /* project id 989577 */
+  src: url('//at.alicdn.com/t/font_989577_yea1cz9cjd.eot');
+  src:
+    url('//at.alicdn.com/t/font_989577_yea1cz9cjd.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_989577_yea1cz9cjd.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_989577_yea1cz9cjd.woff') format('woff'),
+    url('//at.alicdn.com/t/font_989577_yea1cz9cjd.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_989577_yea1cz9cjd.svg#iconfont') format('svg');
+}
+
+@keyframes loadingSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.#{$icon} {
+  font-family: "uniIconFont" !important;
+  font-size: $icon-size-l;
+  font-style: normal;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &-check-circle::before {
+    content: "\e77d";
+  }
+
+  &-close-circle::before {
+    content: "\e77e";
+  }
+
+  &-left-circle::before {
+    content: "\e77f";
+  }
+
+  &-down-circle::before {
+    content: "\e780";
+  }
+
+  &-minus-circle::before {
+    content: "\e781";
+  }
+
+  &-plus-circle::before {
+    content: "\e782";
+  }
+
+  &-right-circle::before {
+    content: "\e783";
+  }
+
+  &-time-circle::before {
+    content: "\e784";
+  }
+
+  &-up-circle::before {
+    content: "\e785";
+  }
+
+  &-warning-circle::before {
+    content: "\e786";
+  }
+
+  &-sync::before {
+    content: "\e787";
+  }
+
+  &-undo::before {
+    content: "\e788";
+  }
+
+  &-redo::before {
+    content: "\e789";
+  }
+
+  &-reload {
+    &::before {
+      content: "\e78a";
+    }
+
+    animation: loadingSpin 1s infinite linear;
+  }
+
+  &-spin {
+    &::before {
+      content: "\e6ab";
+    }
+  }
+
+  &-message::before {
+    content: "\e78b";
+  }
+
+  &-setting::before {
+    content: "\e78e";
+  }
+
+  &-adduser::before {
+    content: "\e7ae";
+  }
+
+  &-heart::before {
+    content: "\e7df";
+  }
+
+  &-error::before {
+    content: "\e7e0";
+  }
+
+  &-star::before {
+    content: "\e7e1";
+  }
+
+  &-link::before {
+    content: "\e7e2";
+  }
+
+  &-tag::before {
+    content: "\e7e4";
+  }
+
+  &-tags::before {
+    content: "\e7e5";
+  }
+
+  &-right::before {
+    content: "\e7eb";
+  }
+
+  &-left::before {
+    content: "\e7ec";
+  }
+
+  &-up::before {
+    content: "\e7ed";
+  }
+
+  &-down::before {
+    content: "\e7ee";
+  }
+
+  &-arrowright::before {
+    content: "\e7ef";
+  }
+
+  &-arrowup::before {
+    content: "\e7f0";
+  }
+
+  &-arrowleft::before {
+    content: "\e7f1";
+  }
+
+  &-arrowdown::before {
+    content: "\e7f2";
+  }
+
+  &-upload::before {
+    content: "\e7f3";
+  }
+
+  &-download::before {
+    content: "\e7f4";
+  }
+
+  &-check::before {
+    content: "\e7fc";
+  }
+
+  &-close::before {
+    content: "\e7fd";
+  }
+
+  &-check-circle-fill::before {
+    content: "\e844";
+  }
+
+  &-left-circle-fill::before {
+    content: "\e845";
+  }
+
+  &-down-circle-fill::before {
+    content: "\e846";
+  }
+
+  &-minus-circle-fill::before {
+    content: "\e847";
+  }
+
+  &-close-circle-fill::before {
+    content: "\e848";
+  }
+
+  &-info-circle-fill::before {
+    content: "\e849";
+  }
+
+  &-up-circle-fill::before {
+    content: "\e84a";
+  }
+
+  &-right-circle-fill::before {
+    content: "\e84b";
+  }
+
+  &-plus-circle-fill::before {
+    content: "\e84c";
+  }
+
+  &-question-circle-fill::before {
+    content: "\e84d";
+  }
+
+  &-warning-circle-fill::before {
+    content: "\e84e";
+  }
+
+  &-heart-fill::before {
+    content: "\e84f";
+  }
+
+  &-message-fill::before {
+    content: "\e850";
+  }
+
+  &-check-square-fill::before {
+    content: "\e851";
+  }
+
+  &-down-square-fill::before {
+    content: "\e852";
+  }
+
+  &-minus-square-fill::before {
+    content: "\e853";
+  }
+
+  &-close-square-fill::before {
+    content: "\e854";
+  }
+
+  &-left-square-fill::before {
+    content: "\e855";
+  }
+
+  &-up-square-fill::before {
+    content: "\e856";
+  }
+
+  &-right-square-fill::before {
+    content: "\e857";
+  }
+
+  &-plus-square-fill::before {
+    content: "\e858";
+  }
+
+  &-camera-fill::before {
+    content: "\e86f";
+  }
+
+  &-apple::before {
+    content: "\e87e";
+  }
+
+  &-android::before {
+    content: "\e87f";
+  }
+
+  &-apple-fill::before {
+    content: "\e881";
+  }
+
+  &-QQ::before {
+    content: "\e882";
+  }
+
+  &-chrome-fill::before {
+    content: "\e884";
+  }
+
+  &-alipay-circle-fill::before {
+    content: "\e885";
+  }
+
+  &-zoomout::before {
+    content: "\e897";
+  }
+
+  &-zoomin::before {
+    content: "\e898";
+  }
+
+  &-caret-down::before {
+    content: "\e8ec";
+  }
+
+  &-caret-up::before {
+    content: "\e8ed";
+  }
+
+  &-caret-right::before {
+    content: "\e8ee";
+  }
+
+  &-caret-left::before {
+    content: "\e8ef";
+  }
+
+  &-search::before {
+    content: "\e8f0";
+  }
+
+  &-eye-fill::before {
+    content: "\e869";
+  }
+
+  &-eye::before {
+    content: "\eb46";
+  }
+
+  &-eye-close::before {
+    content: "\e7b5";
+  }
+
+  &-delete::before {
+    content: "\e65b";
+  }
+}

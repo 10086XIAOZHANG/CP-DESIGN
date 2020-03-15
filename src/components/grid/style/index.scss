@@ -1,0 +1,60 @@
+@import '../../style/index.scss';
+
+$row: 'cp-ui-row';
+$col: 'cp-ui-col';
+
+.#{$row} {
+  display: flex;
+
+  &-top {
+    align-items: flex-start;
+  }
+
+  &-middle {
+    align-items: center;
+  }
+
+  &-bottom {
+    align-items: flex-end;
+  }
+
+  &-baseline {
+    align-items: baseline;
+  }
+
+  &-stretch {
+    align-items: stretch;
+  }
+
+  &-start {
+    justify-content: flex-start;
+  }
+
+  &-end {
+    justify-content: flex-end;
+  }
+
+  &-center {
+    justify-content: center;
+  }
+
+  &-space-around {
+    justify-content: space-around;
+  }
+
+  &-space-between {
+    justify-content: space-between;
+  }
+
+  .#{cp-ui-col} {
+    @for $var from 1 to 25 {
+      &-#{$var} {
+        width: ($var * 100 / 24) * 1%;
+      }
+
+      &-offset-#{$var} {
+        margin-left: ($var * 100 / 24) * 1%;
+      }
+    }
+  }
+}

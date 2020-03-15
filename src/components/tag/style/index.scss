@@ -1,0 +1,151 @@
+@import '../../style/index.scss';
+
+$tag: 'cp-ui-tag';
+
+.#{$tag} {
+  display: inline-block;
+  height: 28px;
+  line-height: 26px;
+  color: $color-text-title-content-1;
+  font-size: 14px;
+  cursor: pointer;
+  overflow: hidden;
+
+  &-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
+    background: #fff;
+  }
+
+  &-small {
+    line-height: 20px;
+    height: 22px;
+
+    .#{$tag} {
+      &-wrapper {
+        padding: 0 8px;
+        font-size: 10px;
+      }
+    }
+
+    .cp-ui-icon {
+      font-size: 12px;
+    }
+  }
+
+  &-large {
+    height: 34px;
+    line-height: 32px;
+
+    .#{$tag} {
+      &-wrapper {
+        padding: 0 16px;
+        font-size: 18px;
+      }
+    }
+
+    .cp-ui-icon {
+      font-size: 18px;
+    }
+  }
+
+  .cp-ui-icon {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+  &-primary {
+    .#{$tag} {
+      &-wrapper {
+        border: none;
+        background: #ebebeb;
+      }
+    }
+
+    &.#{$tag}-checked {
+      .#{$tag}-wrapper {
+        background: $color-brand-normal;
+        color: #fff;
+      }
+    }
+  }
+
+  &-ticked {
+    &.#{$tag}-checked {
+      .#{$tag}-wrapper {
+        border: 1px solid $color-brand-normal;
+        color: $color-brand-normal;
+
+        &::after {
+          content: '';
+          right: 1px;
+          bottom: 5px;
+          width: 10px;
+          height: 5px;
+          position: absolute;
+          transform: rotate(-45deg);
+          color: #fff;
+          border-left: 2px solid #fff;
+          border-bottom: 2px solid #fff;
+          animation: zoomIn 0.4s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+        }
+
+        &::before {
+          right: -14px;
+          bottom: -14px;
+          width: 28px;
+          height: 28px;
+          position: absolute;
+          content: "";
+          -webkit-font-smoothing: antialiased;
+          background-color: $color-brand-normal;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          animation: fadeInRightForTag 0.4s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+        }
+      }
+    }
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+
+    .#{$tag}-wrapper {
+      background: #ebebeb;
+      opacity: 0.5;
+    }
+  }
+}
+
+@keyframes fadeInRightForTag {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(45deg) translateX(20px);
+    transform: rotate(45deg) translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(45deg) translateX(0);
+    transform: rotate(45deg) translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    -ms-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

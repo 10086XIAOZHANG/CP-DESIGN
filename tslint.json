@@ -1,0 +1,42 @@
+{
+  "extends": ["tslint-config-prettier"],
+  "defaultSeverity": "error",
+  "rules": {
+    "adjacent-overload-signatures": true,
+    "class-name": true,
+    "eofline": true,
+    "forin": true,
+    "interface-over-type-literal": true,
+    "new-parens": true,
+    "no-angle-bracket-type-assertion": true,
+    "no-arg": true,
+    "no-conditional-assignment": true,
+    "no-consecutive-blank-lines": true,
+    "no-construct": true,
+    "no-duplicate-super": true,
+    "no-empty": false,
+    "no-empty-interface": true,
+    "no-eval": true,
+    "no-internal-module": true,
+    "no-invalid-this": false,
+    "no-string-literal": true,
+    "no-string-throw": true,
+    "no-switch-case-fall-through": false,
+    "no-trailing-whitespace": true,
+    "no-unsafe-finally": true,
+    "no-use-before-declare": false,
+    "no-var-keyword": true,
+    "no-var-requires": true,
+    "no-console": [true, "debug", "info", "log", "time", "timeEnd", "trace"],
+    "no-unused-expression": false,
+    "radix": true,
+    "use-isnan": true,
+    "variable-name": [
+      true,
+      "allow-leading-underscore",
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case"
+    ]
+  }
+}

@@ -46,6 +46,18 @@ $col: 'cp-ui-col';
     justify-content: space-between;
   }
 
+  &-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
   .#{cp-ui-col} {
     @for $var from 1 to 25 {
       &-#{$var} {

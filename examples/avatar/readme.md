@@ -14,13 +14,17 @@ import { Avatar } from 'cp-ui-design'
 export default function AvatarDemo() {
   return (
     <div>
+      <Avatar icon="adduser" size="small" />
       <Avatar icon="adduser" />
       <Avatar icon="adduser" size="large" />
-      <Avatar icon="adduser" size="small" />
-      <Avatar src="http://img0.imgtn.bdimg.com/it/u=2253122537,3805608083&fm=11&gp=0.jpg" />
+      <Avatar style={{ color: “#f56a00”, backgroundColor: “#fde3cf” }}>U</Avatar>
+      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" size="large" />
+      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" size={64} />
       <Avatar
-        src="http://img0.imgtn.bdimg.com/it/u=2894163781,1992732231&fm=26&gp=0.jpg"
-        size="large"
+        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+        size={128}
+        shape="square"
       />
     </div>
   )
@@ -38,3 +42,4 @@ export default function AvatarDemo() {
 | alt     |  图片不显示的占位  |           string           |       -- |  --  |
 | onError | 图片加载失败的回调 |         fun():void         |       -- |  --  |
 | onClick |   点击头像的回调   |        fun() : void        |       -- |  --  |
+| style   |     自定义样式     |           Object           |       -- |  --  |

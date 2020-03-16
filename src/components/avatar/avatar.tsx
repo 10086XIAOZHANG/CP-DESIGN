@@ -36,21 +36,21 @@ const getChildren = ({ icon, src, alt, children, srcSet, onError }: AvatarProps)
 }
 
 const getStyle = ({ size, icon }: AvatarProps) => {
-  let style: any = {}
+  let _style: any = {}
   if (typeof size === 'number') {
-    style.height = size
-    style.width = size
-    style.lineHeight = `${size}px`
-    style.fontSize = icon ? size / 2 : 18
+    _style.height = size
+    _style.width = size
+    _style.lineHeight = `${size}px`
+    _style.fontSize = icon ? size / 2 : 18
   }
-  return style
+  return _style
 }
 
 const Avatar: React.SFC<AvatarProps> & { defaultProps: Partial<AvatarProps> } = props => {
   const classStr = getClassNames(props)
-  const style = getStyle(props)
+  const _style = getStyle(props)
   return (
-    <span className={classStr} style={style} onClick={props.onClick}>
+    <span className={classStr} style={props.style ?? _style} onClick={props.onClick}>
       <span className="avatar_ava">{getChildren(props)}</span>
     </span>
   )

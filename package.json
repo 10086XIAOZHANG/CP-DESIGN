@@ -12,7 +12,8 @@
     "lint:style": "stylelint \"src/**/*.scss\" --syntax scss",
     "lint:style-fix": "stylelint \"src/**/*.scss\" --syntax scss --fix",
     "dev": "start-storybook -p 9001 -c .storybook",
-    "build:story": "build-storybook"
+    "build:story": "build-storybook -c .storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "husky": {
     "hooks": {
@@ -71,6 +72,7 @@
     "@storybook/addon-viewport": "^5.3.17",
     "@storybook/components": "^5.3.14",
     "@storybook/react": "^5.3.14",
+    "@storybook/storybook-deployer": "^2.8.3",
     "@storybook/theming": "^5.3.14",
     "@types/classnames": "^2.2.10",
     "@types/enzyme-adapter-react-16": "^1.0.6",

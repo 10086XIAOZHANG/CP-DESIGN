@@ -4,20 +4,18 @@ import { Avatar } from '../../src/components'
 export default function AvatarDemo() {
   return (
     <div>
+      <h1>Avatar 头像</h1>
+      <h3>基本</h3>
+      <Avatar icon="adduser" size="small" />
       <Avatar icon="adduser" />
       <Avatar icon="adduser" size="large" />
-      <Avatar icon="adduser" size="small" />
-      <Avatar src="http://img0.imgtn.bdimg.com/it/u=2253122537,3805608083&fm=11&gp=0.jpg" />
+
+      <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>U</Avatar>
+      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" size="large" />
+      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" size={64} />
       <Avatar
-        src="http://img0.imgtn.bdimg.com/it/u=2894163781,1992732231&fm=26&gp=0.jpg"
-        size="large"
-      />
-      <Avatar
-        src="http://img5.imgtn.bdimg.com/it/u=2479827366,1415772881&fm=26&gp=0.jpg"
-        size={64}
-      />
-      <Avatar
-        src="http://img5.imgtn.bdimg.com/it/u=2479827366,1415772881&fm=26&gp=0.jpg"
+        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
         size={128}
         shape="square"
       />

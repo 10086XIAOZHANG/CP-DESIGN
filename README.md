@@ -1,6 +1,6 @@
 # cp-ui-design
 
-### React hooks Typescript H5 组件库
+### React hooks Typescript H5 Component
 
 - [x] Icon
 - [x] Button

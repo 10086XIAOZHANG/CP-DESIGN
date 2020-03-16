@@ -8,6 +8,7 @@ export interface AvatarProps {
   shape: ShapeType
   // src 图片的地址
   src?: string
+  style?: object
   // srcSet
   srcSet?: string
   // icon 可参考Icon组件

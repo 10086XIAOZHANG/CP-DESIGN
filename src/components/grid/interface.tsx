@@ -21,6 +21,11 @@ type alignType = 'top' | 'middle' | 'bottom' | 'baseline' | 'stretch'
 type justifyType = 'start' | 'end' | 'center' | 'space-around' | 'space-between'
 
 /**
+ * 子元素的换行方式，可选nowrap,wrap,wrap-reverse
+ */
+type wrapType = 'nowrap' | 'wrap' | 'wrap-reverse'
+
+/**
  * 栅格占位
  */
 type spanTypeNumber =
@@ -57,6 +62,8 @@ export interface RowProps extends React.HTMLAttributes<HTMLDivElement> {
   gutter: number | object
   // 水平对齐方式
   justify: justifyType
+  // 子元素的换行方式
+  wrap?: wrapType
 }
 
 export interface ColProps extends React.HTMLAttributes<HTMLDivElement> {

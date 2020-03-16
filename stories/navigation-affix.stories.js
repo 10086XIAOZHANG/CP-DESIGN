@@ -1,21 +1,20 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withDocs } from 'storybook-readme'
 
-import GridDemo from '../examples/grid'
-import AvatarReadme from '../examples/grid/readme.md'
+import AffixDemo from '../examples/affix'
+import AffixReadme from '../examples/affix/readme.md'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
-// Globablly
-import './index.scss'
-storiesOf('通用', module)
+storiesOf('导航', module)
   .addDecorator(story => <div style={{ marginTop: '10px' }}>{story()}</div>)
   .addDecorator(withKnobs)
   .addParameters({
     readme: {
-      sidebar: AvatarReadme,
+      sidebar: AffixReadme,
       codeTheme: 'github'
     },
     viewport: { defaultViewport: 'iphone6' }
   })
-  .add('布局', () => {
-    return <GridDemo />
+  .add('Affix', () => {
+    return <AffixDemo />
   })

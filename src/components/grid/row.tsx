@@ -12,10 +12,13 @@ const defaultProps: RowProps = {
 
 const prefixCls = 'cp-ui-row'
 
-const getClassNames = ({ align, justify }: RowProps) => {
+const getClassNames = ({ align, justify, wrap }: RowProps) => {
   return ClassNames(prefixCls, {
     [`${prefixCls}-${align}`]: !!align,
-    [`${prefixCls}-${justify}`]: !!justify
+    [`${prefixCls}-${justify}`]: !!justify,
+    [`${prefixCls}-nowrap`]: wrap === 'nowrap',
+    [`${prefixCls}-wrap`]: wrap === 'wrap',
+    [`${prefixCls}-wrap-reverse`]: wrap === 'wrap-reverse'
   })
 }
 

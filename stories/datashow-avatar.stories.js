@@ -6,12 +6,9 @@ import AvatarDemo from '../examples/avatar'
 import AvatarReadme from '../examples/avatar/readme.md'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
 
-// Globablly
-
 storiesOf('数据显示', module)
-  .addDecorator(story => <div style={{ marginTop: '50px' }}>{story()}</div>)
+  .addDecorator(story => <div style={{ marginTop: '10px' }}>{story()}</div>)
   .addDecorator(withKnobs)
-  // .addDecorator(withViewport('iphone5'))
   .addParameters({
     readme: {
       sidebar: AvatarReadme,

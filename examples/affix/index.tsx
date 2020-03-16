@@ -4,6 +4,8 @@ import { action } from '@storybook/addon-actions'
 export default function AffixDemo() {
   return (
     <div>
+      <h1>Affix 固钉</h1>
+      <h3>Basic</h3>
       <div
         style={{
           paddingTop: 60,
@@ -21,13 +23,13 @@ export default function AffixDemo() {
           backgroundImage: 'url(https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg)'
         }}
       ></div>
-      <Affix offsetTop={200}>
+      <Affix offsetTop={10}>
         <Button>固钉支持sticky</Button>
       </Affix>
       <div
         style={{
           paddingTop: 60,
-          height: 1300,
+          height: 12300,
           backgroundImage: 'url(https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg)'
         }}
       ></div>

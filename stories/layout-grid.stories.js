@@ -16,6 +16,6 @@ storiesOf('通用', module)
     },
     viewport: { defaultViewport: 'iphone6' }
   })
-  .add('布局', () => {
+  .add('Grid布局', () => {
     return <GridDemo />
   })

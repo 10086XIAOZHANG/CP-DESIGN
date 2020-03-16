@@ -15,6 +15,6 @@ storiesOf('导航', module)
     },
     viewport: { defaultViewport: 'iphone6' }
   })
-  .add('Affix', () => {
+  .add('Affix固钉', () => {
     return <AffixDemo />
   })

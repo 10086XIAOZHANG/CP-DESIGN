@@ -1,6 +1,8 @@
 export interface AffixProps {
-  // 距离顶部的定位
-  offsetTop: number
+  // 	距离窗口顶部达到指定偏移量后触发
+  offsetTop?: number
+  // 距离窗口底部达到指定偏移量后触发
+  offsetBottom?: number
   // container
   container?: () => HTMLElement
   // onChange 固定状态改变时候的回调函数

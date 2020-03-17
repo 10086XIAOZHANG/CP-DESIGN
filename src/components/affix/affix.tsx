@@ -27,8 +27,7 @@ const { useRef, useState, useEffect } = React
 const defaultProps: AffixProps = {
   onChange: noop,
   useSticky: false,
-  prefixCls: 'cp-ui-affix',
-  offsetTop: 0
+  prefixCls: 'cp-ui-affix'
 }
 
 const getScrollTarget = ({ container }: AffixProps) => {
@@ -42,11 +41,18 @@ const getClassNames = ({ useSticky, prefixCls }: AffixProps) => {
   })
 }
 
-const getStyle = ({ useSticky, offsetTop }: AffixProps, style: React.CSSProperties) => {
+const getStyle = (
+  { useSticky, offsetTop, offsetBottom }: AffixProps,
+  style: React.CSSProperties
+) => {
   let styleCopy: React.CSSProperties = {}
   if (useSticky) return style
   styleCopy.position = 'sticky'
-  styleCopy.top = offsetTop
+  if (offsetBottom === undefined) {
+    styleCopy.top = offsetTop
+  } else {
+    styleCopy.bottom = offsetBottom
+  }
   return styleCopy
 }
 
@@ -61,7 +67,15 @@ const handleChange = ({ onChange, setAffixed, setStyle, affixed, style }: UseAff
   setAffixed(affixed)
   setStyle(style)
 }
-
+const getOffsetTop = (offsetTop?: number, offsetBottom?: number) => {
+  let _offsetTop = 0
+  if (offsetBottom === undefined && offsetTop === undefined) {
+    offsetTop = 0
+  } else {
+    _offsetTop = offsetTop ?? 0
+  }
+  return _offsetTop
+}
 const handleScroll = ({
   props,
   setStyle,
@@ -70,12 +84,26 @@ const handleScroll = ({
   setAffixed,
   setOuterStyle
 }: ScrollProps) => {
-  const { offsetTop, onChange } = props
+  const { offsetBottom } = props
+  wrapperScollStyle(
+    { props, setStyle, wrapperRef, affixed, setAffixed, setOuterStyle },
+    offsetBottom !== undefined
+  )
+}
+const wrapperScollStyle = (
+  { props, setStyle, wrapperRef, affixed, setAffixed, setOuterStyle }: ScrollProps,
+  isButtom = false
+) => {
   let style: React.CSSProperties = {}
+  const { offsetTop, offsetBottom, onChange } = props
   const rect = (wrapperRef.current as any).getBoundingClientRect()
-  const { top, left, width, height } = rect
+  const { top, bottom, left, width, height } = rect
+  let scrollPos = top
+  if (isButtom) {
+    scrollPos = bottom
+  }
   // 对affixed做判断避免多余的setState
-  if (top > offsetTop) {
+  if (scrollPos > getOffsetTop(props.offsetTop, props.offsetBottom)) {
     if (affixed) {
       style.position = 'relative'
       handleChange({ onChange, setAffixed, setStyle, affixed: false, style })
@@ -85,15 +113,18 @@ const handleScroll = ({
     if (!affixed) {
       style = {
         position: 'fixed',
-        top: offsetTop,
         left: left
+      }
+      if (!isButtom) {
+        style.top = offsetTop
+      } else {
+        style.bottom = offsetBottom
       }
       handleChange({ onChange, setAffixed, setStyle, affixed: true, style })
       setOuterStyle({ width, height })
     }
   }
 }
-
 const Affix: React.FC<AffixProps> & { defaultProps: Partial<AffixProps> } = props => {
   const { useSticky } = props
   const wrapperRef = useRef(null)

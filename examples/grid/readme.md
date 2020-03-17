@@ -269,10 +269,10 @@ export default function AvatarDemo() {
 
 | 属性      |                                                                  说明                                                                  |        类型         |   默认值 | 可选 |
 | --------- | :------------------------------------------------------------------------------------------------------------------------------------: | :-----------------: | -------: | :--: |
-| align     |                         子元素在交叉轴上的对齐方式，可选 'top' , 'middle' , 'bottom' , 'baseline' , 'stretch'                          |       String        | `normal` |  --  |
-| justify   |                      子元素在主轴上的对齐方式，可选 'start' , 'end' , 'center' , 'space-around' , 'space-between'                      |       String        | `normal` |  --  |
-| wrap      |                                            子元素的换行方式，可选 nowrap,wrap,wrap-reverse                                             |       String        | `circle` |  --  |
-| gutter    | 栅格间隔，可以写成像素值或支持响应式的对象写法来设置水平间隔 { xs: 8, sm: 16, md: 24}。或者使用数组形式同时设置 [水平间距, 垂直间距]。 | number/object/array |       -- |  --  |
+| align     |                         子元素在交叉轴上的对齐方式，可选 'top' , 'middle' , 'bottom' , 'baseline' , 'stretch'                          |       String        |    `top` |  --  |
+| justify   |                      子元素在主轴上的对齐方式，可选 'start' , 'end' , 'center' , 'space-around' , 'space-between'                      |       String        |  `start` |  --  |
+| wrap      |                                            子元素的换行方式，可选 nowrap,wrap,wrap-reverse                                             |       String        | `nowrap` |  --  |
+| gutter    | 栅格间隔，可以写成像素值或支持响应式的对象写法来设置水平间隔 { xs: 8, sm: 16, md: 24}。或者使用数组形式同时设置 [水平间距, 垂直间距]。 | number/object/array |        0 |  --  |
 | style     |                                                               自定义样式                                                               |       Object        |       -- |  --  |
 | className |                                                                样式类名                                                                |     fun():void      |       -- |  --  |
 

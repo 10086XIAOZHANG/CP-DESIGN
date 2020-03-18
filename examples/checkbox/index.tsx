@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { Checkbox, Row, Col } from '../../src/components'
+import { Checkbox, CheckboxGroup, Row, Col } from '../../src/components'
 // import { action } from '@storybook/addon-actions'
 export default function ButtonDemo() {
   const data = [
-    { value: 0, label: 'Ph.D.', check: true },
-    { value: 1, label: 'Bachelor', check: false },
-    { value: 2, label: 'College diploma', check: false }
+    { value: '0', label: 'Ph.D.', check: true },
+    { value: '1', label: 'Bachelor', check: false },
+    { value: '2', label: 'College diploma', check: false }
   ]
   const onChange = (val: string | number) => {
     console.log(val)
@@ -25,9 +25,16 @@ export default function ButtonDemo() {
       ))}
       <Row style={{ marginBottom: '1rem' }}>
         <Col span={24}>
-          <Checkbox key="disabled" data-seed="logId" disabled defaultChecked>
+          <Checkbox key="disabled" data-seed="logId" defaultChecked checked={false}>
             UndergraduateAuxiliary text
           </Checkbox>
+        </Col>
+      </Row>
+      <Row style={{ marginBottom: '1rem' }}>
+        <Col span={24}>
+          <CheckboxGroup options={data} value={['1']}>
+            UndergraduateAuxiliary text
+          </CheckboxGroup>
         </Col>
       </Row>
     </div>

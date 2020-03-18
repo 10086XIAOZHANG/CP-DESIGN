@@ -5,7 +5,7 @@ export interface CheckboxProps {
   // 是否被选中 默认为false
   checked?: boolean
   // onChange 变化时候发生的回调
-  onChange: (checked: boolean | number | string) => void
+  onChange: (e: Event) => void
   // autofocus 默认聚焦状态
   autoFocus?: boolean
   // disabled 默认为false

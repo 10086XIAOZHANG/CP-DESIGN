@@ -6,7 +6,7 @@ import Affix from './affix'
 import Avatar from './avatar'
 import Badge from './badge'
 import Card from './card'
-import CheckboxGroup from './checkbox'
+import { CheckboxGroup, Checkbox } from './checkbox'
 import Collapse from './collapse'
 import Divide from './divider'
 import Menu from './menu'
@@ -34,6 +34,7 @@ export {
   Badge,
   Card,
   CheckboxGroup,
+  Checkbox,
   Collapse,
   Divide,
   Menu,

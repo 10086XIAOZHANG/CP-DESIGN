@@ -1,5 +1,6 @@
 import * as React from 'react'
 import ClassNames from 'classnames'
+import RcCheckbox from 'rc-checkbox'
 import { CheckboxProps } from './interface'
 import { omit } from '../utils'
 
@@ -48,8 +49,8 @@ const getOtherProps = (props: CheckboxProps) => {
   return omitProps
 }
 
-const handleChange = (e: React.ChangeEvent<HTMLInputElement>, { onChange }: CheckboxProps) => {
-  const checked = e.target.checked
+const handleChange = (e: Event, { onChange }: CheckboxProps) => {
+  const checked = (e.target as HTMLInputElement).checked
   onChange(checked)
 }
 
@@ -60,12 +61,7 @@ const Checkbox: React.SFC<CheckboxProps> & { defaultProps: Partial<CheckboxProps
   return (
     <label className={getClassName(props)} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <span className={`${prefixCls}-select`}>
-        <input
-          type="checkbox"
-          onChange={e => handleChange(e, props)}
-          {...otherProps}
-          ref={checkboxRef}
-        />
+        <RcCheckbox onChange={e => handleChange(e, props)} {...otherProps} ref={checkboxRef} />
         <span className={`${prefixCls}-select-inner`} />
       </span>
       <span className={`${prefixCls}-label`}>{children}</span>

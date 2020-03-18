@@ -12,7 +12,7 @@ import { Row, Col } from 'cp-ui-design'
 ## Demo 代码
 
 ```jsx
-export default function AvatarDemo() {
+export default function GridDemo() {
   return (
     <div>
       <div>

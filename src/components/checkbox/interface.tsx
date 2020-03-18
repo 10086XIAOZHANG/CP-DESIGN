@@ -22,6 +22,8 @@ export interface CheckboxProps {
   onFocus?: (e: React.ChangeEvent<HTMLInputElement>) => void
   // prefixCls
   prefixCls?: string
+  // onClick
+  onClick?: React.MouseEventHandler<HTMLElement>
   // onMouseEnter
   onMouseEnter?: React.MouseEventHandler<any>
   // onMouseLeave

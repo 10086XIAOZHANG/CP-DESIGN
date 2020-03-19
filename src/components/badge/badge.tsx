@@ -7,7 +7,8 @@ import './style/index.scss'
 const defaultProps: BadgeProps = {
   dot: false,
   overflowCount: 99,
-  prefixCls: 'cp-ui-badge'
+  prefixCls: 'cp-ui-badge',
+  corner: false
 }
 
 const getClassNames = ({ status, prefixCls, children }: BadgeProps) => {
@@ -16,31 +17,44 @@ const getClassNames = ({ status, prefixCls, children }: BadgeProps) => {
     [`${prefixCls}-no-wrapper`]: !children
   })
 }
-
-const renderCount = ({ count, overflowCount, dot, prefixCls }: BadgeProps) => {
-  // dot 和 count都存在的时候优先dot
+const getOutStyle = (style: React.CSSProperties, corner: boolean) => {
+  let _style: React.CSSProperties = {}
+  if (!!corner) {
+    _style.width = '100%'
+  }
+  _style = Object.assign(style, _style)
+  return _style
+}
+const renderCount = ({ text, overflowCount, dot, prefixCls, corner, style }: BadgeProps) => {
+  // dot 和 text都存在的时候优先dot
   if (dot) {
     return <sup className={`${prefixCls}-dot`} />
   }
-  if (count) {
+
+  if (text) {
     let content: any
-    const classStr = ClassNames(`${prefixCls}-count`, {
-      [`${prefixCls}-custom`]: typeof count !== 'number'
+    const classStr = ClassNames(`${prefixCls}-text`, {
+      [`${prefixCls}-custom`]: typeof text !== 'number',
+      [`${prefixCls}-corner`]: !!corner
     })
-    if (typeof count === 'number') {
-      content = count <= overflowCount ? count : `${overflowCount}+`
+    if (typeof text === 'number') {
+      content = text <= overflowCount ? text : `${overflowCount}+`
     } else {
-      content = count
+      content = text
     }
-    return <sup className={classStr}>{content}</sup>
+    return (
+      <sup className={classStr} style={style}>
+        {content}
+      </sup>
+    )
   }
   return null
 }
 
 const Badge: React.SFC<BadgeProps> & { defaultProps: Partial<BadgeProps> } = props => {
-  const { children } = props
+  const { children, corner, outStyle } = props
   return (
-    <div className={getClassNames(props)}>
+    <div className={getClassNames(props)} style={getOutStyle(outStyle ?? {}, corner)}>
       {children}
       {renderCount(props)}
     </div>

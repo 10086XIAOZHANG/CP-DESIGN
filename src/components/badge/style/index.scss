@@ -5,7 +5,7 @@ $badge: 'cp-ui-badge';
   display: inline-block;
   position: relative;
 
-  &-count {
+  &-text {
     position: absolute;
     right: 0;
     top: 0;
@@ -40,6 +40,22 @@ $badge: 'cp-ui-badge';
     transform: translate(50%, -50%);
   }
 
+  &-corner {
+    width: 5 * 12px;
+    position: absolute;
+    right: -2 * 12px;
+    background-color: $color-brand-normal;
+    color: '#fff';
+    white-space: nowrap;
+    transform: rotate(45deg);
+    text-align: center;
+    font-size: 12px;
+
+    &-wrapper {
+      overflow: hidden;
+    }
+  }
+
   &-success {
     .#{$badge}-dot {
       background-color: $color-success-deep;
@@ -71,7 +87,7 @@ $badge: 'cp-ui-badge';
   }
 
   &-no-wrapper {
-    .#{$badge}-count {
+    .#{$badge}-text {
       display: block;
       position: relative;
       top: auto;

@@ -107,14 +107,14 @@ export default function BadgeDemo() {
 }
 ```
 
-| 属性          |                                            说明                                             |                          类型                          | 默认值 |       可选       |
-| ------------- | :-----------------------------------------------------------------------------------------: | :----------------------------------------------------: | -----: | :--------------: |
-| text          | 展示的数字或文案，当为数字时候，大于 overflowCount 时显示为 \${overflowCount}+，为 0 时隐藏 |                         string                         | number | React. ReactNode | -- | -- |
-| corner        |                                          置于角落                                           |                        boolean                         |  large |        --        |
-| disabled      |                                          设置禁用                                           |                        boolean                         |     -- |        --        |
-| dot           |                                 不展示数字，只有一个小红点                                  |                  string/React.Element                  |     -- |        --        |
-| overflowCount |                                      展示封顶的数字值                                       |                         number                         |     -- |        --        |
-| status        |                               status 状态点 这个值对 dot 生效                               | 'success', 'default' , 'process' , 'warning' , 'error' |     -- |        --        |
-| style         |                                      自定义样式(样式)                                       |                         Object                         |     -- |        --        |
-| outStyle      |                                    外围自定义样式(样式)                                     |                         Object                         |     -- |        --        |
-| hot           |                                          营销样式                                           |                        boolean                         |     -- |        --        |
+| 属性          |                                            说明                                             |                          类型                          | 默认值 | 可选 |
+| ------------- | :-----------------------------------------------------------------------------------------: | :----------------------------------------------------: | -----: | :--: |
+| text          | 展示的数字或文案，当为数字时候，大于 overflowCount 时显示为 \${overflowCount}+，为 0 时隐藏 |                         string                         |     -- |  --  | -- | -- |
+| corner        |                                          置于角落                                           |                        boolean                         |     -- |  --  |
+| disabled      |                                          设置禁用                                           |                        boolean                         |     -- |  --  |
+| dot           |                                 不展示数字，只有一个小红点                                  |                  string/React.Element                  |     -- |  --  |
+| overflowCount |                                      展示封顶的数字值                                       |                         number                         |     -- |  --  |
+| status        |                               status 状态点 这个值对 dot 生效                               | 'success', 'default' , 'process' , 'warning' , 'error' |     -- |  --  |
+| style         |                                      自定义样式(样式)                                       |                         Object                         |     -- |  --  |
+| outStyle      |                                    外围自定义样式(样式)                                     |                         Object                         |     -- |  --  |
+| hot           |                                          营销样式                                           |                        boolean                         |     -- |  --  |

@@ -5,7 +5,7 @@
 ## 引入组件
 
 ```jsx
-import { Avatar } from 'cp-ui-design'
+import { Avatar } from 'cp-design'
 ```
 
 ## Demo 代码

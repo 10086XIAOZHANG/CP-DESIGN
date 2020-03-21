@@ -5,7 +5,7 @@
 ## 引入组件
 
 ```jsx
-import { Affix } from 'cp-ui-design'
+import { Affix } from 'cp-design'
 ```
 
 ## Demo 代码

@@ -6,7 +6,7 @@
 
 ```jsx
 import * as React from 'react'
-import { Checkbox, Checkou, Row, Col } from 'cp-ui-design'
+import { Checkbox, Checkou, Row, Col } from 'cp-design'
 ```
 
 ## Demo 代码

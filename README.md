@@ -45,7 +45,7 @@ yarn add cp-design
 ## 🔨 Usage
 
 ```jsx
-import { Button } from 'antd'
+import { Button } from 'cp-design'
 
 const App = () => (
   <>

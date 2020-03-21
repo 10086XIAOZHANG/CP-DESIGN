@@ -6,7 +6,7 @@
 
 ```jsx
 import * as React from 'react'
-import { Row, Col } from 'cp-ui-design'
+import { Row, Col } from 'cp-design'
 ```
 
 ## Demo 代码

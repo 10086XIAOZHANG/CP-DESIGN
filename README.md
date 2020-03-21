@@ -5,9 +5,14 @@
 English | [简体中文](./README.zh-CN.md)
 
 <p align="center">
-  <a href="https://10086xiaozhang.github.io/CP-DESIGN">
-    <img width="320" src="https://github.com/10086XIAOZHANG/CP-WEB-SOURCE-PlATFORM/blob/master/src/assets/bases/logo.png">
-  </a>
+  <table>
+    <tr>
+        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-badge.jpg">badge </center></td>
+        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-btn.jpg">button</center></td>
+         <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-icon.jpg">button</center></td>
+    </tr>
+
+</table>
 </p>
 
 # CP Design Mobile

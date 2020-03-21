@@ -1,6 +1,6 @@
 {
   "name": "cp-design",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "A configurable Mobile UI",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -44,7 +44,13 @@
     "url": "git+https://github.com/10086XIAOZHANG/CP-DESIGN.git"
   },
   "keywords": [
+    "cp",
+    "design",
+    "react-component",
+    "framework",
+    "mobile",
     "UI",
+    "Components",
     "Component",
     "hooks",
     "react"

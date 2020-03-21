@@ -30,7 +30,7 @@ https://10086xiaozhang.github.io/CP-DESIGN
 
 ## Install & Usage
 
-[introduce](docs/react/introduce.en-US.md#安装)
+[introduce](https://10086xiaozhang.github.io/CP-DESIGN)
 
 ## Browser Support
 

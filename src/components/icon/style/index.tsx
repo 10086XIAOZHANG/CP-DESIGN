@@ -1,2 +1,7 @@
 import '../../style/index'
-import './index.scss'
+
+if (process.env.NODE_ENV === 'dev') {
+  require('./index.dev.scss')
+} else {
+  require('./index.scss')
+}

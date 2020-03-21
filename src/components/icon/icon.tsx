@@ -1,7 +1,7 @@
 import * as React from 'react'
 import ClassNames from 'classnames'
 import * as warning from 'warning'
-import './style/index.scss'
+import './style'
 
 const noop = () => {}
 

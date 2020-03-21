@@ -1,0 +1,347 @@
+@import '../../style/index.scss';
+
+$spin: 'cp-ui-spin';
+
+.#{$spin} {
+  font-size: $font-size-normal;
+  display: inline-block;
+  position: relative;
+
+  &-wrapper {
+    .#{$spin}-loading {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      background: rgba(#fff, 0.7);
+
+      &-container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &-loading {
+    &-icon {
+      display: inline-block;
+    }
+
+    &-text {
+      color: $color-brand-normal;
+      text-align: center;
+    }
+  }
+
+  &-small {
+    .#{$spin}-default-spin {
+      width: 32px;
+      height: 32px;
+
+      .loading-dot {
+        width: 8px;
+        height: 8px;
+
+        &:first-child {
+          animation-name: spinRotateX-small;
+        }
+
+        &:nth-child(2) {
+          animation-name: spinRotateY-small;
+        }
+
+        &:nth-child(3) {
+          animation-name: spinRotateXR-small;
+        }
+
+        &:nth-child(4) {
+          animation-name: spinRotateYR-small;
+        }
+      }
+    }
+  }
+
+  &-large {
+    .#{$spin}-loading-icon {
+      font-size: 32px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &-default-spin {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    margin: 0;
+    -webkit-animation-duration: 5.6s;
+    animation-duration: 5.6s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: spinRoute;
+    animation-name: spinRoute;
+
+    .loading-dot {
+      position: absolute;
+      margin: auto;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $color-brand-normal;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-duration: 1.4s;
+      animation-duration: 1.4s;
+
+      &:first-child {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        -webkit-animation-name: spinRotateX;
+        animation-name: spinRotateX;
+      }
+
+      &:nth-child(2) {
+        left: 0;
+        right: 0;
+        top: 0;
+        opacity: 0.8;
+        -webkit-animation-name: spinRotateY;
+        animation-name: spinRotateY;
+      }
+
+      &:nth-child(3) {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.6;
+        -webkit-animation-name: spinRotateXR;
+        animation-name: spinRotateXR;
+      }
+
+      &:nth-child(4) {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.2;
+        -webkit-animation-name: spinRotateYR;
+        animation-name: spinRotateYR;
+      }
+    }
+  }
+}
+
+@keyframes spinRotateX {
+  25% {
+    left: 0;
+  }
+
+  45%,
+  50% {
+    left: 16.8px;
+    width: 14.4px;
+    height: 14.4px;
+  }
+
+  90% {
+    left: 0;
+    height: 12px;
+    width: 12px;
+  }
+}
+
+@keyframes spinRotateX-small {
+  25% {
+    left: 0;
+  }
+
+  45%,
+  50% {
+    left: 11.2px;
+    width: 9.6px;
+    height: 9.6px;
+  }
+
+  90% {
+    left: 0;
+    height: 8px;
+    width: 8px;
+  }
+}
+
+@keyframes spinRotateY-small {
+  25% {
+    top: 0;
+  }
+
+  45%,
+  50% {
+    top: 11.2px;
+    height: 9.6px;
+    width: 9.6px;
+  }
+
+  90% {
+    top: 0;
+    height: 8px;
+    width: 8px;
+  }
+}
+
+@keyframes spinRotateXR-small {
+  25% {
+    right: 0;
+  }
+
+  45%,
+  50% {
+    right: 11.2px;
+    width: 9.6px;
+    height: 9.6px;
+  }
+
+  90% {
+    right: 0;
+    height: 8px;
+    width: 8px;
+  }
+}
+
+@keyframes spinRotateYR-small {
+  25% {
+    bottom: 0;
+  }
+
+  45%,
+  50% {
+    bottom: 11.2px;
+    height: 9.6px;
+    width: 9.6px;
+  }
+
+  90% {
+    bottom: 0;
+    height: 8px;
+    width: 8px;
+  }
+}
+
+@keyframes spinRotateY {
+  25% {
+    top: 0;
+  }
+
+  45%,
+  50% {
+    top: 16.8px;
+    height: 14.4px;
+    width: 14.4px;
+  }
+
+  90% {
+    top: 0;
+    height: 12px;
+    width: 12px;
+  }
+}
+
+@keyframes spinRotateXR {
+  25% {
+    right: 0;
+  }
+
+  45%,
+  50% {
+    right: 16.8px;
+    width: 14.4px;
+    height: 14.4px;
+  }
+
+  90% {
+    right: 0;
+    height: 12px;
+    width: 12px;
+  }
+}
+
+@keyframes spinRotateYR {
+  25% {
+    bottom: 0;
+  }
+
+  45%,
+  50% {
+    bottom: 16.8px;
+    height: 14.4px;
+    width: 14.4px;
+  }
+
+  90% {
+    bottom: 0;
+    height: 12px;
+    width: 12px;
+  }
+}
+
+@keyframes spinRoute {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  5% {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  55% {
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(1turn);
+    -ms-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    -ms-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}

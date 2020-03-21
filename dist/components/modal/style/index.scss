@@ -1,0 +1,146 @@
+@import '../../style/index.scss';
+
+$modal: 'cp-ui-modal';
+
+.#{$modal} {
+  &-mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: $modalIndex;
+  }
+
+  &-wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: $modalIndex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-container {
+    background: #fff;
+    border-radius: $border-radius-normal;
+    width: 500px;
+    position: relative;
+  }
+
+  &-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  &-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: rgba(0, 0, 0, 0.45);
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    cursor: pointer;
+
+    .cp-ui-icon {
+      font-size: 16px;
+    }
+  }
+
+  &-body {
+    &-contain {
+      padding: 24px;
+      font-size: $font-size-normal;
+      line-height: $line-height-normal;
+      word-wrap: break-word;
+    }
+  }
+
+  &-footer {
+    padding: 10px 16px;
+    text-align: right;
+    border-top: 1px solid #e8e8e8;
+
+    &-container {
+      .cp-ui-btn-button_btn {
+        &:last-child {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  &-fade-enter {
+    opacity: 0;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-play-state: paused;
+  }
+
+  &-fade-enter-active {
+    animation-name: modalFadeIn;
+    animation-play-state: running;
+  }
+
+  &-fade-exit {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-play-state: paused;
+  }
+
+  &-fade-exit-active {
+    animation-name: modalFadeOut;
+    animation-play-state: running;
+  }
+}
+
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes modalZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes modalZoomOut {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+}

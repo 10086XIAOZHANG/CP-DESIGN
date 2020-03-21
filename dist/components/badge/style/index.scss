@@ -1,0 +1,98 @@
+@import '../../style/index.scss';
+$badge: 'cp-ui-badge';
+
+.#{$badge} {
+  display: inline-block;
+  position: relative;
+
+  &-text {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+    height: 20px;
+    border-radius: 10px;
+    min-width: 20px;
+    background: $color-brand-normal;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+    -webkit-box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 1px #fff;
+    z-index: 10;
+  }
+
+  &-dot {
+    height: 6px;
+    width: 6px;
+    border-radius: 100%;
+    background: $color-brand-normal;
+    z-index: 10;
+    -webkit-box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 1px #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+  }
+
+  &-corner {
+    width: 5 * 12px;
+    position: absolute;
+    right: -2 * 12px;
+    background-color: $color-brand-normal;
+    color: '#fff';
+    white-space: nowrap;
+    transform: rotate(45deg);
+    text-align: center;
+    font-size: 12px;
+
+    &-wrapper {
+      overflow: hidden;
+    }
+  }
+
+  &-success {
+    .#{$badge}-dot {
+      background-color: $color-success-deep;
+    }
+  }
+
+  &-error {
+    .#{$badge}-dot {
+      background-color: $color-error-deep;
+    }
+  }
+
+  &-warning {
+    .#{$badge}-dot {
+      background-color: $color-warning-deep;
+    }
+  }
+
+  &-process {
+    .#{$badge}-dot {
+      background-color: $color-notice-deep;
+    }
+  }
+
+  &-default {
+    .#{$badge}-dot {
+      background-color: $color-line-deep;
+    }
+  }
+
+  &-no-wrapper {
+    .#{$badge}-text {
+      display: block;
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+    }
+  }
+}

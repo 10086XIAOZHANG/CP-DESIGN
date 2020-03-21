@@ -1,0 +1,178 @@
+@import '../../style/index.scss';
+
+$tabs: 'cp-ui-tabs';
+
+.#{$tabs} {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  overflow: hidden;
+
+  &-top {
+    .#{$tabs} {
+      &-tab {
+        border-bottom: 1px solid #EBEBEB;
+        margin: 0 0 16px 0;
+      }
+
+      &-tab-item {
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &-active {
+          border-bottom: 2px solid $color-brand-normal;
+        }
+      }
+
+      &-tab-container {
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  &-bottom {
+    .#{$tabs}-tab {
+      border-top: 1px solid #EBEBEB;
+      margin: 16px 0 0 0;
+
+      &-container {
+        margin-top: -1px;
+      }
+
+      &-item {
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &-active {
+          border-top: 2px solid $color-brand-normal;
+        }
+      }
+    }
+  }
+
+  &-left,
+  &-right {
+    display: flex;
+
+    .#{$tabs} {
+      &-tab {
+        &-item {
+          display: block;
+          padding: 8px 24px;
+          margin: 0 0 16px 0;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &-content {
+        flex: 1;
+      }
+    }
+  }
+
+  &-left {
+    .#{$tabs} {
+      &-tab {
+        border-right: 1px solid #EBEBEB;
+        margin: 0 16px 0 0;
+      }
+
+      &-tab-container {
+        margin-right: -1px;
+      }
+
+      &-tab-item {
+        &-active {
+          border-right: 2px solid $color-brand-normal;
+        }
+      }
+    }
+  }
+
+  &-right {
+    .#{$tabs} {
+      &-tab {
+        border-left: 1px solid #EBEBEB;
+        margin: 0 0 0 16px;
+      }
+
+      &-tab-container {
+        margin-left: -1px;
+      }
+
+      &-tab-item {
+        &-active {
+          border-left: 2px solid $color-brand-normal;
+        }
+      }
+    }
+  }
+
+  &-card {
+    .#{$tabs}-tab-item {
+      border: 1px solid #EBEBEB;
+      margin-right: 2px;
+      border-radius: 3px;
+
+      &-active {
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+
+  &-tab {
+    white-space: nowrap;
+    outline: none;
+    -webkit-transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
+    align-items: center;
+
+    &-extra {
+      flex: 1;
+      text-align: right;
+      cursor: pointer;
+    }
+
+    &-container {
+      font-size: 14px;
+      line-height: $line-height-normal;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      position: relative;
+      white-space: nowrap;
+      -webkit-transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    &-item {
+      display: inline-block;
+      height: 100%;
+      margin: 0 32px 0 0;
+      padding: 12px 16px;
+      box-sizing: border-box;
+      position: relative;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  &-tabpanel {
+    display: none;
+
+    &-active {
+      display: block;
+    }
+  }
+}

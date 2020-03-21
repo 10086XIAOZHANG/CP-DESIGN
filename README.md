@@ -5,14 +5,14 @@
 English | [简体中文](./README.zh-CN.md)
 
 <p align="center">
-  <a href="https://10086xiaozhang.github.io/CP-UI-DESIGN">
+  <a href="https://10086xiaozhang.github.io/CP-DESIGN">
     <img width="320" src="https://github.com/10086XIAOZHANG/CP-WEB-SOURCE-PlATFORM/blob/master/src/assets/bases/logo.png">
   </a>
 </p>
 
 # CP Design Mobile
 
-[![](https://img.shields.io/travis/ant-design/ant-design-mobile.svg?style=flat-square)](https://10086xiaozhang.github.io/CP-UI-DESIGN)
+[![](https://img.shields.io/travis/ant-design/ant-design-mobile.svg?style=flat-square)](https://10086xiaozhang.github.io/CP-DESIGN)
 
 A configurable Mobile UI specification and React-based implementation.
 
@@ -26,7 +26,7 @@ A configurable Mobile UI specification and React-based implementation.
 
 ### mobile web demo
 
-https://10086xiaozhang.github.io/CP-UI-DESIGN
+https://10086xiaozhang.github.io/CP-DESIGN
 
 ## Install & Usage
 
@@ -39,10 +39,10 @@ https://10086xiaozhang.github.io/CP-UI-DESIGN
 
 ## Links
 
-- [Home Page](https://10086xiaozhang.github.io/CP-UI-DESIGN)
-- [React components](https://10086xiaozhang.github.io/CP-UI-DESIGN)
-- [Demos](https://10086xiaozhang.github.io/CP-UI-DESIGN)
+- [Home Page](https://10086xiaozhang.github.io/CP-DESIGN)
+- [React components](https://10086xiaozhang.github.io/CP-DESIGN)
+- [Demos](https://10086xiaozhang.github.io/CP-DESIGN)
 
 ## Contributing
 
-We welcome all contributions, You can submit any ideas. If you'd like to improve code, check out the [Development Instruction](https://10086xiaozhang.github.io/CP-UI-DESIGN) and have a good time! :)
+We welcome all contributions, You can submit any ideas. If you'd like to improve code, check out the [Development Instruction](https://10086xiaozhang.github.io/CP-DESIGN) and have a good time! :)

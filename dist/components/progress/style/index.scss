@@ -1,0 +1,156 @@
+@import '../../style/index.scss';
+
+$progress: 'cp-ui-progress';
+
+.#{$progress} {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+
+  &-line {
+    .#{$progress} {
+      &-container {
+        padding-right: 60px;
+        margin-right: -60px;
+      }
+
+      &-outer {
+        border-radius: 16px;
+        height: 8px;
+      }
+
+      &-inner {
+        height: 8px;
+        border-radius: 16px;
+        top: 50%;
+        margin-top: -4px;
+      }
+    }
+  }
+
+  &-small {
+    .#{$progress} {
+      &-outer {
+        border-radius: 16px;
+        height: 4px;
+      }
+
+      &-inner {
+        height: 4px;
+        border-radius: 16px;
+        top: 50%;
+        margin-top: -2px;
+      }
+    }
+
+    &.#{$progress}-circle {
+      width: 100px;
+      height: 100px;
+      font-size: 18px;
+
+      &-outer {
+        stroke-width: 6px;
+      }
+
+      &-inner {
+        stroke-width: 6px;
+      }
+    }
+  }
+
+  &-large {
+    .#{$progress} {
+      &-outer {
+        border-radius: 16px;
+        height: 12px;
+      }
+
+      &-inner {
+        height: 12px;
+        border-radius: 16px;
+        top: 50%;
+        margin-top: -6px;
+      }
+    }
+
+    &.#{$progress}-circle {
+      width: 140px;
+      height: 140px;
+      font-size: 30px;
+
+      &-outer {
+        stroke-width: 10px;
+      }
+
+      &-inner {
+        stroke-width: 10px;
+      }
+    }
+  }
+
+  &-circle {
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    font-size: 24px;
+
+    &-container {
+      overflow: hidden;
+    }
+
+    &-outer {
+      stroke-width: 8px;
+      stroke: #ebebeb;
+    }
+
+    &-inner {
+      -webkit-transition: all 1s cubic-bezier(0.65, 0.2, 0.35, 1);
+      transition: all 1s cubic-bezier(0.65, 0.2, 0.35, 1);
+      stroke-linecap: round;
+      stroke-width: 8px;
+      stroke: $color-brand-normal;
+    }
+
+    &-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 1;
+      color: #999;
+      transition: transform 0.3s cubic-bezier(0.65, 0.2, 0.35, 1), -webkit-transform 0.3s cubic-bezier(0.65, 0.2, 0.35, 1);
+    }
+  }
+
+  &-container {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  &-info {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: $font-size-normal;
+    line-height: 1;
+    color: #999;
+    margin-left: 10px;
+    word-wrap: normal;
+  }
+
+  &-outer {
+    position: relative;
+    width: 100%;
+    background-color: #ebebeb;
+  }
+
+  &-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 1s cubic-bezier(0.65, 0.2, 0.35, 1);
+    transition: all 1s cubic-bezier(0.65, 0.2, 0.35, 1);
+    background: $color-brand-normal;
+  }
+}

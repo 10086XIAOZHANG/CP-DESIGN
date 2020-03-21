@@ -1,0 +1,397 @@
+@import '../../style/index.scss';
+
+$steps: 'cp-ui-steps';
+
+.#{$steps} {
+  font-size: 0;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  &-horizontal:not(.cp-ui-steps-label-vertical) {
+    .#{$steps}-item {
+      margin-right: 16px;
+      white-space: nowrap;
+
+      &-tail {
+        display: none;
+      }
+
+      &-content-describe {
+        max-width: 140px;
+        white-space: normal;
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        .#{$steps}-item-title {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  &-vertical {
+    display: block;
+
+    .#{$steps}-item {
+      display: block;
+      overflow: visible;
+
+      &-tail {
+        position: absolute;
+        left: 16px;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        padding: 38px 0 6px;
+
+        &::after {
+          height: 100%;
+          width: 1px;
+        }
+      }
+
+      &-icon {
+        float: left;
+        margin-right: 16px;
+      }
+
+      &-content {
+        min-height: 48px;
+        overflow: hidden;
+        display: block;
+
+        &-title {
+          line-height: 32px;
+
+          &::after {
+            display: none;
+          }
+        }
+
+        &-describe {
+          padding-bottom: 12px;
+        }
+      }
+
+      &:not(:last-child) {
+        &-tail {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-small {
+    .#{$steps}-item {
+      &-icon {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 24px;
+        font-size: 12px;
+
+        &-text {
+          .cp-ui-icon {
+            font-size: 12px;
+          }
+        }
+      }
+
+      &-content-title {
+        font-size: 14px;
+        line-height: 24px;
+        padding-right: 12px;
+
+        &::after {
+          top: 12px;
+        }
+      }
+    }
+
+    &:not(.cp-ui-steps-vertical) {
+      .#{$steps}-item-tail {
+        top: 8px;
+      }
+    }
+
+    &.#{$steps}-vertical {
+      .#{$steps}-item-tail {
+        position: absolute;
+        left: 12px;
+        top: 0;
+        padding: 30px 0 6px;
+      }
+    }
+  }
+
+  &-large {
+    .#{$steps}-item {
+      &-icon {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 40px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-label-vertical {
+    .#{$steps} {
+      &-item {
+        overflow: visible;
+
+        &-tail {
+          padding: 3.5px 24px;
+          margin-left: 51px;
+        }
+
+        &-icon {
+          display: inline-block;
+          margin-left: 36px;
+        }
+
+        &-content {
+          display: block;
+          text-align: center;
+          margin-top: 8px;
+          width: 104px;
+
+          &-title {
+            padding-right: 0;
+
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+
+    &:last-child {
+      -webkit-box-flex: 0;
+      -webkit-flex: none;
+      -ms-flex: none;
+      flex: none;
+
+      .#{$steps}-item {
+
+        &-content-title::after,
+        &-tail {
+          display: none;
+        }
+      }
+    }
+
+    &-tail {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 12px;
+      padding: 0 10px;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        background: #e8e8e8;
+        height: 1px;
+        border-radius: 1px;
+        width: 100%;
+        -webkit-transition: background 0.3s;
+        transition: background 0.3s;
+      }
+    }
+
+    &-icon {
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 32px;
+      font-size: 16px;
+      margin-right: 8px;
+      -webkit-transition: background-color 0.3s, border-color 0.3s;
+      transition: background-color 0.3s, border-color 0.3s;
+      display: inline-block;
+      vertical-align: top;
+      color: $color-text-hint;
+
+      &-text {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+
+        .cp-ui-icon {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &-finish {
+      .#{$steps}-item-icon {
+        border-color: $color-brand-normal;
+        background-color: #fff;
+        opacity: 0.7;
+
+        &-text {
+          .cp-ui-icon {
+            color: $color-brand-normal;
+          }
+        }
+      }
+
+      .#{$steps}-item-tail {
+        &::after {
+          background-color: $color-brand-normal;
+          opacity: 0.7;
+        }
+      }
+
+      .#{$steps}-item-content {
+        &-title {
+          color: $color-brand-normal;
+          opacity: 0.7;
+
+          &::after {
+            background: $color-brand-normal;
+          }
+        }
+
+        &-describe {
+          color: $color-brand-normal;
+          opacity: 0.7;
+        }
+      }
+    }
+
+    &-wait {
+      .#{$steps}-item-icon {
+        border-color: rgba(0, 0, 0, 0.25);
+        background-color: #fff;
+      }
+
+      .#{$steps}-item-content {
+        &-title {
+          color: rgba(0, 0, 0, 0.45);
+
+          &::after {
+            background-color: #e8e8e8;
+          }
+        }
+
+        &-describe {
+          color: rgba(0, 0, 0, 0.45);
+        }
+      }
+    }
+
+    &-process {
+      .#{$steps}-item {
+        &-icon {
+          background: $color-brand-normal;
+          color: #fff;
+          border-color: $color-brand-normal;
+        }
+
+        &-content {
+          &-title {
+            font-weight: 500;
+            color: $color-brand-normal;
+
+            &::after {
+              background-color: #e8e8e8;
+            }
+          }
+
+          &-describe {
+            color: $color-brand-normal;
+          }
+        }
+      }
+    }
+
+    &-content {
+      display: inline-block;
+      vertical-align: top;
+
+      &-title {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.65);
+        display: inline-block;
+        padding-right: 16px;
+        position: relative;
+        line-height: 32px;
+
+        &::after {
+          content: '';
+          height: 1px;
+          width: 9999px;
+          background: #e8e8e8;
+          display: block;
+          position: absolute;
+          top: 16px;
+          left: 100%;
+        }
+      }
+
+      &-describe {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.45);
+      }
+    }
+
+    &-custom {
+      .#{$steps}-item-icon {
+        background: none;
+        border: 0;
+        font-size: 24px;
+        line-height: 32px;
+        top: 0;
+        left: 0.5px;
+        width: 32px;
+        height: 32px;
+
+        &-text {
+          .cp-ui-icon {
+            font-size: 24px;
+          }
+        }
+      }
+
+      &.#{$steps}-item-process {
+        .#{$steps}-item-icon {
+          color: $color-brand-normal;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # CP design
 
-### React hooks Typescript H5 Component
+### React hooks Typescript H5 Mobile Component
 
 English | [简体中文](./README.zh-CN.md)
 

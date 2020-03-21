@@ -10,7 +10,13 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 const req = require.context('../stories/', true, /.js$/)
 
 function loadStories() {
-  req.keys().forEach(filename => req(filename))
+  req('./introduce.stories.js')
+  req.keys().forEach(filename => {
+    console.log(filename)
+    if (filename.indexOf('introduce') === -1) {
+      return req(filename)
+    }
+  })
 }
 configureReadme({
   /**

@@ -31,6 +31,6 @@ export default create({
   inputTextColor: 'black',
   inputBorderRadius: 4,
 
-  brandTitle: 'Cp UI Design ',
+  brandTitle: 'CP design',
   brandUrl: '#'
 })

@@ -13,7 +13,8 @@
     "lint:style-fix": "stylelint \"src/**/*.scss\" --syntax scss --fix",
     "dev": "start-storybook -p 9001 -c .storybook",
     "build:story": "build-storybook -c .storybook -o docs",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "transpile": "babel src -d dist --copy-files"
   },
   "husky": {
     "hooks": {
@@ -47,7 +48,7 @@
     "hooks",
     "react"
   ],
-  "author": "lanyincao",
+  "author": "10086XIAOZHANG",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/snakeUni/mui-design/issues"
@@ -82,6 +83,7 @@
     "@types/storybook-readme": "^5.0.4",
     "@types/warning": "^3.0.0",
     "awesome-typescript-loader": "^5.2.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",

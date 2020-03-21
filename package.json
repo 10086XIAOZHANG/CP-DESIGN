@@ -1,6 +1,6 @@
 {
   "name": "cp-design",
-  "version": "0.0.10",
+  "version": "0.0.13",
   "description": "A configurable Mobile UI",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -14,8 +14,7 @@
     "dev": "start-storybook -p 9001 -c .storybook",
     "build:story": "build-storybook -c .storybook -o docs",
     "deploy-storybook": "storybook-to-ghpages",
-    "transpile": "babel src -d dist --copy-files",
-    "prepublishOnly": "npm run transpile"
+    "prepublishOnly": "npm run build"
   },
   "husky": {
     "hooks": {

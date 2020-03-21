@@ -62,7 +62,7 @@ module.exports = {
         loader: 'awesome-typescript-loader'
       },
       {
-        test: /\.(ttf|eot|svg)$/,
+        test: /\.(ttf|woff|eot|svg|woff2)$/,
         loader: require.resolve('file-loader')
       }
     ]

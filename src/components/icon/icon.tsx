@@ -10,6 +10,14 @@ interface IconProps extends React.HTMLAttributes<HTMLElement> {
   type?: string
   prefixCls: string
   className?: string
+  //是否循环旋转
+  spin?: boolean
+  //是否旋转
+  rotate?: boolean
+  rotateDegree?: 0 | 90 | 180 | 270 | 360
+  //是否翻转
+  flip?: boolean
+  flipOrder?: 'horizontal' | 'vertical'
   color?: string
   onClick: (e: React.MouseEvent<HTMLElement>) => void
 }
@@ -24,17 +32,33 @@ const handleClick = (e: React.MouseEvent<HTMLElement>, { onClick }: IconProps) =
 }
 
 const Icon: React.SFC<IconProps> & { defaultProps: Partial<IconProps> } = props => {
-  const { prefixCls, type, size, color, ...rest } = props
+  const {
+    prefixCls,
+    type,
+    size,
+    color,
+    spin,
+    rotate,
+    rotateDegree,
+    flip,
+    flipOrder,
+    ...rest
+  } = props
   warning(!!type, 'type should be required for icon')
-  const classStr = ClassNames(prefixCls, `${prefixCls}-${type}`)
-  let style = {
+  const classStr = ClassNames(prefixCls, 'fa', `fa-${type}`, {
+    [`fa-spin`]: !!spin,
+    [`fa-rotate-${rotateDegree}`]: !!rotate,
+    [`fa-flip-${flipOrder}`]: !!flip
+  })
+  console.log(classStr)
+  let style: React.CSSProperties = {
     color
   }
   if (size) {
-    ;(style as any).fontSize = size
+    style.fontSize = size
   }
 
-  return <i className={classStr} style={style} onClick={e => handleClick(e, props)} {...rest} />
+  return <i className={classStr} style={style} onClick={e => handleClick(e, props)} {...rest}></i>
 }
 
 Icon.defaultProps = defaultProps

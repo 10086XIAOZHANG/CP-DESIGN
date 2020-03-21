@@ -3,18 +3,18 @@ import { Icon, Row, Col } from '../../src/components'
 // import { action } from '@storybook/addon-actions'
 export default function ButtonDemo() {
   const list = [
-    'check-circle',
-    'check',
-    'caret-up',
-    'delete',
-    'eye-close',
-    'eye',
-    'up',
-    'down',
-    'left',
-    'right',
-    'message-fill',
-    'link'
+    'caret-square-o-down',
+    'circle-o-notch',
+    'cog',
+    'align-right',
+    'pencil',
+    'cog',
+    'lign-left',
+    'align-center',
+    'spinner fa-pulse',
+    'home',
+    'angle-down',
+    'long-arrow-up'
   ]
   const data = list.map(item => ({
     icon: <Icon type={item} />,
@@ -45,6 +45,36 @@ export default function ButtonDemo() {
         }
         return null
       })}
+      <h3>大小</h3>
+      <Row style={{ marginBottom: '1rem', textAlign: 'center' }}>
+        <Col span={8}>
+          <Icon type={'camera-retro'} size={8} />
+        </Col>
+        <Col span={8}>
+          <Icon type={'camera-retro'} size={16} />
+        </Col>
+        <Col span={8}>
+          <Icon type={'camera-retro'} size={24} />
+        </Col>
+        <Col span={8}>
+          <Icon type={'camera-retro'} size={32} />
+        </Col>
+      </Row>
+      <h3>颜色</h3>
+      <Row style={{ marginBottom: '1rem', textAlign: 'center' }}>
+        <Col span={8}>
+          <Icon type={'camera-retro'} color="rgb(44, 167, 241)" />
+        </Col>
+        <Col span={8}>
+          <Icon type={'camera-retro'} color="rgb(234, 32, 152)" />
+        </Col>
+        <Col span={8}>
+          <Icon type={'camera-retro'} color="rgb(21, 239, 218)" />
+        </Col>
+        <Col span={8}>
+          <Icon type={'camera-retro'} color="rgb(95, 25, 220)" />
+        </Col>
+      </Row>
     </div>
   )
 }

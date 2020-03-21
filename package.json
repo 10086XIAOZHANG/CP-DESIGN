@@ -1,6 +1,6 @@
 {
   "name": "cp-design",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A configurable Mobile UI",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -98,6 +98,7 @@
     "babel-polyfill": "^6.26.0",
     "commitlint": "^8.3.5",
     "css-loader": "^3.4.2",
+    "del": "^5.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",

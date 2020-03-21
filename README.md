@@ -6,7 +6,7 @@ English | [简体中文](./README.zh-CN.md)
 
 <p align="center">
   <a href="https://10086xiaozhang.github.io/CP-UI-DESIGN">
-    <img width="320" src="https://zos.alipayobjects.com/rmsportal/wIjMDnsrDoPPcIV.png">
+    <img width="320" src="https://github.com/10086XIAOZHANG/CP-WEB-SOURCE-PlATFORM/blob/master/src/assets/bases/logo.png">
   </a>
 </p>
 
@@ -25,8 +25,6 @@ A configurable Mobile UI specification and React-based implementation.
 ## Demo
 
 ### mobile web demo
-
-<img width="250" src="https://zos.alipayobjects.com/rmsportal/dLMGiKuyFLBfYfm.png" />
 
 https://10086xiaozhang.github.io/CP-UI-DESIGN
 

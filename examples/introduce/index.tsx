@@ -12,16 +12,16 @@ export default function ButtonDemo() {
         <li>引入Font Awesome 图标字体库 等优化方案，一体式开发</li>
       </ul>
       <h1>Install 安装</h1>
-      <p>npm install cp-design --save</p>
+      <p style={{ color: 'deepskyblue', fontSize: '1.3rem' }}>$ npm install cp-design --save</p>
+      <p>或者</p>
+      <p style={{ color: 'deepskyblue', fontSize: '1.3rem' }}>$ yarn add cp-design </p>
       <h1>User 组件使用实例：</h1>
       <p>
         <pre style={{ wordWrap: 'break-word' }}>
           <code>
-            <p>
-              {
-                "import {Button} from 'cp-design';\nReactDOM.render(<Button>Start</Button>, mountNode);"
-              }
-            </p>
+            {
+              "import {Button} from 'cp-design';\nReactDOM.render(<Button>Start</Button>, mountNode);"
+            }
           </code>
         </pre>
       </p>
@@ -30,6 +30,11 @@ export default function ButtonDemo() {
         <li>iOS</li>
         <li>Android 4.0+</li>
       </ul>
+      <h1>✨ Notice 注意</h1>
+      <p>在组件库中使用了 SASS,在安装的时候记得安装 node-sass</p>
+      <p style={{ color: '#f3f' }}>$ npm install node-sass -D</p>
+      <p>或者</p>
+      <p style={{ color: '#f3f' }}>$ yarn add node-sass -D</p>
       <h1>Author Email</h1>
       <p>fcj_zhang@163.com</p>
       <h1>Blog address</h1>

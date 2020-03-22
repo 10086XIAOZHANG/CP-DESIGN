@@ -13,6 +13,18 @@ import { Accordion, Row, Col, Icon } from 'cp-design'
 
 ```jsx
 export default function ButtonDemo() {
+  const datas = Array.from({ length: 5 }, (item, index) => {
+    console.log(item)
+    return {
+      key: `${index}`,
+      title: `测试title${index}`,
+      content: '测试内容',
+      icon: <Icon type={'camera-retro'} />
+    }
+  })
+  const onChange = (expandedKeys: string[]) => {
+    console.log(expandedKeys)
+  }
   return (
     <div>
       <h3>基本模式</h3>

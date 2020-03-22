@@ -5,9 +5,9 @@ export interface DivideProps {
   className?: string
   // dashed 是否为虚线 默认为false
   dashed: boolean
-  // orientation 文字的位置 默认为center
+  // orientation 分割线标题的位置,默认为center
   orientation: OrientationEnum
-  // type 分割线的类型 默认为水平位置
+  // type 分割线的类型,水平还是垂直类型,默认为水平位置
   type: DivideTypeEnum
   children?: React.ReactNode
 }

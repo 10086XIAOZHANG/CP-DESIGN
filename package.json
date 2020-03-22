@@ -12,7 +12,7 @@
     "lint:style": "stylelint \"src/**/*.scss\" --syntax scss",
     "lint:style-fix": "stylelint \"src/**/*.scss\" --syntax scss --fix",
     "dev": "cross-env NODE_ENV=dev start-storybook -p 9001 -c .storybook",
-    "build:story": "build-storybook -c .storybook -o docs",
+    "build:story": "cross-env NODE_ENV=dev build-storybook -c .storybook -o docs",
     "deploy-storybook": "storybook-to-ghpages",
     "prepublishOnly": "npm run build"
   },

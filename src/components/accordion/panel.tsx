@@ -5,31 +5,46 @@ import Icon from '../icon'
 
 interface ClickProps {
   props: PanelProps
-  expanded: boolean
+  defaultExpanded: boolean
 }
-
 const noop = () => {}
 
 const defaultProps: PanelProps = {
   disabled: false,
-  expanded: false,
+  defaultExpanded: false,
   prefixCls: 'cp-ui-panel',
   onChange: noop
 }
 
-const handleClick = ({ props, expanded }: ClickProps) => {
+const handleClick = ({ props, defaultExpanded }: ClickProps) => {
   const { onChange, disabled } = props
   if (disabled) return
-  onChange(!expanded)
+
+  onChange(!defaultExpanded)
 }
 
 const renderIcon = ({ icon }: PanelProps) => {
   if (icon) {
     return icon
   }
-  return <Icon type="right" />
+  return null
 }
-
+const renderRightIcon = ({ rightOpenIcon, rightCloseIcon }: PanelProps, visible: boolean) => {
+  const isShowCustomIcon = !!rightOpenIcon && !!rightCloseIcon
+  if (visible) {
+    if (isShowCustomIcon) {
+      return rightOpenIcon
+    } else {
+      return <Icon type={'angle-up'} />
+    }
+  } else {
+    if (isShowCustomIcon) {
+      return rightCloseIcon
+    } else {
+      return <Icon type={'angle-down'} />
+    }
+  }
+}
 const renderTitleContent = ({ title, prefixCls }: PanelProps) => {
   if (title) {
     return <div className={`${prefixCls}-title-content`}>{title}</div>
@@ -49,20 +64,26 @@ const renderContent = ({ content, prefixCls }: PanelProps, visible: boolean) => 
 }
 
 const Panel: React.SFC<PanelProps> & { defaultProps: Partial<PanelProps> } = props => {
-  const { prefixCls, title, expanded, disabled } = props
+  const { prefixCls, title, defaultExpanded, disabled } = props
+  console.log('defaultExpanded', defaultExpanded)
   const classStr = ClassNames(prefixCls, {
-    [`${prefixCls}-expanded`]: expanded,
+    [`${prefixCls}-expanded`]: defaultExpanded,
     [`${prefixCls}-disabled`]: disabled
   })
   return (
     <div className={classStr}>
       {title ? (
-        <div className={`${prefixCls}-title`} onClick={() => handleClick({ props, expanded })}>
+        <div
+          className={`${prefixCls}-title`}
+          style={defaultExpanded ? { borderBottom: '1px solid #d9d9d9' } : {}}
+          onClick={() => handleClick({ props, defaultExpanded })}
+        >
           <div className={`${prefixCls}-icon`}>{renderIcon(props)}</div>
           {renderTitleContent(props)}
+          <div className={`${prefixCls}-right-icon`}>{renderRightIcon(props, defaultExpanded)}</div>
         </div>
       ) : null}
-      {renderContent(props, expanded)}
+      {renderContent(props, defaultExpanded)}
     </div>
   )
 }

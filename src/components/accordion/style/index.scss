@@ -1,7 +1,7 @@
 $panel: 'cp-ui-panel';
-$collapse: 'cp-ui-collapse';
+$accordion: 'cp-ui-accordion';
 
-.#{$collapse} {
+.#{$accordion} {
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5;
@@ -36,6 +36,18 @@ $collapse: 'cp-ui-collapse';
       &-content {
         margin-left: 10px;
       }
+
+
+    }
+
+    &-right-icon {
+      flex: 1;
+      text-align: right;
+      align-self: center;
+
+      .cp-ui-icon {
+        font-size: 1rem;
+      }
     }
 
     &-body {
@@ -56,11 +68,7 @@ $collapse: 'cp-ui-collapse';
       }
     }
 
-    &-expanded {
-      .cp-ui-icon {
-        transform: rotate(90deg);
-      }
-    }
+    &-expanded {}
 
     &-disabled {
       .#{$panel}-title {

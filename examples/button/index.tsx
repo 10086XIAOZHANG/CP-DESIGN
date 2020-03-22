@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 export default function ButtonDemo() {
   return (
     <div>
-      <h1>Button</h1>
+      <h1>Button 按钮</h1>
       <h3>类型、尺寸</h3>
       <Row style={{ marginBottom: '1rem' }}>
         <Col span={24}>

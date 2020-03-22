@@ -7,7 +7,7 @@ import Avatar from './avatar'
 import Badge from './badge'
 import Card from './card'
 import { CheckboxGroup, Checkbox } from './checkbox'
-import Collapse from './collapse'
+import Accordion from './accordion'
 import Divide from './divider'
 import Menu from './menu'
 import Modal from './modal'
@@ -35,7 +35,7 @@ export {
   Card,
   CheckboxGroup,
   Checkbox,
-  Collapse,
+  Accordion,
   Divide,
   Menu,
   Modal,

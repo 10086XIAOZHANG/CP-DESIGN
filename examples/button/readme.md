@@ -13,11 +13,12 @@ import { Button, Row, Col } from 'cp-design'
 
 ```jsx
 export default function ButtonDemo() {
+  const onClick = () => {}
   return (
     <div>
       <Row style={{ marginBottom: '1rem' }}>
         <Col span={24}>
-          <Button onClick={action('clicked')}>default</Button>
+          <Button onClick={onClick}>default</Button>
         </Col>
       </Row>
       <Row style={{ marginBottom: '1rem' }}>
@@ -27,35 +28,35 @@ export default function ButtonDemo() {
       </Row>
       <Row style={{ marginBottom: '1rem' }}>
         <Col span={24}>
-          <Button type="primary" onClick={action('clicked')}>
+          <Button type="primary" onClick={onClick}>
             primary
           </Button>
         </Col>
       </Row>
       <Row style={{ marginBottom: '1rem' }}>
         <Col span={24}>
-          <Button type="primary" onClick={action('clicked')} disabled>
+          <Button type="primary" onClick={onClick} disabled>
             primary disabled
           </Button>
         </Col>
       </Row>
       <Row style={{ marginBottom: '1rem' }}>
         <Col span={24}>
-          <Button onClick={action('clicked')} type="warning">
+          <Button onClick={onClick} type="warning">
             warning
           </Button>
         </Col>
       </Row>
       <Row style={{ marginBottom: '1rem' }}>
         <Col span={24}>
-          <Button onClick={action('clicked')} type="warning" disabled>
+          <Button onClick={onClick} type="warning" disabled>
             warning disabled
           </Button>
         </Col>
       </Row>
       <Row style={{ marginBottom: '1rem' }}>
         <Col span={24}>
-          <Button onClick={action('clicked')} loading>
+          <Button onClick={onClick} loading>
             loading button
           </Button>
         </Col>

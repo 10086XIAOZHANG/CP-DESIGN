@@ -18,7 +18,7 @@ export default function AccordionDemo() {
     <div>
       <h1>Accordion 手风琴</h1>
       <h3>基本模式</h3>
-      <Row style={{ marginBottom: '1rem' }}>
+      <Row style={{ marginBottom: '0.6rem' }}>
         <Col span={24}>
           <Accordion
             style={{ background: 'none' }}
@@ -29,7 +29,7 @@ export default function AccordionDemo() {
         </Col>
       </Row>
       <h3>手风琴模式</h3>
-      <Row style={{ marginBottom: '1rem' }}>
+      <Row style={{ marginBottom: '0.6rem' }}>
         <Col span={24}>
           <Accordion
             style={{ background: 'none' }}

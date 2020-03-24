@@ -1,21 +1,25 @@
 import * as React from 'react'
 import { Omit } from '../utils/type'
 
-type inputType = 'text' | 'number' | 'mobile' | 'bankCard' | 'password'
-type omitProps = 'type' | 'prefix' | 'onChange' | 'onBlur' | 'value' | 'defaultValue'
+type InputType = 'text' | 'number' | 'mobile' | 'bankCard' | 'password'
+type OmitProps = 'type' | 'prefix' | 'onChange' | 'onBlur' | 'value' | 'defaultValue'
 
 // 对omit的具体用法可以查看typescript的官网关于picker和exclude的用法，就是集合的概念
-export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, omitProps> {
+export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, OmitProps> {
   // 当前值
   value?: string
   // 默认值
   defaultValue?: string
+  //获取元素组件的ref
+  getInputRef?: (ele: HTMLInputElement) => void
   // 类型
-  type: inputType
+  type: InputType
   // prefix
   prefix?: React.ReactNode
   // suffix
   suffix?: React.ReactNode
+  // 错误提示
+  error?: React.ReactNode
   // clear 是否显示清除 默认为false
   clear: boolean
   // 前置点击

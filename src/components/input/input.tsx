@@ -13,7 +13,6 @@ const prefixCls = 'cp-ui-input'
 const defaultProps: InputProps = {
   type: 'text',
   disabled: false,
-  autoFocus: false,
   clear: false,
   onChange: noop,
   onBlur: noop,
@@ -55,7 +54,8 @@ const omitProps = (props: InputProps) => {
     'clear',
     'className',
     'addonBefore',
-    'addonAfter'
+    'addonAfter',
+    'error'
   ]
   return omit(props, excludeProps)
 }
@@ -129,7 +129,7 @@ const renderClearIcon = (
   if (!disabled && newValue && newValue.length && clear) {
     return (
       <Icon
-        type="close-circle"
+        type="times-circle"
         onClick={() => {
           onChange('')
           ;(inputRef.current as any).focus()
@@ -163,11 +163,18 @@ const renderAddonAfter = ({ addonAfter }: InputProps) => {
   }
   return null
 }
-
+const renderErrorEle = ({ error }: InputProps) => {
+  if (!error) return null
+  return (
+    <div className={`${prefixCls}-error`}>
+      <div className="after">{error}</div>
+    </div>
+  )
+}
 const Input: React.SFC<InputProps> & { defaultProps: Partial<InputProps> } = props => {
-  const inputRef = useRef(null)
+  const _inputRef = useRef<HTMLInputElement>(null)
   const type = getTrueType(props.type)
-  const { autoFocus, addonAfter, addonBefore } = props
+  const { addonAfter, addonBefore } = props
   const restProps = omitProps(props)
   if ('value' in restProps) {
     restProps.value = normalizeValue(props.value)
@@ -175,30 +182,32 @@ const Input: React.SFC<InputProps> & { defaultProps: Partial<InputProps> } = pro
     // specify either the value prop, or the defaultValue prop, but not both.
     delete restProps.defaultValue
   }
-  const inputClass = ClassNames(`${prefixCls}-input`, {
+  const inputClass = ClassNames(`${prefixCls}-internal`, {
     [`${prefixCls}-group`]: !!addonBefore || !!addonAfter
   })
   useEffect(() => {
-    inputRef && autoFocus && (inputRef.current as any).focus()
-    return () => {}
-  }, [inputRef])
+    if (props.getInputRef !== undefined && _inputRef.current !== null) {
+      props.getInputRef(_inputRef.current)
+    }
+  }, [])
   return (
     <div className={getClassName(props)}>
       <div className={`${prefixCls}-container`}>
         {renderPrefix(props)}
         <div className={inputClass}>
-          {renderAddonBefore(props)}
-          <div className={`${prefixCls}-input-content`}>
+          <div className={`${prefixCls}-content`}>
+            {renderAddonBefore(props)}
             <input
               type={type}
-              ref={inputRef}
+              ref={_inputRef}
               onChange={e => handleChange(e, props)}
               onBlur={e => handleBlur(restProps.value, e, props)}
               {...restProps}
             />
-            {renderClearIcon(props, inputRef)}
+            {renderClearIcon(props, _inputRef)}
+            {renderAddonAfter(props)}
           </div>
-          {renderAddonAfter(props)}
+          {renderErrorEle(props)}
         </div>
         {renderSuffix(props)}
       </div>

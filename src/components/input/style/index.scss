@@ -5,6 +5,7 @@ $input: 'cp-ui-input';
 .#{$input} {
   display: inline-block;
   position: relative;
+  width: 100%;
 
   .#{$input}-container {
     display: flex;
@@ -15,8 +16,9 @@ $input: 'cp-ui-input';
       color: rgba(0, 0, 0, 0.65);
     }
 
-    .#{$input}-input {
+    .#{$input}-internal {
       display: table;
+      flex: 1;
 
       &.#{$input}-group {
         .#{$input}-addon-before {
@@ -25,7 +27,7 @@ $input: 'cp-ui-input';
           border-right: 0;
         }
 
-        .#{$input}-input-content {
+        .#{$input}-content {
           position: relative;
 
           &:first-child {
@@ -50,34 +52,41 @@ $input: 'cp-ui-input';
         }
 
         .#{$input}-addon-after {
+          float: right;
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+          border-left: 0;
+        }
+
+        .#{$input}-addon-before {
+          text-align: center;
+          background-color: #fafafa;
+          vertical-align: middle;
+          border: 1px solid #d9d9d9;
+          border-right: 0;
+          border-radius: $border-radius-normal;
+          cursor: pointer;
+          color: rgba(0, 0, 0, 0.65);
+
+          .before {
+            display: block;
+            margin-left: 11px;
+            margin-right: 11px;
+            position: relative;
+            line-height: 30px;
+          }
+        }
+
+        .#{$input}-error {
           border-bottom-left-radius: 0;
           border-top-left-radius: 0;
           border-left: 0;
         }
       }
 
-      .#{$input}-addon-before {
-        display: table-cell;
-        text-align: center;
-        background-color: #fafafa;
-        vertical-align: middle;
-        border: 1px solid #d9d9d9;
-        border-right: 0;
-        border-radius: $border-radius-normal;
-        cursor: pointer;
-        color: rgba(0, 0, 0, 0.65);
 
-        .before {
-          display: block;
-          margin-left: 11px;
-          margin-right: 11px;
-          position: relative;
-          line-height: 30px;
-        }
-      }
 
       .#{$input}-addon-after {
-        display: table-cell;
         text-align: center;
         background-color: #fafafa;
         vertical-align: middle;
@@ -96,8 +105,9 @@ $input: 'cp-ui-input';
         }
       }
 
-      .#{$input}-input-content {
+      .#{$input}-content {
         position: relative;
+        display: flex;
 
         input {
           -webkit-box-sizing: border-box;
@@ -117,7 +127,7 @@ $input: 'cp-ui-input';
           border-radius: $border-radius-normal;
           -webkit-transition: all 0.3s;
           transition: all 0.3s;
-          display: table-cell;
+          flex: 1;
 
           &::placeholder {
             color: #999;

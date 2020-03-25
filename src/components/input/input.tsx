@@ -50,7 +50,9 @@ const omitProps = (props: InputProps) => {
     'onBlur',
     'type',
     'prefix',
+    'style',
     'suffix',
+    'inlinePrefix',
     'clear',
     'className',
     'addonBefore',
@@ -108,27 +110,36 @@ const handleBlur = (
 }
 
 const renderPrefix = ({ prefix }: InputProps) => {
-  if (prefix) {
-    return <div className={`${prefixCls}-prefix`}>{prefix}</div>
+  if (!prefix) {
+    return null
   }
-  return null
+  return <div className={`${prefixCls}-prefix`}>{prefix}</div>
 }
-
+const renderInlinePrefix = ({ inlinePrefix }: InputProps) => {
+  if (!inlinePrefix) {
+    return null
+  }
+  return <div className={`${prefixCls}-inline-prefix`}>{inlinePrefix}</div>
+}
 const renderSuffix = ({ suffix }: InputProps) => {
   if (suffix) {
-    return <div className={`${prefixCls}-suffix`}>{suffix}</div>
+    return null
   }
-  return null
+  return <div className={`${prefixCls}-suffix`}>{suffix}</div>
 }
 
-const renderClearIcon = (
-  { disabled, value, defaultValue, clear, onChange }: InputProps,
+const renderInlineSuffix = (
+  { disabled, value, defaultValue, clear, inlineSuffix, onChange }: InputProps,
   inputRef: any
 ) => {
+  if (inlineSuffix !== undefined) {
+    return <div className={`${prefixCls}-inline-suffix`}>{inlineSuffix}</div>
+  }
   const newValue = normalizeValue(value || defaultValue)
   if (!disabled && newValue && newValue.length && clear) {
     return (
       <Icon
+        className={`${prefixCls}-clear`}
         type="times-circle"
         onClick={() => {
           onChange('')
@@ -174,7 +185,7 @@ const renderErrorEle = ({ error }: InputProps) => {
 const Input: React.SFC<InputProps> & { defaultProps: Partial<InputProps> } = props => {
   const _inputRef = useRef<HTMLInputElement>(null)
   const type = getTrueType(props.type)
-  const { addonAfter, addonBefore } = props
+  const { addonAfter, addonBefore, inlinePrefix, style } = props
   const restProps = omitProps(props)
   if ('value' in restProps) {
     restProps.value = normalizeValue(props.value)
@@ -185,6 +196,11 @@ const Input: React.SFC<InputProps> & { defaultProps: Partial<InputProps> } = pro
   const inputClass = ClassNames(`${prefixCls}-internal`, {
     [`${prefixCls}-group`]: !!addonBefore || !!addonAfter
   })
+  const inputStyle = Object.assign(
+    {},
+    inlinePrefix !== undefined ? { paddingLeft: '26px' } : {},
+    style ?? {}
+  )
   useEffect(() => {
     if (props.getInputRef !== undefined && _inputRef.current !== null) {
       props.getInputRef(_inputRef.current)
@@ -193,18 +209,20 @@ const Input: React.SFC<InputProps> & { defaultProps: Partial<InputProps> } = pro
   return (
     <div className={getClassName(props)}>
       <div className={`${prefixCls}-container`}>
-        {renderPrefix(props)}
         <div className={inputClass}>
           <div className={`${prefixCls}-content`}>
+            {renderPrefix(props)}
             {renderAddonBefore(props)}
+            {renderInlinePrefix(props)}
             <input
               type={type}
               ref={_inputRef}
+              style={inputStyle}
               onChange={e => handleChange(e, props)}
               onBlur={e => handleBlur(restProps.value, e, props)}
               {...restProps}
             />
-            {renderClearIcon(props, _inputRef)}
+            {renderInlineSuffix(props, _inputRef)}
             {renderAddonAfter(props)}
           </div>
           {renderErrorEle(props)}

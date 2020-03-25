@@ -16,10 +16,16 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
   type: InputType
   // prefix
   prefix?: React.ReactNode
-  // suffix
+  // 内嵌input前缀
+  inlinePrefix?: React.ReactNode
+  // 内嵌input前缀
+  inlineSuffix?: React.ReactNode
+  // suffix11
   suffix?: React.ReactNode
   // 错误提示
   error?: React.ReactNode
+  // 是否禁用输入框
+  disabled?: boolean
   // clear 是否显示清除 默认为false
   clear: boolean
   // 前置点击

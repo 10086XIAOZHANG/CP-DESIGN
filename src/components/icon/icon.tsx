@@ -42,10 +42,11 @@ const Icon: React.SFC<IconProps> & { defaultProps: Partial<IconProps> } = props 
     rotateDegree,
     flip,
     flipOrder,
+    className,
     ...rest
   } = props
   warning(!!type, 'type should be required for icon')
-  const classStr = ClassNames(prefixCls, 'fa', `fa-${type}`, {
+  const classStr = ClassNames(prefixCls, className, 'fa', `fa-${type}`, {
     [`fa-spin`]: !!spin,
     [`fa-rotate-${rotateDegree}`]: !!rotate,
     [`fa-flip-${flipOrder}`]: !!flip

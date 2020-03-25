@@ -6,7 +6,11 @@ $input: 'cp-ui-input';
   display: inline-block;
   position: relative;
   width: 100%;
-
+  &.#{$input}-disabled {
+    input {
+      border-color: #d9d9d9 !important;
+    }
+  }
   .#{$input}-container {
     display: flex;
     align-items: center;
@@ -15,7 +19,13 @@ $input: 'cp-ui-input';
       margin-right: 5px;
       color: rgba(0, 0, 0, 0.65);
     }
-
+    .#{$input}-inline-prefix {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 99;
+    }
     .#{$input}-internal {
       display: table;
       flex: 1;
@@ -84,8 +94,6 @@ $input: 'cp-ui-input';
         }
       }
 
-
-
       .#{$input}-addon-after {
         text-align: center;
         background-color: #fafafa;
@@ -148,7 +156,13 @@ $input: 'cp-ui-input';
           }
         }
 
-        .cp-ui-icon {
+        .#{$input}-clear {
+          position: absolute;
+          right: 5px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        .#{$input}-inline-suffix {
           position: absolute;
           right: 5px;
           top: 50%;

@@ -1,0 +1,53 @@
+@import '../../style/index.scss';
+
+$toast: 'cp-ui-toast';
+
+.#{$toast} {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    font-size: 14;
+    text-align: center;
+
+    span {
+        max-width: 50%;
+    }
+
+    &-mask {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 0;
+        transform: translateZ(1px);
+    }
+
+    &-nomask {
+        max-width: 50%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &-notice-content {
+        .#{$toast}-text {
+            min-width: 60px;
+            border-radius: 4px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, .7);
+            line-height: 13px;
+            padding: 12px 10px;
+
+            &.#{$toast}-text-icon {
+                border-radius: 6px;
+                padding: 12px 32px;
+
+                .#{$toast}-text-info {
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+}

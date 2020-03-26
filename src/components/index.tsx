@@ -9,6 +9,7 @@ import Card from './card'
 import { CheckboxGroup, Checkbox } from './checkbox'
 import Accordion from './accordion'
 import Divider from './divider'
+import Toast from './toast'
 import Menu from './menu'
 import Modal from './modal'
 import Overlay from './overlay'
@@ -49,5 +50,6 @@ export {
   Switch,
   Tabs,
   Tag,
-  Upload
+  Upload,
+  Toast
 }

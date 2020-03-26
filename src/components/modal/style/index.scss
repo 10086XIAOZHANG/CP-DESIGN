@@ -27,14 +27,17 @@ $modal: 'cp-ui-modal';
 
   &-container {
     background: #fff;
-    border-radius: $border-radius-normal;
-    width: 500px;
+    border-radius: $border-radius-large;
+    width: 70%;
     position: relative;
   }
 
   &-header {
-    padding: 16px 24px;
-    border-bottom: 1px solid #e8e8e8;
+    padding: 24px 24px 0 24px;
+
+    .#{$modal}-title {
+      text-align: center;
+    }
   }
 
   &-close {
@@ -55,23 +58,58 @@ $modal: 'cp-ui-modal';
 
   &-body {
     &-contain {
-      padding: 24px;
+      padding: 24px 16px;
+      text-align: center;
       font-size: $font-size-normal;
       line-height: $line-height-normal;
       word-wrap: break-word;
     }
+
   }
 
   &-footer {
-    padding: 10px 16px;
+    padding: 10px auto;
     text-align: right;
     border-top: 1px solid #e8e8e8;
 
     &-container {
-      .cp-ui-btn-button_btn {
-        &:last-child {
-          margin-left: 8px;
-        }
+      display: flex;
+
+      .#{$modal}-footer-ok-only {
+        font-family: PingFangSC-Regular;
+        font-size: 16px;
+        color: $color-brand-normal;
+        letter-spacing: 0;
+        padding: 8px 12px;
+        text-align: center;
+        background: none;
+        line-height: 16px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      .#{$modal}-footer-ok {
+        font-family: PingFangSC-Regular;
+        font-size: 16px;
+        padding: 8px 0;
+        color: $color-brand-normal;
+        letter-spacing: 0;
+        background: none;
+        line-height: 16px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      .#{$modal}-footer-cancel {
+        font-family: PingFangSC-Regular;
+        font-size: 16px;
+        padding: 8px 0;
+        border-right: 1px solid #e8e8e8;
+        color: $color-brand-normal;
+        background: none;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 16px;
       }
     }
   }

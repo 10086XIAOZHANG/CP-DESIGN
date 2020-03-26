@@ -4,6 +4,7 @@ import Overlay from '../overlay'
 import Button from '../button'
 
 import './style/index.scss'
+import { omit } from '../utils'
 
 const noop = () => {}
 
@@ -33,9 +34,27 @@ const renderHeader = ({ title, prefixCls }: ModalProps) => {
   }
   return null
 }
-
+const getFooterBotton = (props: ModalProps) => {
+  const { okText, cancelText, prefixCls } = props
+  let btns = [
+    {
+      text: okText,
+      onClick: () => handleOk(props),
+      className: cancelText !== null ? `${prefixCls}-footer-ok` : `${prefixCls}-footer-ok-only`
+    }
+  ]
+  if (cancelText !== null) {
+    btns.unshift({
+      text: cancelText,
+      onClick: () => handleCancel(props),
+      className: `${prefixCls}-footer-cancel`
+    })
+  }
+  return btns
+}
 const renderFooter = (props: ModalProps) => {
-  const { okText, cancelText, prefixCls, footer } = props
+  const { prefixCls, footer } = props
+  const buttons = getFooterBotton(props)
   let com = null
   if (footer) {
     com = footer
@@ -43,10 +62,11 @@ const renderFooter = (props: ModalProps) => {
     com =
       footer === undefined ? (
         <React.Fragment>
-          <Button onClick={() => handleCancel(props)} type="ghost">
-            {cancelText}
-          </Button>
-          <Button onClick={() => handleOk(props)}>{okText}</Button>
+          {buttons.map((button, index) => (
+            <Button key={index} {...omit(button, ['text'])}>
+              {button.text}
+            </Button>
+          ))}
         </React.Fragment>
       ) : (
         footer
@@ -59,6 +79,7 @@ const Modal: React.SFC<ModalProps> & { defaultProps: Partial<ModalProps> } = pro
   const {
     children,
     prefixCls,
+    closable,
     visible,
     closeIcon,
     className,
@@ -80,7 +101,7 @@ const Modal: React.SFC<ModalProps> & { defaultProps: Partial<ModalProps> } = pro
       maskAnimationName={maskAnimationName}
       animationName={animationName}
       destroy={destroy}
-      closable
+      closable={closable}
     >
       <div className={`${prefixCls}-body-contain`}>{children}</div>
     </Overlay>

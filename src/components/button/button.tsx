@@ -28,7 +28,7 @@ const getClassName = ({ className, loading, disabled, type, size, prefixCls }: B
 
 const renderLoading = ({ loading }: ButtonProps) => {
   if (loading) {
-    return <Icon type="reload" />
+    return <Icon type="circle-o-notch" spin />
   }
   return null
 }

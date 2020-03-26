@@ -17,6 +17,6 @@ storiesOf('通用', module)
     },
     viewport: { defaultViewport: 'iphone6' }
   })
-  .add('Checkbox复选框', () => {
+  .add('Checkbox 复选框', () => {
     return <CheckboxDemo />
   })

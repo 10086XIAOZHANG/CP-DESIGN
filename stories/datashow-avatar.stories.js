@@ -16,6 +16,6 @@ storiesOf('数据显示', module)
     },
     viewport: { defaultViewport: 'iphone6' }
   })
-  .add('Avatar头像', () => {
+  .add('Avatar 头像', () => {
     return <AvatarDemo />
   })

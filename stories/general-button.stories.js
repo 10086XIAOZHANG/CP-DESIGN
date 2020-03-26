@@ -17,6 +17,6 @@ storiesOf('通用', module)
     },
     viewport: { defaultViewport: 'iphone6' }
   })
-  .add('Button按钮', () => {
+  .add('Button 按钮', () => {
     return <ButtonDemo />
   })

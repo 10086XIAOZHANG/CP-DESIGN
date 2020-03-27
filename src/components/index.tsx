@@ -16,7 +16,7 @@ import Overlay from './overlay'
 import Pagination from './pagination'
 import Progress from './progress'
 import RadioGroup from './radio'
-import Slide from './slide'
+import Slider from './slider'
 import Spin from './spin'
 import Step from './step'
 import Switch from './switch'
@@ -44,7 +44,7 @@ export {
   Pagination,
   Progress,
   RadioGroup,
-  Slide,
+  Slider,
   Step,
   Spin,
   Switch,

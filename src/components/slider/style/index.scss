@@ -1,0 +1,30 @@
+@import '../../style/index.scss';
+
+$slide: 'cp-ui-slider';
+$rc-slider:'rc-slider';
+
+.#{$slide} {
+  .#{$rc-slider} {
+    &-track {
+      background: $color-brand-normal;
+    }
+
+    &-handle {
+      border: solid 2px $color-brand-normal;
+    }
+
+    &-disabled {
+      background: none;
+
+      .#{$rc-slider}-track {
+        background: $color-brand-shallow-low;
+      }
+
+      .#{$rc-slider}-handle {
+        border: solid 2px $color-brand-shallow-low;
+      }
+    }
+  }
+
+
+}

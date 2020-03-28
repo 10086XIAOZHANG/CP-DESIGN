@@ -30,7 +30,7 @@ export default function RadioDemo() {
           <span style={{ padding: '15px 10px 15px 0', color: '#888' }}>
             Radio demo(dustomized style)
           </span>
-          <Radio checked={checked} disabled onChange={changeRadio} color={'#ff9813'}>
+          <Radio checked={checked} onChange={changeRadio} color={'#ff9813'}>
             Agree
           </Radio>
         </Col>

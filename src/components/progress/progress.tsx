@@ -9,14 +9,18 @@ const defaultProps: ProgressProps = {
   type: 'line',
   percent: 0,
   status: 'normal',
+  position: 'normal',
+  unfilled: true,
   showInfo: true
 }
 
 const prefixCls = 'cp-ui-progress'
 
-const getClassNames = ({ type, size, status, showInfo }: ProgressProps) => {
+const getClassNames = ({ type, size, status, showInfo, position, unfilled }: ProgressProps) => {
   return ClassNames(prefixCls, {
     [`${prefixCls}-${type}`]: type,
+    [`${prefixCls}-fixed-outer`]: position === 'fixed',
+    [`${prefixCls}-unfilled`]: !unfilled,
     [`${prefixCls}-${size}`]: size,
     [`${prefixCls}-${status}`]: status,
     [`${prefixCls}-show-info`]: showInfo
@@ -47,7 +51,7 @@ const renderCircleText = ({ textRender, percent }: ProgressProps) => {
 }
 
 const renderLine = (props: ProgressProps) => {
-  const { showInfo, percent } = props
+  const { showInfo, position, percent } = props
   const innerStyle = getInnerStyle(props)
   const outStyle = getOuterStyle(props)
   return (
@@ -57,7 +61,9 @@ const renderLine = (props: ProgressProps) => {
           <div className={`${prefixCls}-inner`} style={innerStyle} />
         </div>
       </div>
-      {showInfo ? <div className={`${prefixCls}-info`}>{`${percent}%`}</div> : null}
+      {showInfo && position === 'normal' ? (
+        <div className={`${prefixCls}-info`}>{`${percent}%`}</div>
+      ) : null}
     </React.Fragment>
   )
 }

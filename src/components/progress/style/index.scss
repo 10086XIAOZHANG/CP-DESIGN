@@ -7,6 +7,7 @@ $progress: 'cp-ui-progress';
   position: relative;
   display: inline-block;
 
+
   &-line {
     .#{$progress} {
       &-container {
@@ -24,6 +25,29 @@ $progress: 'cp-ui-progress';
         border-radius: 16px;
         top: 50%;
         margin-top: -4px;
+      }
+    }
+  }
+
+  &-fixed-outer {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+
+    .#{$progress}-container {
+      margin-top: -12px;
+    }
+
+    .#{$progress}-inner {
+      border-radius: 0;
+      height: 4px;
+    }
+
+    .#{$progress} {
+      &-outer {
+        height: 4px;
       }
     }
   }
@@ -145,6 +169,8 @@ $progress: 'cp-ui-progress';
     background-color: #ebebeb;
   }
 
+
+
   &-inner {
     position: absolute;
     left: 0;
@@ -152,5 +178,11 @@ $progress: 'cp-ui-progress';
     -webkit-transition: all 1s cubic-bezier(0.65, 0.2, 0.35, 1);
     transition: all 1s cubic-bezier(0.65, 0.2, 0.35, 1);
     background: $color-brand-normal;
+  }
+
+  &-unfilled {
+    .#{$progress}-outer {
+      background: none;
+    }
   }
 }

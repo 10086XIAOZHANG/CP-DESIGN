@@ -23,4 +23,8 @@ export interface ProgressProps {
   activeColor?: string
   // 圆形的时候的文本渲染函数
   textRender?: (percent: number) => React.ReactNode
+  // 进度条的位置，fixed 将浮出固定在最顶层
+  position: 'fixed' | 'normal'
+  //是否显示未填充的轨道 默认是true
+  unfilled: boolean
 }

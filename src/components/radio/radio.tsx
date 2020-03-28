@@ -3,7 +3,7 @@ import ClassNames from 'classnames'
 import { RadioProps, func } from './interface'
 
 import './style/index.scss'
-
+import Icon from '../icon'
 const noop = () => {}
 
 const prefixCls = 'cp-ui-radio'
@@ -13,7 +13,8 @@ const defaultProps: RadioProps = {
   checked: false,
   disabled: false,
   defaultChecked: false,
-  autoFocus: false
+  autoFocus: false,
+  color: '#ff5454'
 }
 
 const getClassNames = ({ checked, disabled, autoFocus, className }: RadioProps) => {
@@ -24,16 +25,20 @@ const getClassNames = ({ checked, disabled, autoFocus, className }: RadioProps) 
   })
 }
 
-const handleChange = (e: React.ChangeEvent<HTMLInputElement>, onChange: func) => {
-  const checked = e.target.checked
-  onChange(checked)
+const handleChange = (onChange: func, radioChecked: boolean) => {
+  onChange(radioChecked)
+}
+const renderIcon = (radioChecked: boolean, color: string, disabled: boolean) => {
+  if (disabled) {
+    return <Icon type={'circle-o'} size={'18px'} color={'#c2c2c2'} />
+  }
+  return <Icon type={!radioChecked ? 'circle-o' : 'check-circle'} size={'18px'} color={color} />
 }
 const Radio: React.SFC<RadioProps> & { defaultProps: Partial<RadioProps> } = props => {
   const propsCopy = { ...props }
-  if ('checked' in props) {
-    delete propsCopy.defaultChecked
-  }
-  const { children, onChange, ...rest } = propsCopy
+  const { children, onChange, color, ...rest } = propsCopy
+  const isChecked =
+    propsCopy.checked !== undefined ? propsCopy.checked : propsCopy.defaultChecked ?? false
   const classStr = getClassNames(props)
   return (
     <label className={classStr}>
@@ -41,10 +46,13 @@ const Radio: React.SFC<RadioProps> & { defaultProps: Partial<RadioProps> } = pro
         <input
           type="radio"
           className={`${prefixCls}-input`}
-          onChange={e => handleChange(e, onChange)}
+          onClick={e => {
+            console.log(e)
+            handleChange(onChange, isChecked)
+          }}
           {...rest}
         />
-        <span className={`${prefixCls}-select-inner`} />
+        {renderIcon(isChecked, color, propsCopy.disabled)}
       </span>
       <span className={`${prefixCls}-label`}>{children}</span>
     </label>

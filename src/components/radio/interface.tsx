@@ -10,9 +10,11 @@ export interface RadioProps {
   // disabled 不可用状态 默认为false
   disabled: boolean
   // onChange
-  onChange: () => void
+  onChange: (checked: boolean) => void
   // className
   className?: string
+  // 单选框颜色
+  color: string
 }
 
 export interface OptionTypes {
@@ -21,25 +23,4 @@ export interface OptionTypes {
   disabled?: boolean
 }
 
-export type SizeTypes = 'small' | 'normal' | 'large'
-
-export type ShapeTypes = 'default' | 'button'
-
 export type func = (value: any) => void
-
-export interface RadioGroupProps {
-  // options
-  options: Array<OptionTypes>
-  // onChange
-  onChange: func
-  // size
-  size: SizeTypes
-  // value 当前选中的值
-  value?: any
-  //disabled 禁用所有
-  disabled: boolean
-  // className
-  className?: string
-  // 形状 默认为default
-  shape: ShapeTypes
-}

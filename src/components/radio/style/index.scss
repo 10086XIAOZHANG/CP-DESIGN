@@ -15,11 +15,7 @@ $radio: 'cp-ui-radio';
   cursor: pointer;
   display: inline-block;
 
-  &:hover {
-    .#{$radio}-select-inner {
-      border-color: $color-brand-normal;
-    }
-  }
+
 
   &-select {
     font-size: $font-size-normal;
@@ -36,7 +32,7 @@ $radio: 'cp-ui-radio';
     display: inline-block;
     line-height: 1;
     position: relative;
-    vertical-align: middle;
+    vertical-align: bottom;
     top: -0.09em;
 
     input {
@@ -51,41 +47,6 @@ $radio: 'cp-ui-radio';
       width: 100%;
       height: 100%;
     }
-
-    &-inner {
-      position: relative;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 16px;
-      height: 16px;
-      border: 1px solid #d9d9d9;
-      border-radius: 100px;
-      background-color: #fff;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
-      border-collapse: separate;
-
-      &::after {
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        left: 3px;
-        top: 3px;
-        border-radius: 8px;
-        display: table;
-        border-top: 0;
-        border-left: 0;
-        content: ' ';
-        background-color: $color-brand-normal;
-        opacity: 0;
-        -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-        transform: scale(0);
-        -webkit-transition: 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-        transition: 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-      }
-    }
   }
 
   &-label {
@@ -93,18 +54,6 @@ $radio: 'cp-ui-radio';
   }
 
   &-checked {
-    .#{$radio}-select-inner {
-      border-color: $color-brand-normal;
-
-      &::after {
-        -webkit-transform: scale(0.875);
-        -ms-transform: scale(0.875);
-        transform: scale(0.875);
-        opacity: 1;
-        -webkit-transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-        transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-      }
-    }
 
     .#{$radio}-select {
       &::after {
@@ -132,14 +81,6 @@ $radio: 'cp-ui-radio';
       cursor: not-allowed;
     }
 
-    .#{$radio}-select-inner {
-      border-color: #d9d9d9 !important;
-      background-color: #f5f5f5;
-
-      &::after {
-        background-color: rgba(0, 0, 0, 0.2);
-      }
-    }
   }
 
   input[type='radio'][disabled] {

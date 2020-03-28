@@ -15,7 +15,7 @@ import Modal from './modal'
 import Overlay from './overlay'
 import Pagination from './pagination'
 import Progress from './progress'
-import RadioGroup from './radio'
+import { Radio } from './radio'
 import Slider from './slider'
 import Spin from './spin'
 import Step from './step'
@@ -43,7 +43,7 @@ export {
   Overlay,
   Pagination,
   Progress,
-  RadioGroup,
+  Radio,
   Slider,
   Step,
   Spin,

@@ -11,11 +11,12 @@ const defaultProps: SwitchProps = {
   checked: false,
   onChange: noop,
   prefixCls: 'cp-ui-switch',
-  color: '#ff5454'
+  color: '#ff5454',
+  platform: 'ios'
 }
 
-const getClassName = ({ checked, disabled, prefixCls }: SwitchProps) => {
-  return ClassNames(prefixCls, {
+const getClassName = ({ checked, disabled, prefixCls, platform }: SwitchProps) => {
+  return ClassNames(prefixCls, `${prefixCls}-checked-${platform}`, {
     [`${prefixCls}-checked`]: checked,
     [`${prefixCls}-disabled`]: disabled
   })
@@ -27,7 +28,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>, { onChange }: Swit
 }
 
 const Switch: React.SFC<SwitchProps> & { defaultProps: Partial<SwitchProps> } = props => {
-  const { prefixCls, checked, color } = props
+  const { prefixCls, checked, color, platform } = props
   const classStr = getClassName(props)
   let style: any = {}
   if (checked) {
@@ -35,7 +36,7 @@ const Switch: React.SFC<SwitchProps> & { defaultProps: Partial<SwitchProps> } = 
   }
   return (
     <div className={classStr}>
-      <div className={`${prefixCls}-checkbox`} style={style} />
+      <div className={`${prefixCls}-checkbox-${platform}`} style={style} />
       <input
         type="checkbox"
         checked={checked}

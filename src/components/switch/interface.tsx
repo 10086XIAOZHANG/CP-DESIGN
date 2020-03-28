@@ -17,4 +17,6 @@ export interface SwitchProps {
   size?: number
   // disabled 默认为false
   disabled: boolean
+  //platform  设定组件的平台特有样式, 可选值为 android, ios， 默认为 ios
+  platform: 'ios' | 'android'
 }

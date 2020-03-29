@@ -1,0 +1,78 @@
+@import '../../style/index.scss';
+$action-sheet: 'cp-ui-action-sheet';
+
+.#{$action-sheet} {
+
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .4);
+
+    &-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(246, 246, 246, 1);
+
+        .#{$action-sheet}-select-choose {
+            &-list {
+                position: relative;
+                text-align: center;
+                font-size: 16px;
+
+                a {
+                    display: block;
+                    padding: 20px 0;
+                    color: #333;
+                    background: #fff;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $color-brand-normal;
+                        background: rgba(247, 247, 247, 1);
+                    }
+                }
+
+                &:after {
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 1px;
+                    background: rgba(223, 226, 230, 1);
+                    transform: scaleY(.5);
+                }
+            }
+
+            .#{$action-sheet}-on {
+                a {
+                    color: #FF7000;
+                    background: rgba(247, 247, 247, 1);
+
+                }
+            }
+        }
+    }
+
+    &-select-chancel {
+        margin-top: 12px;
+        font-size: 16px;
+
+        a {
+            padding: 12px 0;
+            display: block;
+            color: #999;
+            text-align: center;
+            background: #fff;
+            text-decoration: none;
+
+
+        }
+    }
+}

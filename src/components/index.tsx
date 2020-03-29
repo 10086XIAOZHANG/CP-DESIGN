@@ -23,7 +23,7 @@ import Switch from './switch'
 import Tabs from './tabs'
 import Tag from './tag'
 import Upload from './upload'
-
+import ActionSheet from './action-sheet'
 export {
   Icon,
   Button,
@@ -51,5 +51,6 @@ export {
   Tabs,
   Tag,
   Upload,
-  Toast
+  Toast,
+  ActionSheet
 }

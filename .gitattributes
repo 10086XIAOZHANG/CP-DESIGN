@@ -1,1 +1,1 @@
-*.ts linguist-language=typescript； *.tsx linguist-language=typescript； *.scss linguist-language=typescript； *.js linguist-language=typescript；*.css linguist-language=typescript；*.html linguist-language=typescript
+*.js linguist-language=java；*.css linguist-language=java；*.html linguist-language=java

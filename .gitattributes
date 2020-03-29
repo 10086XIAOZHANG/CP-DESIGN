@@ -1,6 +1,6 @@
-*.js linguist-language=java
-*.tsx linguist-language=java
-*.ts linguist-language=java
-*.scss linguist-language=java
-*.css linguist-language=java
-*.html linguist-language=java
+*.js linguist-language=typescript
+*.tsx linguist-language=typescript
+*.ts linguist-language=typescript
+*.scss linguist-language=typescript
+*.css linguist-language=typescript
+*.html linguist-language=typescript

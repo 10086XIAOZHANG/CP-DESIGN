@@ -75,9 +75,9 @@ const App = () => (
 
 https://10086xiaozhang.github.io/CP-DESIGN
 
-## Install & Usage
+## 安装与使用
 
-[introduce](https://10086xiaozhang.github.io/CP-DESIGN)
+[介绍](https://10086xiaozhang.github.io/CP-DESIGN)
 
 ## 浏览器支持
 
@@ -86,9 +86,9 @@ https://10086xiaozhang.github.io/CP-DESIGN
 
 ## 链接
 
-- [Home Page](https://10086xiaozhang.github.io/CP-DESIGN)
-- [React components](https://10086xiaozhang.github.io/CP-DESIGN)
-- [Demos](https://10086xiaozhang.github.io/CP-DESIGN)
+- [案例主页](https://10086xiaozhang.github.io/CP-DESIGN)
+- [组件文档](https://10086xiaozhang.github.io/CP-DESIGN)
+- [例子](https://10086xiaozhang.github.io/CP-DESIGN)
 
 ## 欢迎贡献
 

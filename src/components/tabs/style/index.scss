@@ -17,7 +17,8 @@ $tabs: 'cp-ui-tabs';
   &-top {
     .#{$tabs} {
       &-tab {
-        border-bottom: 1px solid #EBEBEB;
+        border-bottom: 1px solid rgb(221, 221, 221);
+        ;
         margin: 0 0 16px 0;
       }
 
@@ -28,6 +29,7 @@ $tabs: 'cp-ui-tabs';
 
         &-active {
           border-bottom: 2px solid $color-brand-normal;
+          color: $color-brand-normal;
         }
       }
 
@@ -39,7 +41,8 @@ $tabs: 'cp-ui-tabs';
 
   &-bottom {
     .#{$tabs}-tab {
-      border-top: 1px solid #EBEBEB;
+      border-top: 1px solid rgb(221, 221, 221);
+      border-bottom: 1px solid rgb(221, 221, 221);
       margin: 16px 0 0 0;
 
       &-container {
@@ -52,7 +55,7 @@ $tabs: 'cp-ui-tabs';
         }
 
         &-active {
-          border-top: 2px solid $color-brand-normal;
+          border-bottom: 2px solid $color-brand-normal;
         }
       }
     }
@@ -61,13 +64,23 @@ $tabs: 'cp-ui-tabs';
   &-left,
   &-right {
     display: flex;
+    align-content: center;
 
     .#{$tabs} {
+      &-tab-container {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+      }
+
       &-tab {
         &-item {
           display: block;
-          padding: 8px 24px;
-          margin: 0 0 16px 0;
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
           &:last-child {
             margin-bottom: 0;
@@ -84,7 +97,7 @@ $tabs: 'cp-ui-tabs';
   &-left {
     .#{$tabs} {
       &-tab {
-        border-right: 1px solid #EBEBEB;
+        border-right: 1px solid rgb(221, 221, 221);
         margin: 0 16px 0 0;
       }
 
@@ -103,7 +116,7 @@ $tabs: 'cp-ui-tabs';
   &-right {
     .#{$tabs} {
       &-tab {
-        border-left: 1px solid #EBEBEB;
+        border-left: 1px solid rgb(221, 221, 221);
         margin: 0 0 0 16px;
       }
 
@@ -121,7 +134,7 @@ $tabs: 'cp-ui-tabs';
 
   &-card {
     .#{$tabs}-tab-item {
-      border: 1px solid #EBEBEB;
+      border: 1px solid rgb(221, 221, 221);
       margin-right: 2px;
       border-radius: 3px;
 
@@ -147,6 +160,8 @@ $tabs: 'cp-ui-tabs';
 
     &-container {
       font-size: 14px;
+      display: flex;
+      width: 100%;
       line-height: $line-height-normal;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -159,8 +174,9 @@ $tabs: 'cp-ui-tabs';
     &-item {
       display: inline-block;
       height: 100%;
-      margin: 0 32px 0 0;
-      padding: 12px 16px;
+      padding: 10px 2px;
+      text-align: center;
+      flex: auto;
       box-sizing: border-box;
       position: relative;
       cursor: pointer;

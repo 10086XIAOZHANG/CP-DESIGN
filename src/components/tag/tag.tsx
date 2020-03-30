@@ -2,7 +2,7 @@ import * as React from 'react'
 import ClassNames from 'classnames'
 import { TagProps } from './interface'
 import Icon from '../icon'
-
+import TagChecked from './tagChecked'
 import './style/index.scss'
 
 const { useState } = React
@@ -43,9 +43,26 @@ const handleClose = ({ event, setVisible, onClose }: any) => {
 
 const Tag: React.FC<TagProps> & { defaultProps: Partial<TagProps> } = props => {
   const [visible, setVisible] = useState(true)
-  const { closable, color, onClose, onClick, style } = props
+  const {
+    closable,
+    color,
+    onClose,
+    onClick,
+    checked,
+    onChange = noop,
+    disabled = false,
+    type = 'primary',
+    style
+  } = props
   const classStr = getClassNames(props)
   const wrapperStyle = getStyle(color)
+  if (checked !== undefined) {
+    return (
+      <TagChecked checked={checked} onChange={onChange} disabled={disabled} type={type}>
+        {props.children}
+      </TagChecked>
+    )
+  }
   return visible ? (
     <div className={classStr} onClick={onClick} style={style}>
       <div className={`${prefixCls}-wrapper`} style={wrapperStyle}>

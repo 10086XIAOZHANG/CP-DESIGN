@@ -41,11 +41,10 @@ $pagination: 'cp-ui-pagination';
 
   &-item {
     display: inline-block;
-    min-width: 32px;
-    height: 32px;
     margin-right: 8px;
     font-family: Arial;
     line-height: 30px;
+    font-size: 18px;
     text-align: center;
     vertical-align: middle;
     list-style: none;
@@ -57,29 +56,36 @@ $pagination: 'cp-ui-pagination';
     -ms-user-select: none;
     user-select: none;
 
-    a {
-      display: flex;
-      height: 100%;
-      align-items: center;
-      justify-content: center;
+    .#{$pagination}-pointer-span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin-right: 5px;
+      border-radius: 50%;
+      background: #ccc;
+    }
+
+    .#{$pagination}-num {
+      color: $color-brand-normal;
     }
   }
 
   &-noEllipsis {
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
 
     &.#{$pagination}-item-active {
       font-weight: 500;
-      border-color: $color-brand-normal;
-      color: #fff;
-      background: $color-brand-normal;
+
+      .#{$pagination}-pointer-span {
+        border-color: $color-brand-normal;
+        background: $color-brand-normal;
+      }
     }
 
     &:hover {
-      border-color: $color-brand-normal;
-      color: #fff;
-      background: $color-brand-normal;
+      .#{$pagination}-pointer-span {
+        border-color: $color-brand-normal;
+        background: $color-brand-normal;
+      }
     }
   }
 

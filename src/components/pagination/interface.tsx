@@ -14,12 +14,6 @@ export interface PaginationProps {
   pageSize: number
   // total 数据总数 默认为0
   total: number
-  // 是否显示可以改变 pageSize 默认为false
-  showSizeChanger: boolean
-  // showQuickJumper 是否可以快速跳转到某页 默认为false
-  showQuickJumper: boolean
-  // onShowSizeChange 每页条数发生变化的回调, current当前页数， size为每页条数
-  onShowSizeChange: (current: number, size: number) => void
   // size 默认为middle
   size: SizeProps
   // className 类名
@@ -28,6 +22,8 @@ export interface PaginationProps {
   preStep?: React.ReactNode
   // next 下一步 可以自定义
   nextStep?: React.ReactNode
-  // pageShowCount 一页显示几个 默认为5
-  pageShowCount: number
+  // 是否隐藏数值
+  simple?: boolean
+  // mode 形态，可选number,pointer
+  mode?: 'number' | 'pointer'
 }

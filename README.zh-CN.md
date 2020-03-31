@@ -73,6 +73,8 @@ const App = () => (
 
 ### mobile web demo
 
+<img width="250" src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/1585658520.png" />
+
 https://10086xiaozhang.github.io/CP-DESIGN
 
 ## 安装与使用

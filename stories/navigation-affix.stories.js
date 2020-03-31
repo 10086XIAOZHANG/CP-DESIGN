@@ -5,7 +5,7 @@ import { withDocs } from 'storybook-readme'
 import AffixDemo from '../examples/affix'
 import AffixReadme from '../examples/affix/readme.md'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
-storiesOf('导航', module)
+storiesOf('Navigation 导航', module)
   .addDecorator(story => <div style={{ marginTop: '10px' }}>{story()}</div>)
   .addDecorator(withKnobs)
   .addParameters({

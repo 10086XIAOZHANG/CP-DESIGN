@@ -33,6 +33,8 @@ export interface TabsProps {
   tabBarExtraContent?: React.ReactNode
   // tabBarGutter tabs 之间的间隙
   tabBarGutter?: number
+  //TabBar 样式
+  tabTitleStyle?: React.CSSProperties
   // className
   className?: string
   // tabPosition 标签位置 默认为top

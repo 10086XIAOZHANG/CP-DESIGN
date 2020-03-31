@@ -54,7 +54,8 @@ const renderTabTitle = ({
   onChange,
   prefixCls,
   tabBarExtraContent,
-  onExtraClick
+  onExtraClick,
+  tabTitleStyle
 }: TabsProps) => {
   return (
     <div className={`${prefixCls}-tab`}>
@@ -66,6 +67,7 @@ const renderTabTitle = ({
           return (
             <div
               className={classStr}
+              style={tabTitleStyle}
               role="tab"
               onClick={() => handleTab({ key: option.key, activeKey: activeKey, onChange })}
               key={`${prefixCls}-${option.key}`}

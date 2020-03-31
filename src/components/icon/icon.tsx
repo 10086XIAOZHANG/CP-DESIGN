@@ -5,7 +5,7 @@ import './style'
 
 const noop = () => {}
 
-interface IconProps extends React.HTMLAttributes<HTMLElement> {
+export interface IconProps extends React.HTMLAttributes<HTMLElement> {
   size?: string | number
   type?: string
   prefixCls: string
@@ -51,7 +51,6 @@ const Icon: React.SFC<IconProps> & { defaultProps: Partial<IconProps> } = props 
     [`fa-rotate-${rotateDegree}`]: !!rotate,
     [`fa-flip-${flipOrder}`]: !!flip
   })
-  console.log(classStr)
   let style: React.CSSProperties = {
     color
   }

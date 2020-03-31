@@ -185,6 +185,7 @@ export default function TabsDemo() {
 | onChange           |            切换 tab 的回调            |           (value: string) => void           |       -- |  --  |
 | size               |              tabs 的大小              |         'small' , 'normal' ,'large'         | 'normal' |  --  |
 | tabBarExtraContent |   tab bar 上额外的元素显示在最右边    |               React.ReactNode               |       -- |  --  |
+| tabTitleStyle      |             tab bar 样式              |                   object                    |       -- |  --  |
 | tabBarGutter       |            tabs 之间的间隙            |                   number                    |       -- |  --  |
 | tabPosition        |          标签位置 默认为 top          |                   string                    |    ‘top’ |  --  |
 | onExtraClick       | tab bar 上额外的元素显示在最右边 点击 | (e: React.MouseEvent\<HTMLElement>) => void |       -- |  --  |

@@ -1,0 +1,84 @@
+@import '../../style/index.scss';
+
+$tab-bar: 'cp-ui-tab-bar';
+$tabs: 'cp-ui-tabs';
+
+.#{$tab-bar} {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  .#{$tabs} {
+    flex-flow: column;
+    display: flex;
+    height: 100%;
+
+    &-content {
+      flex: 1;
+
+      .#{$tabs}-tabpanel {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-tab {
+      margin: 1px 0 0 0;
+    }
+
+    &-tab-item-active {
+      border-bottom: none;
+    }
+  }
+
+  &-tab {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+
+    &-icon {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-title {
+      font-size: 10px;
+      margin: 2px 0 0 0;
+      line-height: 14px;
+      text-align: center;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    &-inner {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      overflow-y: auto;
+    }
+  }
+
+  &-hidden {
+    .#{$tabs} {
+      &-tab {
+        display: none;
+      }
+    }
+  }
+}

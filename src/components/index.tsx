@@ -10,7 +10,6 @@ import { CheckboxGroup, Checkbox } from './checkbox'
 import Accordion from './accordion'
 import Divider from './divider'
 import Toast from './toast'
-import Menu from './menu'
 import Modal from './modal'
 import Overlay from './overlay'
 import Pagination from './pagination'
@@ -24,6 +23,7 @@ import Tabs from './tabs'
 import Tag from './tag'
 import Upload from './upload'
 import ActionSheet from './action-sheet'
+import TabBar from './tab-bar'
 export {
   Icon,
   Button,
@@ -38,7 +38,6 @@ export {
   Checkbox,
   Accordion,
   Divider,
-  Menu,
   Modal,
   Overlay,
   Pagination,
@@ -52,5 +51,6 @@ export {
   Tag,
   Upload,
   Toast,
-  ActionSheet
+  ActionSheet,
+  TabBar
 }

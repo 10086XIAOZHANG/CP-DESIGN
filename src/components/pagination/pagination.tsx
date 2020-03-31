@@ -3,7 +3,7 @@ import ClassNames from 'classnames'
 import { PaginationProps } from './interface'
 import Icon from '../icon'
 import { Row, Col } from '../grid'
-import './style'
+import './style/index.scss'
 
 type Operation = 'add' | 'subtraction'
 

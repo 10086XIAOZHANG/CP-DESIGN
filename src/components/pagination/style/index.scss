@@ -71,7 +71,6 @@ $pagination: 'cp-ui-pagination';
   }
 
   &-noEllipsis {
-
     &.#{$pagination}-item-active {
       font-weight: 500;
 
@@ -119,12 +118,6 @@ $pagination: 'cp-ui-pagination';
     margin-right: 0;
   }
 
-  &-leftEllipsis,
-  &-rightEllipsis {
-    letter-spacing: 2px;
-    border-radius: 4px;
-  }
-
   .cp-ui-icon {
     font-size: 16px;
   }
@@ -133,12 +126,5 @@ $pagination: 'cp-ui-pagination';
     display: inline-block;
     margin-left: 16px;
     vertical-align: middle;
-  }
-
-  &-quick-jump {
-    .cp-ui-input {
-      margin: 0 8px;
-      width: 50px;
-    }
   }
 }

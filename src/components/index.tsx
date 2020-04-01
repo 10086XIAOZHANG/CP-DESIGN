@@ -21,7 +21,7 @@ import Step from './step'
 import Switch from './switch'
 import Tabs from './tabs'
 import Tag from './tag'
-import Upload from './upload'
+import ImagePicker from './image-picker'
 import ActionSheet from './action-sheet'
 import TabBar from './tab-bar'
 export {
@@ -49,7 +49,7 @@ export {
   Switch,
   Tabs,
   Tag,
-  Upload,
+  ImagePicker,
   Toast,
   ActionSheet,
   TabBar

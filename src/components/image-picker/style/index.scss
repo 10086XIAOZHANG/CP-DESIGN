@@ -3,38 +3,14 @@
 $upload: 'cp-ui-upload';
 
 .#{$upload} {
-  &-default {
-    .#{$upload}-image {
-      position: relative;
-      padding: 8px;
-      border: 1px solid #d9d9d9;
-      margin-top: 10px;
-      cursor: pointer;
-      transition: 2s all ease-in-out;
-      @include round(4px);
-
-      img {
-        width: 48px;
-        height: 48px;
-      }
-    }
-
-    .#{$upload}-operation {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      color: $color-text-hint;
-    }
-  }
-
   &-card {
     display: flex;
     flex-wrap: wrap;
 
     .#{$upload}-item {
       position: relative;
-      width: 104px;
-      height: 104px;
+      width: 96px;
+      height: 96px;
       background-color: #fafafa;
       text-align: center;
       cursor: pointer;
@@ -145,6 +121,18 @@ $upload: 'cp-ui-upload';
 
       &:hover {
         opacity: 0.7;
+      }
+
+      .#{$upload}-remove {
+        padding-left: 4px;
+      }
+    }
+  }
+
+  &-disabled {
+    .#{$upload}-add {
+      &:hover {
+        border-color: #d9d9d9;
       }
     }
   }

@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { PickerPanel, Row, Col } from '../../src/components'
-// import Picker from 'react-mobile-picker'
 const { useState } = React
-export default function ButtonDemo() {
+export default function PickerPanelDemo() {
   const [valueGroups, setValueGroups] = useState({
     title: 'Mr.',
     firstName: 'Micheal',
@@ -24,7 +23,7 @@ export default function ButtonDemo() {
   }
   return (
     <div>
-      <h1>Picker 选择器</h1>
+      <h1>PickerPanel 选择器</h1>
       <h3>基本</h3>
       <Row style={{ marginBottom: '1rem' }}>
         <Col span={24}>

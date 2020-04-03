@@ -1,12 +1,12 @@
-# Button 按钮
+# PickerPanel 选择器
 
-按钮的展示
+选择器的展示
 
 ## 引入组件
 
 ```jsx
 import * as React from 'react'
-import { Button, Row, Col } from 'cp-design'
+import { PickerPanel, Row, Col } from 'cp-design'
 ```
 
 ## Demo 代码

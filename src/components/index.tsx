@@ -24,7 +24,7 @@ import Tag from './tag'
 import ImagePicker from './image-picker'
 import ActionSheet from './action-sheet'
 import TabBar from './tab-bar'
-import { PickerPanel } from './picker'
+import { PickerPanel, Picker } from './picker'
 export {
   Icon,
   Button,
@@ -54,5 +54,6 @@ export {
   Toast,
   ActionSheet,
   TabBar,
-  PickerPanel
+  PickerPanel,
+  Picker
 }

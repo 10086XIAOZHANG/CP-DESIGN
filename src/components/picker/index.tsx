@@ -1,2 +1,3 @@
 import PickerPanel from './picker-panel'
-export { PickerPanel }
+import Picker from './picker'
+export { PickerPanel, Picker }

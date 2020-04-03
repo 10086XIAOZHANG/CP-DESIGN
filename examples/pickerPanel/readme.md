@@ -12,58 +12,38 @@ import { PickerPanel, Row, Col } from 'cp-design'
 ## Demo 代码
 
 ```jsx
-export default function ButtonDemo() {
-  const onClick = () => {}
+const { useState } = React
+export default function PickerPanelDemo() {
+  const [valueGroups, setValueGroups] = useState({
+    title: 'Mr.',
+    firstName: 'Micheal',
+    secondName: 'Jordan'
+  })
+
+  const optionGroups = {
+    title: ['Mr.', 'Mrs.', 'Ms.', 'Dr.'],
+    firstName: ['John', 'Micheal', 'Elizabeth'],
+    secondName: ['Lennon', 'Jackson', 'Jordan', 'Legend', 'Taylor']
+  }
+
+  const handleChange = (name: string, value: string) => {
+    console.log(name, value)
+    setValueGroups({
+      ...valueGroups,
+      [name]: value
+    })
+  }
   return (
     <div>
+      <h1>PickerPanel 选择器</h1>
+      <h3>基本</h3>
       <Row style={{ marginBottom: '1rem' }}>
         <Col span={24}>
-          <Button onClick={onClick}>default</Button>
-        </Col>
-      </Row>
-      <Row style={{ marginBottom: '1rem' }}>
-        <Col span={24}>
-          <Button disabled>default disabled</Button>
-        </Col>
-      </Row>
-      <Row style={{ marginBottom: '1rem' }}>
-        <Col span={24}>
-          <Button type="primary" onClick={onClick}>
-            primary
-          </Button>
-        </Col>
-      </Row>
-      <Row style={{ marginBottom: '1rem' }}>
-        <Col span={24}>
-          <Button type="primary" onClick={onClick} disabled>
-            primary disabled
-          </Button>
-        </Col>
-      </Row>
-      <Row style={{ marginBottom: '1rem' }}>
-        <Col span={24}>
-          <Button onClick={onClick} type="warning">
-            warning
-          </Button>
-        </Col>
-      </Row>
-      <Row style={{ marginBottom: '1rem' }}>
-        <Col span={24}>
-          <Button onClick={onClick} type="warning" disabled>
-            warning disabled
-          </Button>
-        </Col>
-      </Row>
-      <Row style={{ marginBottom: '1rem' }}>
-        <Col span={24}>
-          <Button onClick={onClick} loading>
-            loading button
-          </Button>
-        </Col>
-      </Row>
-      <Row style={{ marginBottom: '1rem' }}>
-        <Col span={24}>
-          <Button>with icon</Button>
+          <PickerPanel
+            optionGroups={optionGroups}
+            valueGroups={valueGroups}
+            onChange={handleChange}
+          />
         </Col>
       </Row>
     </div>
@@ -73,14 +53,13 @@ export default function ButtonDemo() {
 
 ## Api
 
-| 属性      |                                                       说明                                                       |         类型         | 默认值 | 可选 |
-| --------- | :--------------------------------------------------------------------------------------------------------------: | :------------------: | -----: | :--: |
-| type      |                                按钮类型，可选值为 primary/ghost/warning 或者不设                                 |        string        |     -- |  --  |
-| size      |                                         按钮大小，可选值为 large、small                                          |        string        |  large |  --  |
-| disabled  |                                                     设置禁用                                                     |       boolean        |     -- |  --  |
-| icon      | 可以是 Icon 组件里内置的某个 icon 的 type 值，也可以是任意合法的 ReactElement (注意: loading 设置后此项设置失效) | string/React.Element |     -- |  --  |
-| prefixCls |                                            class 前缀 默认 cp-ui-btn                                             |        string        |     -- |  --  |
-| className |                                                     样式类名                                                     |      fun():void      |     -- |  --  |
-| onClick   |                                              点击按钮的点击回调函数                                              |     fun() : void     |     -- |  --  |
-| style     |                                                    自定义样式                                                    |        Object        |     -- |  --  |
-| loading   |                                                 是否出现正在加载                                                 |       boolean        |     -- |  --  |
+| 属性         |                    说明                    |                 类型                  | 默认值 | 可选 |
+| ------------ | :----------------------------------------: | :-----------------------------------: | -----: | :--: |
+| optionGroups |         数据集合 key 对应数组集合          |                object                 |     -- |  --  |
+| valueGroups  | value 对象类型,key 和数据集合中 key 相对应 |                object                 |     -- |  --  |
+| onChange     |                选中后的回调                | (name: string, value: string) => void |     -- |  --  |
+| prefixCls    |     class 前缀 默认 cp-ui-picker-panel     |                string                 |     -- |  --  |
+| className    |                  样式类名                  |              fun():void               |     -- |  --  |
+| onClick      |                点击回调函数                | (name: string, value: string) => void |     -- |  --  |
+| itemHeight   |                 子项行高度                 |                number                 |     36 |  --  |
+| height       |                  弹层高度                  |                number                 |    216 |  --  |

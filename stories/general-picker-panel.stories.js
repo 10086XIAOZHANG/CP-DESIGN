@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import PickerDemo from '../examples/picker'
-import PickerReadme from '../examples/picker/readme.md'
+import PickerPanelDemo from '../examples/pickerPanel'
+import PickerPanelReadme from '../examples/pickerPanel/readme.md'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
 
 // Globablly
@@ -12,11 +12,11 @@ storiesOf('通用', module)
   .addDecorator(withKnobs)
   .addParameters({
     readme: {
-      sidebar: PickerReadme,
+      sidebar: PickerPanelReadme,
       codeTheme: 'github'
     },
-    viewport: { defaultViewport: 'iphone5' }
+    viewport: { defaultViewport: 'iphone6' }
   })
-  .add('Picker 选择器', () => {
-    return <PickerDemo />
+  .add('PickerPanel 选择器', () => {
+    return <PickerPanelDemo />
   })

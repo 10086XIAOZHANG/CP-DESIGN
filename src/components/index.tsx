@@ -26,6 +26,7 @@ import ActionSheet from './action-sheet'
 import TabBar from './tab-bar'
 import { PickerPanel, Picker } from './picker'
 import SegmentedControl from './segmented-control'
+import Popover from './popover'
 export {
   Icon,
   Button,
@@ -57,5 +58,6 @@ export {
   TabBar,
   PickerPanel,
   Picker,
-  SegmentedControl
+  SegmentedControl,
+  Popover
 }

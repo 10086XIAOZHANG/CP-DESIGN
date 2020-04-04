@@ -1,0 +1,74 @@
+@import './base';
+
+.#{$popover} {
+  &-inner {
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.21) 0 0 2px;
+    border-radius: 3px;
+    overflow: hidden;
+
+    &-wrapper {
+      position: relative;
+      background-color: rgb(255, 255, 255);
+    }
+  }
+
+  &-item {
+    padding: 0 8px;
+
+    &-container {
+      position: relative;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      height: 39px;
+      box-sizing: border-box;
+      padding: 0 8px;
+    }
+
+    &:not(:first-child) {
+      .#{$popover}-item-container {
+        border-top: none;
+      }
+    }
+
+    &-active {
+      .#{$popover}-item-container {
+        border-top: 0;
+      }
+    }
+
+    &.#{$popover}-item-active+.#{$popover}-item .#{$popover}-item-container {
+      border-top: 0;
+    }
+
+    &.#{$popover}-item-active {
+      background-color: #ddd;
+    }
+
+    &.#{$popover}-item-active.#{$popover}-item-fix-active-arrow {
+      position: relative;
+    }
+
+    &.#{$popover}-item-disabled {
+      color: $color-text-disabled;
+
+      &.#{$popover}-item-active {
+        background-color: transparent;
+      }
+    }
+
+    &-icon {
+      margin-right: 8px;
+      width: 18px;
+      height: 18px;
+    }
+
+    &-content {
+      line-height: 18px;
+      height: 18px;
+    }
+  }
+}

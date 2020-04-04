@@ -13,6 +13,7 @@
     "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "emitDecoratorMetadata": true,
     "baseUrl": "src",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["*"]
     }

@@ -4,7 +4,16 @@
 
 English | [简体中文](./README.zh-CN.md)
 
-![组件截图](https://upload-images.jianshu.io/upload_images/8731009-8897ba5d5445e215.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<p align="center">
+  <table>
+    <tr>
+        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-badge.jpg">badge </center></td>
+        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-btn.jpg">button</center></td>
+         <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-icon.jpg">icon</center></td>
+    </tr>
+
+</table>
+</p>
 
 # CP Design Mobile
 

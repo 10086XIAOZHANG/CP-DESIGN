@@ -12,7 +12,8 @@ interface TogglePickerProps {
 const defaultProps = {
   onVisibleChange: () => {},
   okText: '确认',
-  dismissText: '取消'
+  dismissText: '取消',
+  title: ''
 }
 
 const getClassNames = () => {
@@ -26,7 +27,7 @@ const togglePicker = (props: PickerProps, { isPickerShow, setIsPickerShow }: Tog
   setIsPickerShow(isPickerShow)
   onVisibleChange && onVisibleChange(isPickerShow)
 }
-const handleHeaderLeft = (
+const handleHeaderRight = (
   e: React.MouseEvent,
   props: PickerProps,
   setIsPickerShow: React.Dispatch<React.SetStateAction<boolean>>,
@@ -37,7 +38,7 @@ const handleHeaderLeft = (
   onOk && onOk(valueGroups)
   togglePicker(props, { isPickerShow: false, setIsPickerShow })
 }
-const handleHeaderRight = (
+const handleHeaderLeft = (
   e: React.MouseEvent,
   props: PickerProps,
   setIsPickerShow: React.Dispatch<React.SetStateAction<boolean>>
@@ -49,7 +50,7 @@ const handleHeaderRight = (
 }
 //Picker
 const Picker: React.FC<PickerProps> & { defaultProps: Partial<PickerProps> } = props => {
-  const { okText, dismissText, valueGroups, data, onChange } = props
+  const { okText, dismissText, valueGroups, data, onChange, title } = props
   const [isPickerShow, setIsPickerShow] = useState<boolean>(false)
 
   const classStr = getClassNames()
@@ -71,20 +72,21 @@ const Picker: React.FC<PickerProps> & { defaultProps: Partial<PickerProps> } = p
         <header>
           <a
             href="#"
+            className={`${prefixCls}-header-left`}
             onClick={e => {
-              handleHeaderLeft(e, props, setIsPickerShow, valueGroups)
-            }}
-          >
-            {okText}
-          </a>
-          <a
-            href="#"
-            className={`${prefixCls}-header-right`}
-            onClick={e => {
-              handleHeaderRight(e, props, setIsPickerShow)
+              handleHeaderLeft(e, props, setIsPickerShow)
             }}
           >
             {dismissText}
+          </a>
+          <div>{title}</div>
+          <a
+            href="#"
+            onClick={e => {
+              handleHeaderRight(e, props, setIsPickerShow, valueGroups)
+            }}
+          >
+            {okText}
           </a>
         </header>
         <PickerPanel optionGroups={data} valueGroups={valueGroups} onChange={onChange} />

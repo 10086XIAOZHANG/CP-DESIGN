@@ -144,7 +144,8 @@ export default function PickerDemo() {
 | prefixCls       |        class 前缀 默认 cp-ui-picker        |                string                 |     -- |  --  |
 | className       |                  样式类名                  |              fun():void               |     -- |  --  |
 | onVisibleChange |          当显隐状态变化时回调函数          |      (visible: boolean) => void       |     -- |  --  |
-| okText          |                 选中的文案                 |          React.ReactElement           |     -- |  --  |
-| dismissText     |               取消选中的文案               |          React.ReactElement           |     -- |  --  |
+| okText          |                 选中的文案                 |       string,React.ReactElement       |     -- |  --  |
+| dismissText     |               取消选中的文案               |       string,React.ReactElement       |     -- |  --  |
+| title           |                   大标题                   |       string,React.ReactElement       |     -- |  --  |
 | onOk            |            点击选中时执行的回调            |        (value: object) => void        |     -- |  --  |
 | onDismiss       |            点击取消时执行的回调            |              () => void               |     -- |  --  |

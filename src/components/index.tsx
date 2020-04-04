@@ -25,6 +25,7 @@ import ImagePicker from './image-picker'
 import ActionSheet from './action-sheet'
 import TabBar from './tab-bar'
 import { PickerPanel, Picker } from './picker'
+import SegmentedControl from './segmented-control'
 export {
   Icon,
   Button,
@@ -55,5 +56,6 @@ export {
   ActionSheet,
   TabBar,
   PickerPanel,
-  Picker
+  Picker,
+  SegmentedControl
 }

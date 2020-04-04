@@ -1,0 +1,63 @@
+@import '../../style/index.scss';
+
+$cp-ui-segment: 'cp-ui-segment';
+
+.#{$cp-ui-segment} {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  min-height: 27px;
+  opacity: 1;
+
+  &-disabled {
+    opacity: 0.5;
+  }
+
+  &-item {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    color: $color-brand-normal;
+    font-size: $font-size-normal;
+    line-height: $line-height-normal;
+    transition: background 0.2s;
+    position: relative;
+    border: 1px solid $color-brand-normal;
+    width: 100%;
+    box-sizing: border-box;
+    border-left-width: 0;
+    cursor: pointer;
+
+    &-tintcolor {
+      border-color: $color-brand-normal;
+    }
+
+    &:first-child {
+      border-left-width: 1px;
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+    &-selected {
+      background: $color-brand-normal;
+      color: $color-shadow-normal;
+    }
+
+    &-active {
+      .#{$cp-ui-segment}-item-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0.1;
+        transition: background 0.2s;
+        background-color: $color-brand-normal;
+      }
+    }
+  }
+}

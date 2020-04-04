@@ -15,6 +15,8 @@
 </table>
 </p>
 
+![项目截图](https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/CP.png)
+
 # CP Design Mobile
 
 [![](https://img.shields.io/travis/ant-design/ant-design-mobile.svg?style=flat-square)](https://10086xiaozhang.github.io/CP-DESIGN)

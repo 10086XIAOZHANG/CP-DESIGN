@@ -4,16 +4,7 @@
 
 [English](./README.md) | 简体中文
 
-<p align="center">
-  <table>
-    <tr>
-        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-badge.jpg">badge </center></td>
-        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-btn.jpg">button</center></td>
-         <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-icon.jpg">icon</center></td>
-    </tr>
-
-</table>
-</p>
+![组件截图](https://upload-images.jianshu.io/upload_images/8731009-8897ba5d5445e215.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 # CP Design Mobile
 
@@ -73,7 +64,7 @@ const App = () => (
 
 ### mobile web demo
 
-<img width="250" src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/1585658520.png" />
+![手机扫码查看](https://upload-images.jianshu.io/upload_images/8731009-b32dc8c39fcdc99c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 https://10086xiaozhang.github.io/CP-DESIGN
 

@@ -100,16 +100,15 @@ $popover-arrow-width: 7 * $hd;
   &-placement-bottomRight &-arrow {
     right: 8px;
   }
-}
-
-// Arrows
-.#{$popover}-arrow {
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  background-color: rgb(255, 255, 255);
-  transform: rotate(45deg);
-  z-index: 0;
-  box-shadow: rgba(0, 0, 0, 0.21) 0 0 2px;
-  border-radius: 1px;
+  // Arrows
+  &-arrow {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(45deg);
+    z-index: 0;
+    box-shadow: rgba(0, 0, 0, 0.21) 0 0 2px;
+    border-radius: 1px;
+  }
 }

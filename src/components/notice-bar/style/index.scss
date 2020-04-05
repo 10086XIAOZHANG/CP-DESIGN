@@ -1,0 +1,43 @@
+$cp-ui-notice: 'cp-ui-notice-bar';
+@import '../../style/index.scss';
+
+.#{$cp-ui-notice} {
+  background-color: rgba(132, 130, 129, 0.02);
+  height: 36px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 36px;
+  color: $color-brand-normal;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  &-content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: auto 15px;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-icon {
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+
+    & + div {
+      margin-left: 5px;
+    }
+  }
+
+  &-operation {
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+  }
+}

@@ -6,7 +6,7 @@ import DividerDemo from '../examples/divider'
 import DividerReadme from '../examples/divider/readme.md'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
 
-storiesOf('数据显示', module)
+storiesOf('Data Display 数据显示', module)
   .addDecorator(story => <div style={{ marginTop: '10px' }}>{story()}</div>)
   .addDecorator(withKnobs)
   .addParameters({

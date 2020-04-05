@@ -2,8 +2,8 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
 
-import BadgeDemo from '../examples/tag'
-import BadgeReadme from '../examples/tag/readme.md'
+import NoticeBarDemo from '../examples/noticeBar'
+import NoticeBarReadme from '../examples/noticeBar/readme.md'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
 
 storiesOf('Data Display 数据显示', module)
@@ -11,11 +11,11 @@ storiesOf('Data Display 数据显示', module)
   .addDecorator(withKnobs)
   .addParameters({
     readme: {
-      sidebar: BadgeReadme,
+      sidebar: NoticeBarReadme,
       codeTheme: 'github'
     },
     viewport: { defaultViewport: 'iphone6' }
   })
-  .add('Tag 标签', () => {
-    return <BadgeDemo />
+  .add('NoticeBar 通告栏', () => {
+    return <NoticeBarDemo />
   })

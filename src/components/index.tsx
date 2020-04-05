@@ -27,6 +27,7 @@ import TabBar from './tab-bar'
 import { PickerPanel, Picker } from './picker'
 import SegmentedControl from './segmented-control'
 import Popover from './popover'
+import NoticeBar from './notice-bar'
 export {
   Icon,
   Button,
@@ -59,5 +60,6 @@ export {
   PickerPanel,
   Picker,
   SegmentedControl,
-  Popover
+  Popover,
+  NoticeBar
 }

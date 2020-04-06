@@ -1,0 +1,92 @@
+@import '../../style/index.scss';
+
+$modal: 'cp-ui-list-view';
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+}
+
+.pullDownTip,
+.pullUpTip {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  position: relative;
+
+  img {
+    width: auto;
+    height: 16px;
+    vertical-align: -4px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+}
+
+.pullDownTip {
+  margin-top: -30px;
+}
+
+.loading {
+  animation: myrotate 1s infinite linear;
+}
+
+@keyframes myrotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.back_top {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+  display: none;
+
+  i {
+    font-size: 44px;
+    color: #1296db;
+  }
+
+  img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.back_top.show {
+  display: block;
+}
+
+.back_top.move {
+  display: block;
+  animation: move 0.3s;
+  bottom: 100%;
+}
+
+@keyframes move {
+  0% {
+    bottom: 10px;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}

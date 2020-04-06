@@ -28,6 +28,7 @@ import { PickerPanel, Picker } from './picker'
 import SegmentedControl from './segmented-control'
 import Popover from './popover'
 import NoticeBar from './notice-bar'
+import SwipeAction from './swipe-action'
 export {
   Icon,
   Button,
@@ -61,5 +62,6 @@ export {
   Picker,
   SegmentedControl,
   Popover,
-  NoticeBar
+  NoticeBar,
+  SwipeAction
 }

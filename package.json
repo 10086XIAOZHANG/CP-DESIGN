@@ -1,6 +1,6 @@
 {
   "name": "cp-design",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "description": "A configurable Mobile UI by React Hooks",
   "main": "lib/index.js",
   "module": "es/index.js",

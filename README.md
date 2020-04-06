@@ -73,6 +73,43 @@ const App = () => (
 )
 ```
 
+## Componets
+
+- [x] Icon,
+- [x] Button,
+- [x] Input,
+- [x] Row,
+- [x] Col,
+- [x] Affix,
+- [x] Avatar,
+- [x] Badge,
+- [x] Card,
+- [x] CheckboxGroup,
+- [x] Checkbox,
+- [x] Accordion,
+- [x] Divider,
+- [x] Modal,
+- [x] Overlay,
+- [x] Pagination,
+- [x] Progress,
+- [x] Radio,
+- [x] Slider,
+- [x] Step,
+- [x] Spin,
+- [x] Switch,
+- [x] Tabs,
+- [x] Tag,
+- [x] ImagePicker,
+- [x] Toast,
+- [x] ActionSheet,
+- [x] TabBar,
+- [x] PickerPanel,
+- [x] Picker,
+- [x] SegmentedControl,
+- [x] Popover,
+- [x] NoticeBar,
+- [x] SwipeAction
+
 ## Demo
 
 ### mobile web demo

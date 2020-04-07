@@ -3,51 +3,48 @@
 $swipe-action: 'cp-ui-swipe-action';
 
 .#{$swipe-action} {
-    * {
-        touch-action: none;
+  * {
+    touch-action: none;
+  }
+
+  &.#{$swipe-action}-wrap {
+    width: 100%;
+    font-size: 14px;
+    position: relative;
+
+    .#{$swipe-action}-content {
+      position: relative;
+      z-index: 10;
+      display: block;
     }
 
-    &.#{$swipe-action}-wrap {
-        width: 100%;
-        font-size: 14px;
-        position: relative;
+    .#{$swipe-action}-button {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 70px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: rgb(221, 221, 221);
+      height: 100%;
+      justify-content: center;
 
+      &:last-child {
+        border-right: solid;
+        border-width: 1px;
+        background-color: red;
+        border-color: #fff;
+      }
 
-
-        .#{$swipe-action}-content {
-            position: relative;
-            z-index: 10;
-            display: block;
-            height: 100%;
-        }
-
-        .#{$swipe-action}-button {
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 70px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: rgb(221, 221, 221);
-            height: 100%;
-            justify-content: center;
-
-            &:last-child {
-                border-right: solid;
-                border-width: 1px;
-                background-color: red;
-                border-color: #fff;
-            }
-
-            &:first-child {
-                border: none;
-            }
-        }
-
-        +.#{$swipe-action}-wrap {
-            border-top: 1px solid #cfcfcf;
-        }
+      &:first-child {
+        border: none;
+      }
     }
+
+    + .#{$swipe-action}-wrap {
+      border-top: 1px solid #cfcfcf;
+    }
+  }
 }

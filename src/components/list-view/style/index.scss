@@ -3,7 +3,7 @@
 $modal: 'cp-ui-list-view';
 
 * {
-  touch-action: none;
+  touch-action: initial;
 }
 
 .wrapper {
@@ -12,13 +12,13 @@ $modal: 'cp-ui-list-view';
   bottom: 0;
   width: 100%;
   overflow-y: auto;
-  // -webkit-overflow-scrolling: touch;
-  // -ms-overflow-style: none;
-  // overflow: -moz-scrollbars-none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
 
-  // &::-webkit-scrollbar {
-  //   width: 0 !important;
-  // }
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
 }
 
 .pullDownTip,

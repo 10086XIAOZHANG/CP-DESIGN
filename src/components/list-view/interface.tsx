@@ -15,9 +15,10 @@ export interface ListViewProps {
   pullDownRefresh?: () => void
   pullUpLoad?: () => Promise<any>
   noMore: boolean
-  noMoreTip?: string
+  noMoreTip?: string | React.ReactElement
   children?: React.ReactElement
+  listViewHandleRefs?: React.MutableRefObject<ListViewHandlesProps | null>
 }
 export interface ListViewHandlesProps {
-  pullDownRefreshRenderData?: () => void
+  pullDownRefreshRenderData: () => void
 }

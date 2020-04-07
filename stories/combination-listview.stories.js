@@ -14,7 +14,7 @@ storiesOf('Combination 结合', module)
       sidebar: ListViewReadme,
       codeTheme: 'github'
     },
-    viewport: { defaultViewport: 'iphone5' }
+    viewport: { defaultViewport: 'iphone6' }
   })
   .add('ListView 长列表', () => {
     return <ListViewDemo />

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ListViewProps, PullDownRefreshProps } from './interface'
 import './style'
 import Icon from '../icon'
-const { useState, useRef, useEffect } = React
+const { useState, useRef, useEffect, useImperativeHandle } = React
 const timeout = (delay: number) => new Promise(resolve => setTimeout(resolve, delay))
 interface ScrollHandleProps {
   listViewStatusRefs: React.MutableRefObject<{
@@ -47,7 +47,7 @@ interface TouchMoveHandleProps {
 const defaultProps = {
   noMore: false,
   backTop: false,
-  noMoreTip: '我是有底线的'
+  noMoreTip: '已经到底了~'
 }
 interface TouchEndHandleProps {
   setTranslateY: React.Dispatch<React.SetStateAction<number>>
@@ -273,7 +273,10 @@ const _pullUpLoad = async (
   }
 }
 
-const ListView: React.SFC<ListViewProps> & { defaultProps: Partial<ListViewProps> } = props => {
+const ListView: React.SFC<ListViewProps> & {
+  defaultProps: Partial<ListViewProps>
+} = props => {
+  const { pullDownRefresh, pullUpLoad, children, noMore, noMoreTip, listViewHandleRefs } = props
   const [translateY, setTranslateY] = useState(0)
   const [move, setMove] = useState(false)
   const [pullUpHide, setPullUpHide] = useState(true)
@@ -297,18 +300,13 @@ const ListView: React.SFC<ListViewProps> & { defaultProps: Partial<ListViewProps
     }
   }, [props.children])
 
-  useEffect(() => {
-    if (!wrapperElRef.current) return
-    wrapperElRef.current.addEventListener('scroll', _onSrcoll, false)
-    return () => {
-      if (!wrapperElRef.current) return
-      wrapperElRef.current.removeEventListener('scroll', _onSrcoll)
+  useImperativeHandle(listViewHandleRefs, () => {
+    return {
+      pullDownRefreshRenderData: () => {
+        _pullDownRefresh(props, { setMove, setTranslateY, setPullDownStatus, listViewStatusRefs })
+      }
     }
-  }, [wrapperElRef.current])
-  const _onSrcoll = (e: any) => {
-    scrollHandle(e, props, { listViewStatusRefs, pullUpStatus, pullUpHide, setPullUpStatus })
-  }
-  const { pullDownRefresh, pullUpLoad, children, noMore, noMoreTip } = props
+  })
 
   return (
     <React.Fragment>

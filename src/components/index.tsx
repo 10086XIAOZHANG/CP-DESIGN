@@ -29,6 +29,7 @@ import SegmentedControl from './segmented-control'
 import Popover from './popover'
 import NoticeBar from './notice-bar'
 import SwipeAction from './swipe-action'
+import ListView from './list-view'
 export {
   Icon,
   Button,
@@ -63,5 +64,6 @@ export {
   SegmentedControl,
   Popover,
   NoticeBar,
-  SwipeAction
+  SwipeAction,
+  ListView
 }

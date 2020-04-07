@@ -143,6 +143,7 @@
     "sass-loader": "^7.0.3"
   },
   "dependencies": {
+    "better-scroll": "^1.15.2",
     "classnames": "^2.2.6",
     "rc-checkbox": "^2.1.8",
     "rc-resize-observer": "^0.1.3",

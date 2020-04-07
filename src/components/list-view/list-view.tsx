@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { ListViewProps } from './interface'
+import { ListViewProps, PullDownRefreshProps } from './interface'
 import './style'
+import Icon from '../icon'
 const { useState, useRef, useEffect } = React
 const timeout = (delay: number) => new Promise(resolve => setTimeout(resolve, delay))
 interface ScrollHandleProps {
@@ -42,19 +43,7 @@ interface TouchMoveHandleProps {
   setMove: React.Dispatch<React.SetStateAction<boolean>>
   setTranslateY: React.Dispatch<React.SetStateAction<number>>
 }
-interface PullDownRefreshProps {
-  setMove: React.Dispatch<React.SetStateAction<boolean>>
-  setTranslateY: React.Dispatch<React.SetStateAction<number>>
-  setPullDownStatus: React.Dispatch<React.SetStateAction<number>>
-  listViewStatusRefs: React.MutableRefObject<{
-    scrollTop: number
-    touchX: number
-    touchY: number
-    time: number
-    type: string
-    pullDownDoneBacking: boolean
-  }>
-}
+
 const defaultProps = {
   noMore: false,
   backTop: false,
@@ -80,7 +69,7 @@ interface TouchEndHandleProps {
   setPullDownStatus: React.Dispatch<React.SetStateAction<number>>
 }
 const scrollHandle = (
-  e: React.UIEvent<HTMLDivElement>,
+  e: any,
   props: ListViewProps,
   { listViewStatusRefs, pullUpStatus, pullUpHide, setPullUpStatus }: ScrollHandleProps
 ) => {
@@ -169,7 +158,6 @@ const touchMoveHandle = (
      * */
     setTranslateY(moveY * 0.3)
   }
-  e.preventDefault()
 }
 
 const touchEndHandle = (
@@ -284,6 +272,7 @@ const _pullUpLoad = async (
     setPullUpStatus(3)
   }
 }
+
 const ListView: React.SFC<ListViewProps> & { defaultProps: Partial<ListViewProps> } = props => {
   const [translateY, setTranslateY] = useState(0)
   const [move, setMove] = useState(false)
@@ -301,26 +290,6 @@ const ListView: React.SFC<ListViewProps> & { defaultProps: Partial<ListViewProps
   const innerElRef = useRef<HTMLDivElement | null>(null)
   const wrapperElRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
-    //内容高度小于滚动区域高度时隐藏底部的提示信息（判定为数据少不需要显示底部信息）
-    if (innerElRef.current && wrapperElRef.current) {
-      setPullUpHide(innerElRef.current.clientHeight < wrapperElRef.current.clientHeight)
-      //解决ios和安卓的页面自带滚动回弹
-      wrapperElRef.current.addEventListener(
-        'touchmove',
-        e => {
-          touchMoveHandle(e, props, {
-            move,
-            listViewStatusRefs,
-            pullUpHide,
-            setMove,
-            setTranslateY
-          })
-        },
-        { passive: false }
-      )
-    }
-  }, [])
-  useEffect(() => {
     //内容发生变化时重新计算 pullUpHide
     if (innerElRef.current && wrapperElRef.current) {
       const pullUpHide = innerElRef.current.clientHeight < wrapperElRef.current.clientHeight
@@ -328,95 +297,111 @@ const ListView: React.SFC<ListViewProps> & { defaultProps: Partial<ListViewProps
     }
   }, [props.children])
 
+  useEffect(() => {
+    if (!wrapperElRef.current) return
+    wrapperElRef.current.addEventListener('scroll', _onSrcoll, false)
+    return () => {
+      if (!wrapperElRef.current) return
+      wrapperElRef.current.removeEventListener('scroll', _onSrcoll)
+    }
+  }, [wrapperElRef.current])
+  const _onSrcoll = (e: any) => {
+    scrollHandle(e, props, { listViewStatusRefs, pullUpStatus, pullUpHide, setPullUpStatus })
+  }
   const { pullDownRefresh, pullUpLoad, children, noMore, noMoreTip } = props
 
   return (
-    <div
-      className={'wrapper'}
-      ref={el => (wrapperElRef.current = el)}
-      onScroll={e => {
-        scrollHandle(e, props, { listViewStatusRefs, pullUpStatus, pullUpHide, setPullUpStatus })
-      }}
-      onTouchStart={e => {
-        touchStartHandle(e, { wrapperElRef, setMove, listViewStatusRefs })
-      }}
-      onTouchEnd={e => {
-        touchEndHandle(e, props, {
-          listViewStatusRefs,
-          move,
-          translateY,
-          pullUpHide,
-          pullDownStatus,
-          pullUpStatus,
-          setTranslateY,
-          setMove,
-          setPullUpStatus,
-          setPullDownStatus
-        })
-      }}
-    >
+    <React.Fragment>
       <div
-        style={{
-          transform: `translateY(${translateY}px)`,
-          transition: move ? '' : 'transform .3s ease'
+        className={'wrapper'}
+        ref={wrapperElRef}
+        onTouchStart={e => {
+          touchStartHandle(e, { wrapperElRef, setMove, listViewStatusRefs })
+        }}
+        onTouchMove={e => {
+          touchMoveHandle(e, props, {
+            move,
+            listViewStatusRefs,
+            pullUpHide,
+            setMove,
+            setTranslateY
+          })
+        }}
+        onTouchEnd={e => {
+          touchEndHandle(e, props, {
+            listViewStatusRefs,
+            move,
+            translateY,
+            pullUpHide,
+            pullDownStatus,
+            pullUpStatus,
+            setTranslateY,
+            setMove,
+            setPullUpStatus,
+            setPullDownStatus
+          })
+        }}
+        onScroll={e => {
+          scrollHandle(e, props, { listViewStatusRefs, pullUpStatus, pullUpHide, setPullUpStatus })
         }}
       >
-        {pullDownRefresh && (
-          <div className="pullDownTip">
-            {pullDownStatus !== 0 ? (
-              <div>
-                {pullDownStatus === 1 && (
-                  <img className="loading" src={require('./imgs/loading.png')} />
-                )}
-                {pullDownStatus === 2 && <img src={require('./imgs/success.png')} />}
-                {pullDownStatus === 3 && <img src={require('./imgs/fail.png')} />}
-                <span>
-                  {pullDownStatus === 1 && '正在刷新'}
-                  {pullDownStatus === 2 && '刷新成功'}
-                  {pullDownStatus === 3 && '刷新失败'}
-                </span>
-              </div>
-            ) : (
-              <div>
-                <img
-                  src={require('./imgs/pull.png')}
-                  style={{
-                    transform: `rotate(${translateY > 60 ? 180 : 0}deg)`
-                  }}
-                />
-                <span>{translateY > 60 ? '释放' : '下拉'}刷新</span>
-              </div>
-            )}
-          </div>
-        )}
-        <div ref={el => (innerElRef.current = el)}>{children}</div>
-        {!pullUpHide && pullUpLoad && (
-          <div className="pullUpTip">
-            {noMore ? (
-              noMoreTip
-            ) : pullUpStatus === 0 || pullUpStatus === 1 ? (
-              <div>
-                <img className="loading" src={require('./imgs/loading.png')} />
-                <span>加载中</span>
-              </div>
-            ) : pullUpStatus === 2 ? (
-              <div>
-                <img src={require('./imgs/success.png')} />
-                <span>加载成功</span>
-              </div>
-            ) : pullUpStatus === 3 ? (
-              <div>
-                <img src={require('./imgs/fail.png')} />
-                <span>加载失败</span>
-              </div>
-            ) : (
-              ''
-            )}
-          </div>
-        )}
+        <div
+          style={{
+            transform: `translateY(${translateY}px)`,
+            transition: move ? '' : 'transform .3s ease'
+          }}
+        >
+          {pullDownRefresh && (
+            <div className="pullDownTip">
+              {pullDownStatus !== 0 ? (
+                <div>
+                  {pullDownStatus === 1 && <Icon type="spinner" spin size={18} />}
+                  {pullDownStatus === 2 && <Icon type={'check-circle'} size={18} />}
+                  {pullDownStatus === 3 && <Icon type={'times-circle'} size={18} />}
+                  <span>
+                    {pullDownStatus === 1 && '正在刷新'}
+                    {pullDownStatus === 2 && '刷新成功'}
+                    {pullDownStatus === 3 && '刷新失败'}
+                  </span>
+                </div>
+              ) : (
+                <div>
+                  <Icon type="arrow-down" size={18} />
+                  <span>{translateY > 60 ? '释放' : '下拉'}刷新</span>
+                </div>
+              )}
+            </div>
+          )}
+          <div ref={innerElRef}>{children}</div>
+          {!pullUpHide && pullUpLoad && (
+            <div className="pullUpTip">
+              {noMore ? (
+                noMoreTip
+              ) : pullUpStatus === 0 || pullUpStatus === 1 ? (
+                <div>
+                  <Icon type="spinner" spin size={18} />
+                  <span>加载中</span>
+                </div>
+              ) : pullUpStatus === 2 ? (
+                <div>
+                  <Icon type={'check-circle'} size={18} />
+                  <span>加载成功</span>
+                </div>
+              ) : pullUpStatus === 3 ? (
+                <div>
+                  <Icon type={'times-circle'} size={18} />
+                  <span>加载失败</span>
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 ListView.defaultProps = defaultProps
+
 export default ListView

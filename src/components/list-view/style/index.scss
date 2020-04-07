@@ -2,19 +2,23 @@
 
 $modal: 'cp-ui-list-view';
 
+* {
+  touch-action: none;
+}
+
 .wrapper {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
+  overflow-y: auto;
+  // -webkit-overflow-scrolling: touch;
+  // -ms-overflow-style: none;
+  // overflow: -moz-scrollbars-none;
 
-  &::-webkit-scrollbar {
-    width: 0 !important;
-  }
+  // &::-webkit-scrollbar {
+  //   width: 0 !important;
+  // }
 }
 
 .pullDownTip,

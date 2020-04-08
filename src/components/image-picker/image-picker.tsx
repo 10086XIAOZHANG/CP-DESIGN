@@ -228,7 +228,7 @@ const renderFiles = (props: ImagePickerProps) => {
   })
 }
 
-const ImagePicker: React.SFC<ImagePickerProps> & {
+const ImagePicker: React.FC<ImagePickerProps> & {
   defaultProps: Partial<ImagePickerProps>
 } = props => {
   const classStr = getClassNames(props)

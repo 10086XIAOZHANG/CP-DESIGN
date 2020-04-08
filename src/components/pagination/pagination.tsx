@@ -114,7 +114,7 @@ const renderPointerContainerData = (props: PaginationProps) => {
 const renderPointerData = (props: PaginationProps) => {
   return <ul className={`${prefixCls}-wrap `}>{renderPointerContainerData(props)}</ul>
 }
-const Pagination: React.SFC<PaginationProps> & {
+const Pagination: React.FC<PaginationProps> & {
   defaultProps: Partial<PaginationProps>
 } = props => {
   const classStr = getClassNames(props)

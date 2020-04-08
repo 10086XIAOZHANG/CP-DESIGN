@@ -62,7 +62,7 @@ const onMark = (closeOnClickModal: boolean) => {
   }
   closeActionSheet()
 }
-const ActionSheet: React.SFC<ActionSheetProps> & {
+const ActionSheet: React.FC<ActionSheetProps> & {
   defaultProps: Partial<ActionSheetProps>
 } = props => {
   const { cancelText, onCancel, closeOnClickModal } = props

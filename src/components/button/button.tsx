@@ -41,7 +41,7 @@ const renderIcon = ({ icon }: ButtonProps) => {
 }
 
 // 解决ts 写了defaultProps  使用仍然需要必填的问题
-const Button: React.SFC<ButtonProps> & { defaultProps: Partial<ButtonProps> } = props => {
+const Button: React.FC<ButtonProps> & { defaultProps: Partial<ButtonProps> } = props => {
   const { style, onClick, disabled, prefixCls, children } = props
   return (
     <div className={`${prefixCls}-button_btn`}>

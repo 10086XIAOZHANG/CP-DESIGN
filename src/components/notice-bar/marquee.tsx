@@ -91,7 +91,7 @@ const _measureText = ({
     }
   }
 }
-const Marquee: React.SFC<MarqueeProps> & {
+const Marquee: React.FC<MarqueeProps> & {
   defaultProps: Partial<MarqueeProps>
 } = props => {
   const { prefixCls, className, text } = props

@@ -46,7 +46,7 @@ const getStyle = ({ size, icon }: AvatarProps) => {
   return _style
 }
 
-const Avatar: React.SFC<AvatarProps> & { defaultProps: Partial<AvatarProps> } = props => {
+const Avatar: React.FC<AvatarProps> & { defaultProps: Partial<AvatarProps> } = props => {
   const classStr = getClassNames(props)
   const _style = getStyle(props)
   return (

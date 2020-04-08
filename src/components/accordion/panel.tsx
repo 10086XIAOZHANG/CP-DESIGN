@@ -63,9 +63,8 @@ const renderContent = ({ content, prefixCls }: PanelProps, visible: boolean) => 
   return null
 }
 
-const Panel: React.SFC<PanelProps> & { defaultProps: Partial<PanelProps> } = props => {
+const Panel: React.FC<PanelProps> & { defaultProps: Partial<PanelProps> } = props => {
   const { prefixCls, title, defaultExpanded, disabled } = props
-  console.log('defaultExpanded', defaultExpanded)
   const classStr = ClassNames(prefixCls, {
     [`${prefixCls}-expanded`]: defaultExpanded,
     [`${prefixCls}-disabled`]: disabled

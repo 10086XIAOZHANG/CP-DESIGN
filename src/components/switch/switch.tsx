@@ -27,7 +27,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>, { onChange }: Swit
   onChange(checked)
 }
 
-const Switch: React.SFC<SwitchProps> & { defaultProps: Partial<SwitchProps> } = props => {
+const Switch: React.FC<SwitchProps> & { defaultProps: Partial<SwitchProps> } = props => {
   const { prefixCls, checked, color, platform } = props
   const classStr = getClassName(props)
   let style: any = {}

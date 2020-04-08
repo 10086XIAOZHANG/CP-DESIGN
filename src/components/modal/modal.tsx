@@ -75,7 +75,7 @@ const renderFooter = (props: ModalProps) => {
   return <div className={`${prefixCls}-footer-container`}>{com}</div>
 }
 
-const Modal: React.SFC<ModalProps> & { defaultProps: Partial<ModalProps> } = props => {
+const Modal: React.FC<ModalProps> & { defaultProps: Partial<ModalProps> } = props => {
   const {
     children,
     prefixCls,

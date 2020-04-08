@@ -29,7 +29,7 @@ const getClassNames = ({ offset, span, className }: ColProps) => {
   })
 }
 
-const Col: React.SFC<ColProps> & { defaultProps: Partial<ColProps> } = props => {
+const Col: React.FC<ColProps> & { defaultProps: Partial<ColProps> } = props => {
   const style = getStyle(props)
   const classStr = getClassNames(props)
   return (

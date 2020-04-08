@@ -34,7 +34,7 @@ const renderIcon = (radioChecked: boolean, color: string, disabled: boolean) => 
   }
   return <Icon type={!radioChecked ? 'circle-o' : 'check-circle'} size={'18px'} color={color} />
 }
-const Radio: React.SFC<RadioProps> & { defaultProps: Partial<RadioProps> } = props => {
+const Radio: React.FC<RadioProps> & { defaultProps: Partial<RadioProps> } = props => {
   const propsCopy = { ...props }
   const { children, onChange, color, ...rest } = propsCopy
   const isChecked =
@@ -46,8 +46,7 @@ const Radio: React.SFC<RadioProps> & { defaultProps: Partial<RadioProps> } = pro
         <input
           type="radio"
           className={`${prefixCls}-input`}
-          onClick={e => {
-            console.log(e)
+          onClick={() => {
             handleChange(onChange, isChecked)
           }}
           {...rest}

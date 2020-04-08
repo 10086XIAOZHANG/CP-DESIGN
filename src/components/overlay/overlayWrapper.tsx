@@ -24,7 +24,7 @@ const setBodyStyle = (visible: boolean) => {
   document.body.style.overflow = visible ? 'hidden' : 'auto'
 }
 
-const OverlayWrapper: React.SFC<OverlayProps> & { defaultProps: Partial<OverlayProps> } = props => {
+const OverlayWrapper: React.FC<OverlayProps> & { defaultProps: Partial<OverlayProps> } = props => {
   const [firstTime, setFirstTime] = useState(true)
   const { visible, destroy, prefixCls } = props
 

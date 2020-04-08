@@ -91,7 +91,6 @@ const onSiderContentTouchMove = (
   currentComponent.style.transition = ''
 
   let currentComponentOffset = currentComponent.offsetLeft
-  console.log('currentComponentOffset', currentComponentOffset, -sliderButtonWidth)
   if (currentComponentOffset > 0 && directionRef.current === 'right') {
     currentComponentOffset = 0
   } else if (currentComponentOffset < -sliderButtonWidth && directionRef.current === 'left') {
@@ -135,7 +134,7 @@ const defaultProps = {
   prefixCls: prefixCls,
   autoClose: true
 }
-const SwipeAction: React.SFC<SwipeActionProps> & {
+const SwipeAction: React.FC<SwipeActionProps> & {
   defaultProps: Partial<SwipeActionProps>
 } = props => {
   const [prevX, setPrevX] = useState(0)

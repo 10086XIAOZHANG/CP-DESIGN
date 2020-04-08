@@ -31,7 +31,7 @@ const handleClick = (e: React.MouseEvent<HTMLElement>, { onClick }: IconProps) =
   onClick(e)
 }
 
-const Icon: React.SFC<IconProps> & { defaultProps: Partial<IconProps> } = props => {
+const Icon: React.FC<IconProps> & { defaultProps: Partial<IconProps> } = props => {
   const {
     prefixCls,
     type,

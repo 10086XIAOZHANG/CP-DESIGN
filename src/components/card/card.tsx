@@ -33,7 +33,7 @@ const renderActions = ({ actions, prefixCls }: CardProps) => {
   return null
 }
 
-const Card: React.SFC<CardProps> & { defaultProps: Partial<CardProps> } = props => {
+const Card: React.FC<CardProps> & { defaultProps: Partial<CardProps> } = props => {
   const { prefixCls, title, extra, children, className, style, onExtraClick } = props
   const classStr = ClassNames(prefixCls, className)
   let styleCopy = style || {}

@@ -182,7 +182,7 @@ const renderErrorEle = ({ error }: InputProps) => {
     </div>
   )
 }
-const Input: React.SFC<InputProps> & { defaultProps: Partial<InputProps> } = props => {
+const Input: React.FC<InputProps> & { defaultProps: Partial<InputProps> } = props => {
   const _inputRef = useRef<HTMLInputElement>(null)
   const type = getTrueType(props.type)
   const { addonAfter, addonBefore, inlinePrefix, style } = props

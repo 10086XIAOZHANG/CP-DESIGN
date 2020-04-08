@@ -281,7 +281,7 @@ const getClassNames = (prefixCls: string | undefined, className: string | undefi
   return Classnames(prefixCls, className)
 }
 
-const ListView: React.SFC<ListViewProps> & {
+const ListView: React.FC<ListViewProps> & {
   defaultProps: Partial<ListViewProps>
 } = props => {
   const {

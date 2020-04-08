@@ -23,13 +23,13 @@ const defaultProps: CheckboxProps = {
   onMouseEnter: noop,
   onMouseLeave: noop
 }
-interface checkStateObjProps {
+interface CheckStateObjProps {
   isChange: boolean
   checked: boolean
 }
-interface checkboxStateProps {
-  setCheckState: React.Dispatch<React.SetStateAction<checkStateObjProps>>
-  checkState: checkStateObjProps
+interface CheckboxStateProps {
+  setCheckState: React.Dispatch<React.SetStateAction<CheckStateObjProps>>
+  checkState: CheckStateObjProps
 }
 /**
  * 类名wrapper
@@ -53,7 +53,7 @@ const wrapperClassName = (
 
 const getClassName = (
   { disabled, checked, defaultChecked, indeterminate, prefixCls }: CheckboxProps,
-  { checkState }: checkboxStateProps
+  { checkState }: CheckboxStateProps
 ) => {
   if (checkState.isChange) {
     return wrapperClassName(prefixCls, disabled, checkState.checked, indeterminate)
@@ -87,7 +87,7 @@ const getOtherProps = (props: CheckboxProps) => {
 const handleChange = (
   e: Event,
   { onChange }: CheckboxProps,
-  setCheckState: React.Dispatch<React.SetStateAction<checkStateObjProps>>
+  setCheckState: React.Dispatch<React.SetStateAction<CheckStateObjProps>>
 ) => {
   const checked = (e.target as HTMLInputElement).checked
   setCheckState({
@@ -98,13 +98,12 @@ const handleChange = (
 }
 
 const Checkbox: React.SFC<CheckboxProps> & { defaultProps: Partial<CheckboxProps> } = props => {
-  const [checkState, setCheckState] = useState<checkStateObjProps>({
+  const [checkState, setCheckState] = useState<CheckStateObjProps>({
     isChange: false,
     checked: props.checked !== undefined ? !!props.checked : false
   })
   const { children, prefixCls, onMouseEnter, onMouseLeave } = props
   const otherProps = getOtherProps(props)
-  console.log('otherProps', otherProps)
   const checkboxRef = useRef(null)
 
   return (

@@ -30,7 +30,7 @@ const _onClick = (
 const getClassNames = (prefixCls?: string, className?: string) => {
   return Classnames(prefixCls, className)
 }
-const NoticeBar: React.SFC<NoticeBarProps> & {
+const NoticeBar: React.FC<NoticeBarProps> & {
   defaultProps: Partial<NoticeBarProps>
 } = props => {
   const [show, setShow] = useState<boolean>(true)

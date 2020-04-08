@@ -88,7 +88,7 @@ const renderSteps = ({ options, current }: StepsProps) => {
   )
 }
 
-const Steps: React.SFC<StepsProps> & { defaultProps: Partial<StepsProps> } = props => {
+const Steps: React.FC<StepsProps> & { defaultProps: Partial<StepsProps> } = props => {
   const classStr = getClassNames(props)
   return <div className={classStr}>{renderSteps(props)}</div>
 }

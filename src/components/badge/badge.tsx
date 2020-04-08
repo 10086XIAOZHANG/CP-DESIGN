@@ -51,7 +51,7 @@ const renderCount = ({ text, overflowCount, dot, prefixCls, corner, style }: Bad
   return null
 }
 
-const Badge: React.SFC<BadgeProps> & { defaultProps: Partial<BadgeProps> } = props => {
+const Badge: React.FC<BadgeProps> & { defaultProps: Partial<BadgeProps> } = props => {
   const { children, corner, outStyle } = props
   return (
     <div className={getClassNames(props)} style={getOutStyle(outStyle ?? {}, corner)}>

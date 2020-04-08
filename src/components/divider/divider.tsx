@@ -20,7 +20,7 @@ const getClassNames = ({ type, orientation, dashed, className, children }: Divid
   })
 }
 
-const Divide: React.SFC<DivideProps> & { defaultProps: Partial<DivideProps> } = props => {
+const Divide: React.FC<DivideProps> & { defaultProps: Partial<DivideProps> } = props => {
   const classStr = getClassNames(props)
   const { children } = props
   return (

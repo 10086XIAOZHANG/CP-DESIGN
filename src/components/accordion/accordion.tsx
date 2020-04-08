@@ -38,7 +38,6 @@ const handleChange = ({
   setActiveKeyList
 }: ClickInterface) => {
   const { onChange, accordion } = props
-  console.log('key', activeKeyList.indexOf(key), setActiveKeyList)
   let activeKeyCopy = activeKeyList.slice()
   if (expanded) {
     if (accordion && !activeKeyList.includes(key)) {
@@ -61,7 +60,7 @@ const handleChange = ({
   onChange(activeKeyCopy, key)
 }
 
-const Accordion: React.SFC<AccordionProps> & { defaultProps: Partial<AccordionProps> } = props => {
+const Accordion: React.FC<AccordionProps> & { defaultProps: Partial<AccordionProps> } = props => {
   const { dataSource, activeKey, style } = props
   const [activeKeyList, setActiveKeyList] = useState<string[]>(activeKey ?? [])
   const classStr = getClassNames(props)

@@ -5,11 +5,7 @@
 English | [简体中文](./README.zh-CN.md)
 
 <p align="center">
-  <table>
-    <tr>
-        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/logo.jpg" width = 30% height = 30%> </center></td>
-    </tr>
-</table>
+  <img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/logo.jpg" style="width:300px;height:300px;" width = 30% height = 30%> 
 </p>
 <p align="center">
   <table>

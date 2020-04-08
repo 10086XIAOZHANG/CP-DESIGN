@@ -5,11 +5,8 @@
 [English](./README.md) | 简体中文
 
 <p align="center">
-  <table>
-    <tr>
-        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/logo.jpg" style="width:300px;height:300px;" width = 30% height = 30%> </center></td>
-    </tr>
-</table>
+
+  <img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/logo.jpg" style="width:300px;height:300px;" width = 30% height = 30%> 
 </p>
 <p align="center">
   <table>

@@ -7,7 +7,7 @@
 <p align="center">
   <table>
     <tr>
-        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/logo.jpg" style="width:300px;height:300px;"> </center></td>
+        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/logo.jpg" style="width:300px;height:300px;" width = 30% height = 30%> </center></td>
     </tr>
 </table>
 </p>

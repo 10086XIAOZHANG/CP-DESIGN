@@ -7,7 +7,7 @@ English | [简体中文](./README.zh-CN.md)
 <p align="center">
   <table>
     <tr>
-        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/logo.jpg">badge </center></td>
+        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/logo.jpg" style="width:300px;height:300px;"> </center></td>
     </tr>
 </table>
 </p>

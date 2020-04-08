@@ -54,7 +54,7 @@ yarn add cp-design
 
 ## ✨ Notice
 
-在组件库中使用了 SASS,在安装的时候记得安装 node-sass
+SASS is used in the component library, remember to install node-sass when installing
 
 ```bash
 npm install node-sass --save-dev

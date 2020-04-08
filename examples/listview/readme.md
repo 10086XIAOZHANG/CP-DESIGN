@@ -100,3 +100,27 @@ export default function ListViewDemo() {
 | prefixCls          |                                           class 前缀 默认 cp-ui-list-view                                           |            string            |          -- |  --  |
 | className          |                                                      样式类名                                                       |            string            |          -- |  --  |
 | listViewHandleRefs |                                可以调用 ListView 组件的下拉刷新方法,使用方式见(demo)                                | useRef\<ListViewHandlesProps | null>(null) |  --  | -- |
+| refreshTips        |                                                    下拉刷新文案                                                     |         RefreshTips          |          -- |  --  |
+| upLoadTips         |                                                    上拉加载文案                                                     |          UpLoadTips          |          -- |  --  |
+
+###### RefreshTips
+
+```
+interface RefreshTips {
+loading?: RefreshContainer
+success?: RefreshContainer
+error?: RefreshContainer
+actionRelease?: string
+actionDown?: string
+}
+```
+
+###### UpLoadTips
+
+```
+interface UpLoadTips {
+loading: string | React.ReactNode
+success?: string | React.ReactNode
+error?: string | React.ReactNode
+}
+```

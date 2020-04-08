@@ -1,8 +1,12 @@
 import * as React from 'react'
 import { ListViewProps, PullDownRefreshProps } from './interface'
+import Classnames from 'classnames'
 import './style'
 import Icon from '../icon'
 const { useState, useRef, useEffect, useImperativeHandle } = React
+
+const prefixCls = 'cp-ui-list-view'
+
 const timeout = (delay: number) => new Promise(resolve => setTimeout(resolve, delay))
 interface ScrollHandleProps {
   listViewStatusRefs: React.MutableRefObject<{
@@ -47,6 +51,7 @@ interface TouchMoveHandleProps {
 const defaultProps = {
   noMore: false,
   backTop: false,
+  prefixCls: prefixCls,
   noMoreTip: '已经到底了~'
 }
 interface TouchEndHandleProps {
@@ -213,10 +218,10 @@ const touchEndHandle = (
     setTranslateY(0)
 
     /*
-     * 开启了上拉加载 且 未隐藏底部提示 且 还有更多数据 且 不是正在加载中 且 Y轴偏移量小于0（是在上拉）
+     * 开启了上拉加载 且 未隐藏底部提示 且 还有更多数据 且 不是正在加载中 且 Y轴偏移量小于-20（是在上拉）
      * 触发上拉加载
      * */
-    if (pullUpLoad && !pullUpHide && !noMore && pullUpStatus !== 1 && moveY < 0) {
+    if (pullUpLoad && !pullUpHide && !noMore && pullUpStatus !== 1 && moveY < -20) {
       _pullUpLoad(props, setPullUpStatus)
     }
   }
@@ -272,11 +277,26 @@ const _pullUpLoad = async (
     setPullUpStatus(3)
   }
 }
+const getClassNames = (prefixCls: string | undefined, className: string | undefined) => {
+  return Classnames(prefixCls, className)
+}
 
 const ListView: React.SFC<ListViewProps> & {
   defaultProps: Partial<ListViewProps>
 } = props => {
-  const { pullDownRefresh, pullUpLoad, children, noMore, noMoreTip, listViewHandleRefs } = props
+  const {
+    pullDownRefresh,
+    pullUpLoad,
+    children,
+    noMore,
+    noMoreTip,
+    listViewHandleRefs,
+    className,
+    prefixCls,
+    style,
+    refreshTips,
+    upLoadTips
+  } = props
   const [translateY, setTranslateY] = useState(0)
   const [move, setMove] = useState(false)
   const [pullUpHide, setPullUpHide] = useState(true)
@@ -307,97 +327,140 @@ const ListView: React.SFC<ListViewProps> & {
       }
     }
   })
-
+  const classStr = getClassNames(prefixCls, className)
   return (
-    <React.Fragment>
+    <div
+      className={classStr}
+      style={style}
+      ref={wrapperElRef}
+      onTouchStart={e => {
+        touchStartHandle(e, { wrapperElRef, setMove, listViewStatusRefs })
+      }}
+      onTouchMove={e => {
+        touchMoveHandle(e, props, {
+          move,
+          listViewStatusRefs,
+          pullUpHide,
+          setMove,
+          setTranslateY
+        })
+      }}
+      onTouchEnd={e => {
+        touchEndHandle(e, props, {
+          listViewStatusRefs,
+          move,
+          translateY,
+          pullUpHide,
+          pullDownStatus,
+          pullUpStatus,
+          setTranslateY,
+          setMove,
+          setPullUpStatus,
+          setPullDownStatus
+        })
+      }}
+      onScroll={e => {
+        scrollHandle(e, props, { listViewStatusRefs, pullUpStatus, pullUpHide, setPullUpStatus })
+      }}
+    >
       <div
-        className={'wrapper'}
-        ref={wrapperElRef}
-        onTouchStart={e => {
-          touchStartHandle(e, { wrapperElRef, setMove, listViewStatusRefs })
-        }}
-        onTouchMove={e => {
-          touchMoveHandle(e, props, {
-            move,
-            listViewStatusRefs,
-            pullUpHide,
-            setMove,
-            setTranslateY
-          })
-        }}
-        onTouchEnd={e => {
-          touchEndHandle(e, props, {
-            listViewStatusRefs,
-            move,
-            translateY,
-            pullUpHide,
-            pullDownStatus,
-            pullUpStatus,
-            setTranslateY,
-            setMove,
-            setPullUpStatus,
-            setPullDownStatus
-          })
-        }}
-        onScroll={e => {
-          scrollHandle(e, props, { listViewStatusRefs, pullUpStatus, pullUpHide, setPullUpStatus })
+        style={{
+          transform: `translateY(${translateY}px)`,
+          transition: move ? '' : 'transform .3s ease'
         }}
       >
-        <div
-          style={{
-            transform: `translateY(${translateY}px)`,
-            transition: move ? '' : 'transform .3s ease'
-          }}
-        >
-          {pullDownRefresh && (
-            <div className="pullDownTip">
-              {pullDownStatus !== 0 ? (
-                <div>
-                  {pullDownStatus === 1 && <Icon type="spinner" spin size={18} />}
-                  {pullDownStatus === 2 && <Icon type={'check-circle'} size={18} />}
-                  {pullDownStatus === 3 && <Icon type={'times-circle'} size={18} />}
-                  <span>
-                    {pullDownStatus === 1 && '正在刷新'}
-                    {pullDownStatus === 2 && '刷新成功'}
-                    {pullDownStatus === 3 && '刷新失败'}
-                  </span>
-                </div>
-              ) : (
-                <div>
-                  <Icon type="arrow-down" size={18} />
-                  <span>{translateY > 60 ? '释放' : '下拉'}刷新</span>
-                </div>
-              )}
-            </div>
-          )}
-          <div ref={innerElRef}>{children}</div>
-          {!pullUpHide && pullUpLoad && (
-            <div className="pullUpTip">
-              {noMore ? (
-                noMoreTip
-              ) : pullUpStatus === 0 || pullUpStatus === 1 ? (
-                <div>
-                  <Icon type="spinner" spin size={18} />
-                  <span>加载中</span>
-                </div>
-              ) : pullUpStatus === 2 ? (
-                <div>
-                  <Icon type={'check-circle'} size={18} />
-                  <span>加载成功</span>
-                </div>
-              ) : pullUpStatus === 3 ? (
-                <div>
-                  <Icon type={'times-circle'} size={18} />
-                  <span>加载失败</span>
-                </div>
-              ) : (
-                ''
-              )}
-            </div>
-          )}
-        </div>
+        {pullDownRefresh && (
+          <div className={`${prefixCls}-pull-down-tip`}>
+            {pullDownStatus !== 0 ? (
+              <div>
+                {pullDownStatus === 1 &&
+                  (refreshTips?.loading ? (
+                    refreshTips?.loading.icon
+                  ) : (
+                    <Icon type="spinner" spin size={18} />
+                  ))}
+                {pullDownStatus === 2 &&
+                  (refreshTips?.success ? (
+                    refreshTips?.success.icon
+                  ) : (
+                    <Icon type={'check-circle'} size={18} />
+                  ))}
+                {pullDownStatus === 3 &&
+                  (refreshTips?.error ? (
+                    refreshTips?.error.icon
+                  ) : (
+                    <Icon type={'times-circle'} size={18} />
+                  ))}
+                <span>
+                  {pullDownStatus === 1 &&
+                    (refreshTips?.loading?.text ? refreshTips?.loading?.text : '正在刷新')}
+                  {pullDownStatus === 2 &&
+                    (refreshTips?.success?.text ? refreshTips?.success?.text : '刷新成功')}
+                  {pullDownStatus === 3 &&
+                    (refreshTips?.error?.text ? refreshTips?.error?.text : '刷新失败')}
+                </span>
+              </div>
+            ) : (
+              <div>
+                <Icon type="arrow-down" size={18} />
+                <span>
+                  {translateY > 60
+                    ? refreshTips?.actionRelease
+                      ? refreshTips?.actionRelease
+                      : '释放刷新'
+                    : refreshTips?.actionDown
+                    ? refreshTips.actionDown
+                    : '下拉刷新'}
+                </span>
+              </div>
+            )}
+          </div>
+        )}
+        <div ref={innerElRef}>{children}</div>
+        {!pullUpHide && pullUpLoad && (
+          <div className={`${prefixCls}-pull-up-tip`}>
+            {noMore ? (
+              noMoreTip
+            ) : pullUpStatus === 0 || pullUpStatus === 1 ? (
+              <div>
+                {upLoadTips?.loading ? (
+                  upLoadTips?.loading
+                ) : (
+                  <>
+                    <Icon type="spinner" spin size={18} />
+                    <span>加载中</span>
+                  </>
+                )}
+              </div>
+            ) : pullUpStatus === 2 ? (
+              <div>
+                {upLoadTips?.success ? (
+                  upLoadTips?.success
+                ) : (
+                  <>
+                    <Icon type={'check-circle'} size={18} />
+                    <span>加载成功</span>
+                  </>
+                )}
+              </div>
+            ) : pullUpStatus === 3 ? (
+              <div>
+                {upLoadTips?.error ? (
+                  upLoadTips?.error
+                ) : (
+                  <>
+                    <Icon type={'times-circle'} size={18} />
+                    <span>加载失败</span>
+                  </>
+                )}
+              </div>
+            ) : (
+              ''
+            )}
+          </div>
+        )}
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 ListView.defaultProps = defaultProps

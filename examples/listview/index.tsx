@@ -58,8 +58,8 @@ export default function ListViewDemo() {
                   style={{
                     padding: '0 20px',
                     listStyle: 'none',
-                    lineHeight: '80px',
-                    height: '80px'
+                    lineHeight: '60px',
+                    height: '60px'
                   }}
                   key={index}
                 >

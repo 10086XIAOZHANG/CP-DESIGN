@@ -1,12 +1,27 @@
 @import '../../style/index.scss';
 
-$modal: 'cp-ui-list-view';
+$list-view: 'cp-ui-list-view';
+.#{$list-view} {
+  * {
+    touch-action: initial;
+  }
+  @mixin pullBox() {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    position: relative;
 
-* {
-  touch-action: initial;
-}
+    img {
+      width: auto;
+      height: 16px;
+      vertical-align: -4px;
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+    }
+  }
 
-.wrapper {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -19,78 +34,31 @@ $modal: 'cp-ui-list-view';
   &::-webkit-scrollbar {
     width: 0 !important;
   }
-}
 
-.pullDownTip,
-.pullUpTip {
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 12px;
-  color: #999;
-  position: relative;
-
-  img {
-    width: auto;
-    height: 16px;
-    vertical-align: -4px;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-  }
-}
-
-.pullDownTip {
-  margin-top: -30px;
-}
-
-.loading {
-  animation: myrotate 1s infinite linear;
-}
-
-@keyframes myrotate {
-  from {
-    transform: rotate(0deg);
+  &-pull-down-tip,
+  &-pull-up-tip {
+    @include pullBox();
   }
 
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.back_top {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  z-index: 2;
-  display: none;
-
-  i {
-    font-size: 44px;
-    color: #1296db;
+  &-pull-down-tip {
+    margin-top: -30px;
   }
 
-  img {
-    width: 42px;
-    height: 42px;
-  }
-}
-
-.back_top.show {
-  display: block;
-}
-
-.back_top.move {
-  display: block;
-  animation: move 0.3s;
-  bottom: 100%;
-}
-
-@keyframes move {
-  0% {
+  .back_top {
+    position: absolute;
     bottom: 10px;
-  }
+    right: 10px;
+    z-index: 2;
+    display: none;
 
-  100% {
-    bottom: 100%;
+    i {
+      font-size: 44px;
+      color: #1296db;
+    }
+
+    img {
+      width: 42px;
+      height: 42px;
+    }
   }
 }

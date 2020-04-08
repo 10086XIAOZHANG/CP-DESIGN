@@ -45,4 +45,6 @@ export interface TabsProps {
   options: Array<TabProps>
   // onExtraClick
   onExtraClick: (e: React.MouseEvent<HTMLElement>) => void
+  //样式
+  style?: React.CSSProperties
 }

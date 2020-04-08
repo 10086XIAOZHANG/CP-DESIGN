@@ -131,7 +131,12 @@ const renderTabPosition = (props: TabsProps) => {
 }
 
 const Tabs: React.FC<TabsProps> & { defaultProps: Partial<TabsProps> } = props => {
-  return <div className={getClassNames(props)}>{renderTabPosition(props)}</div>
+  const { style } = props
+  return (
+    <div className={getClassNames(props)} style={style}>
+      {renderTabPosition(props)}
+    </div>
+  )
 }
 
 Tabs.defaultProps = defaultProps

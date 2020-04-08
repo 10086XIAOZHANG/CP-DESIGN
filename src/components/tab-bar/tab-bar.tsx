@@ -64,7 +64,7 @@ const TabBar: React.FC<TabBarProps> & { defaultProps: Partial<TabBarProps> } = p
   const options = wrapperOptions(props, activeKey)
   return (
     <div className={getClassNames(props)}>
-      <Row style={{ height: '100%' }}>
+      <Row style={{ height: '100%', width: '100%' }}>
         <Col span={24} style={{ height: '100%', width: '100%' }}>
           <Tabs
             activeKey={activeKey}

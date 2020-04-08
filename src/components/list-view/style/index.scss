@@ -27,6 +27,7 @@ $list-view: 'cp-ui-list-view';
   bottom: 0;
   width: 100%;
   overflow-y: auto;
+  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;

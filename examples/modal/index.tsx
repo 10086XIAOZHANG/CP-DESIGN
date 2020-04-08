@@ -23,7 +23,7 @@ export default function ModalDemo() {
           setModal1(false)
         }}
       >
-        <div style={{ height: 100, overflowY: 'scroll' }}>
+        <div style={{ height: 100, overflowY: 'scroll', scrollbarWidth: 'none' }}>
           scoll content...
           <br />
           scoll content...
@@ -50,7 +50,7 @@ export default function ModalDemo() {
           setModal2(false)
         }}
       >
-        <div style={{ height: 100, overflowY: 'scroll' }}>
+        <div style={{ height: 100, overflowY: 'scroll', scrollbarWidth: 'none' }}>
           scoll content...
           <br />
           scoll content...

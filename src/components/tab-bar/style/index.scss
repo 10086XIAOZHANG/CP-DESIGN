@@ -76,6 +76,10 @@ $tabs: 'cp-ui-tabs';
 
   &-hidden {
     .#{$tabs} {
+      &-content {
+        height: 100%;
+      }
+
       &-tab {
         display: none;
       }

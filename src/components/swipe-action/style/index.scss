@@ -14,7 +14,7 @@ $swipe-action: 'cp-ui-swipe-action';
 
     .#{$swipe-action}-content {
       position: relative;
-      z-index: 10;
+      z-index: 110;
       display: block;
     }
 
@@ -31,19 +31,13 @@ $swipe-action: 'cp-ui-swipe-action';
       height: 100%;
       justify-content: center;
 
-      &:last-child {
-        border-right: solid;
-        border-width: 1px;
+      &:not(:last-child) {
         background-color: red;
-        border-color: #fff;
-      }
-
-      &:first-child {
-        border: none;
+        border-right: 1px solid #fff;
       }
     }
 
-    + .#{$swipe-action}-wrap {
+    +.#{$swipe-action}-wrap {
       border-top: 1px solid #cfcfcf;
     }
   }

@@ -18,7 +18,7 @@ $tabs: 'cp-ui-tabs';
     .#{$tabs} {
       &-tab {
         border-bottom: 1px solid rgb(221, 221, 221);
-        ;
+        
         margin: 0 0 16px 0;
       }
 
@@ -76,7 +76,6 @@ $tabs: 'cp-ui-tabs';
 
       &-tab {
         &-item {
-          display: block;
           flex: 1;
           display: flex;
           align-items: center;

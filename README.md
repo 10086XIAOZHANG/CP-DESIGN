@@ -109,6 +109,7 @@ const App = () => (
 - [x] Popover,
 - [x] NoticeBar,
 - [x] SwipeAction
+- [x] ListView
 
 ## Demo
 

@@ -12,28 +12,29 @@ export default function SwipeActionDemo() {
         </Col>
       </Row>
       <h3>基本</h3>
-      <SwipeAction
-        onOpen={() => {
-          console.log('打开时回调函数')
-        }}
-        onClose={() => {
-          console.log('关闭时回调函数')
-        }}
-        right={[
-          {
-            text: 'Delete',
-            onPress: () => console.log('delete'),
-            style: { backgroundColor: '#F4333C', color: 'white' }
-          },
-          {
-            text: 'Cancel',
-            onPress: () => console.log('cancel'),
-            style: { backgroundColor: '#ddd', color: 'white' }
-          }
-        ]}
-      >
-        <Row style={{ marginBottom: '1rem' }}>
-          <Col span={24}>
+
+      <Row style={{ marginBottom: '1rem' }}>
+        <Col span={24}>
+          <SwipeAction
+            onOpen={() => {
+              console.log('打开时回调函数')
+            }}
+            onClose={() => {
+              console.log('关闭时回调函数')
+            }}
+            right={[
+              {
+                text: 'Delete',
+                onPress: () => console.log('delete'),
+                style: { backgroundColor: '#F4333C', color: 'white' }
+              },
+              {
+                text: 'Cancel',
+                onPress: () => console.log('cancel'),
+                style: { backgroundColor: '#ddd', color: 'white' }
+              }
+            ]}
+          >
             <div
               style={{
                 position: 'relative',
@@ -70,33 +71,35 @@ export default function SwipeActionDemo() {
                 </p>
               </div>
             </div>
-          </Col>
-        </Row>
-      </SwipeAction>
+          </SwipeAction>
+        </Col>
+      </Row>
+
       <h3>禁用 swipeout</h3>
-      <SwipeAction
-        disabled
-        onOpen={() => {
-          console.log('打开时回调函数')
-        }}
-        onClose={() => {
-          console.log('关闭时回调函数')
-        }}
-        right={[
-          {
-            text: 'Delete',
-            onPress: () => console.log('delete'),
-            style: { backgroundColor: '#F4333C', color: 'white' }
-          },
-          {
-            text: 'Cancel',
-            onPress: () => console.log('cancel'),
-            style: { backgroundColor: '#ddd', color: 'white' }
-          }
-        ]}
-      >
-        <Row style={{ marginBottom: '1rem' }}>
-          <Col span={24}>
+
+      <Row style={{ marginBottom: '1rem' }}>
+        <Col span={24}>
+          <SwipeAction
+            disabled
+            onOpen={() => {
+              console.log('打开时回调函数')
+            }}
+            onClose={() => {
+              console.log('关闭时回调函数')
+            }}
+            right={[
+              {
+                text: 'Delete',
+                onPress: () => console.log('delete'),
+                style: { backgroundColor: '#F4333C', color: 'white' }
+              },
+              {
+                text: 'Cancel',
+                onPress: () => console.log('cancel'),
+                style: { backgroundColor: '#ddd', color: 'white' }
+              }
+            ]}
+          >
             <div
               style={{
                 position: 'relative',
@@ -133,9 +136,9 @@ export default function SwipeActionDemo() {
                 </p>
               </div>
             </div>
-          </Col>
-        </Row>
-      </SwipeAction>
+          </SwipeAction>
+        </Col>
+      </Row>
     </div>
   )
 }

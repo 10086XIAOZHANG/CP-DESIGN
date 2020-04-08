@@ -245,7 +245,7 @@ export default function ButtonDemo() {
         </Row>
         <Row justify={'center'}>
           <Col span={18}>
-            <Button htmlType="submit" onClick={handleSubmit(onSubmit)} style={btnStyle}>
+            <Button onClick={handleSubmit(onSubmit)} style={btnStyle}>
               Submit
             </Button>
           </Col>

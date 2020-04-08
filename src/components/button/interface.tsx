@@ -21,7 +21,6 @@ export interface ButtonProps {
   style?: object
   // icon
   icon?: React.ReactNode
-  // htmlType 原生的type  比如submit这些
-  htmlType?: string
+
   children?: React.ReactNode
 }

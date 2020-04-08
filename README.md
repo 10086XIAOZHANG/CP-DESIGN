@@ -7,6 +7,14 @@ English | [简体中文](./README.zh-CN.md)
 <p align="center">
   <table>
     <tr>
+        <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/CP.png">badge </center></td>
+    </tr>
+
+</table>
+</p>
+<p align="center">
+  <table>
+    <tr>
         <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-badge.jpg">badge </center></td>
         <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-btn.jpg">button</center></td>
          <td ><center><img src="https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/cp-design-icon.jpg">icon</center></td>

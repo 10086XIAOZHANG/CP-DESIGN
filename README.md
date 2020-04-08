@@ -18,7 +18,7 @@ English | [简体中文](./README.zh-CN.md)
 </table>
 </p>
 
-![项目截图](https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/CP.png)
+![Project screenshot](https://github.com/10086XIAOZHANG/blogImgAttr/blob/master/CP.png)
 
 # CP Design Mobile
 

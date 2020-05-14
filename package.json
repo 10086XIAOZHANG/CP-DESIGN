@@ -122,6 +122,7 @@
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.3.0",
+    "lerna": "^3.21.0",
     "less": "^3.11.1",
     "lint-staged": "^10.0.8",
     "postcss-loader": "^3.0.0",

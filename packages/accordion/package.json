@@ -1,0 +1,15 @@
+{
+  "name": "cp-design-accordion",
+  "version": "0.1.26",
+  "description": "cp-design-accordion",
+  "keywords": [
+    "react",
+    "accordion"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo hasn't write test~"
+  },
+  "author": "deepkolos",
+  "license": "MIT"
+}

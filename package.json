@@ -15,7 +15,7 @@
     "build:story": "cross-env NODE_ENV=dev build-storybook -c .storybook -o docs",
     "deploy-storybook": "storybook-to-ghpages",
     "prepublishOnly": "npm run build",
-    "commit": "git-cz",
+    "commit": "git-cz && npm run genlog",
     "genlog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "husky": {

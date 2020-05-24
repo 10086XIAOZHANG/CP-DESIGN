@@ -1,3 +1,17 @@
+## 0.3.4 (2020-05-24)
+
+
+### Documentation
+
+* **添加 changelog:** 添加 changelog ([9d403af](https://github.com/10086XIAOZHANG/CP-DESIGN/commit/9d403afabd830edbdc55b2874208ce1f64471f2b))
+
+
+### BREAKING CHANGES
+
+* **添加 changelog:** 添加 changelog
+
+
+
 ## <small>0.3.4 (2020-05-24)</small>
 
 * 1 ([50bf559](https://github.com/10086XIAOZHANG/CP-DESIGN/commit/50bf559))
